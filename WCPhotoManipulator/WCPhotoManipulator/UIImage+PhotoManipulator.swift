@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension UIImage {
+public extension UIImage {
     /**
      Crop image
      
@@ -16,7 +16,7 @@ extension UIImage {
      
      - Returns: Cropped image
      */
-    func crop(_ cropRegion: CGRect) -> UIImage? {
+    public func crop(_ cropRegion: CGRect) -> UIImage? {
         let targetSize = cropRegion.size;
         let targetRect = CGRect(x: -cropRegion.origin.x, y: -cropRegion.origin.y, width: self.size.width, height: self.size.width)
         let operation = BitmapUtils.transformFromTargetRect(self.size, targetRect)
@@ -32,7 +32,7 @@ extension UIImage {
      
      - Returns: Resized image
      */
-    func resize(_ targetSize: CGSize, _ scale: CGFloat? = nil) -> UIImage? {
+    public func resize(_ targetSize: CGSize, _ scale: CGFloat? = nil) -> UIImage? {
         let rect = BitmapUtils.targetRect(self.size, targetSize, 1, .cover)
         let operation = BitmapUtils.transformFromTargetRect(self.size, rect)
         return BitmapUtils.transform(self, targetSize, scale ?? self.scale, operation)
@@ -48,6 +48,28 @@ extension UIImage {
      */
     func crop(_ cropRegion: CGRect, _ targetSize: CGSize) -> UIImage? {
         return self.crop(cropRegion)?.resize(targetSize, self.scale)
+    }
+    
+    public func drawText(_ text: NSString, position: CGPoint, color: UIColor, size: CGFloat, thickness: CGFloat = 0, scale: CGFloat? = nil) -> UIImage? {
+        let opaque = !self.hasAlpha()
+        UIGraphicsBeginImageContextWithOptions(self.size, opaque, scale ?? self.scale)
+        
+        self.draw(in: CGRect(x: 0, y: 0, width: self.size.width, height: self.size.height))
+        
+        var textStyles = [
+            NSAttributedString.Key.font: UIFont.systemFont(ofSize: size),
+            NSAttributedString.Key.foregroundColor: color,
+            ] as [NSAttributedString.Key : Any]
+        if (thickness > 0) {
+            textStyles[NSAttributedString.Key.strokeColor] = color
+            textStyles[NSAttributedString.Key.strokeWidth] = thickness
+        }
+        text.draw(at: position, withAttributes: textStyles)
+        
+        let result = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext()
+        
+        return result
     }
     
     func hasAlpha() -> Bool {
