@@ -9,37 +9,6 @@
 import UIKit
 
 class BitmapUtils: NSObject {
-    static func crop(_ image: UIImage, _ region: CGRect) -> UIImage? {
-        let targetSize = region.size;
-        let targetRect = CGRect(x: -region.origin.x, y: -region.origin.y, width: image.size.width, height: image.size.width)
-        let operation = transformFromTargetRect(image.size, targetRect)
-
-        return transform(image, targetSize, image.scale, operation)
-    }
-    
-    static func resize(_ image: UIImage, _ targetSize: CGSize, _ scale: CGFloat) -> UIImage? {
-        let rect = targetRect(image.size, targetSize, 1, .cover)
-        let operation = transformFromTargetRect(image.size, rect)
-        return transform(image, targetSize, scale, operation)
-    }
-    
-    static func cropAndResize(image: UIImage, cropRegion: CGRect, targetSize: CGSize) -> UIImage? {
-        guard let result = crop(image, cropRegion) else { return nil }
-        
-        return resize(result, targetSize, image.scale)
-    }
-    
-    static func hasAlpha(_ image: CGImage?) -> Bool {
-        guard let image = image else { return false }
-        
-        switch (image.alphaInfo) {
-        case .none, .noneSkipLast, .noneSkipFirst:
-            return false
-        default:
-            return true
-        }
-    }
-    
     // Transform
     // https://github.com/facebook/react-native/blob/master/Libraries/Image/RCTImageUtils.m
     static func transform(_ image: UIImage, _ size: CGSize, _ scale: CGFloat, _ transform: CGAffineTransform) -> UIImage? {
@@ -47,7 +16,7 @@ class BitmapUtils: NSObject {
             return nil;
         }
         
-        let opaque = !hasAlpha(image.cgImage)
+        let opaque = !image.hasAlpha()
         UIGraphicsBeginImageContextWithOptions(size, opaque, scale)
         UIGraphicsGetCurrentContext()?.concatenate(transform)
         image.draw(at: CGPoint.zero)

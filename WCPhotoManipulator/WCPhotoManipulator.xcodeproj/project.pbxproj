@@ -12,6 +12,7 @@
 		7F85A5B62244DAB5005139A9 /* WCPhotoManipulator.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F85A5A82244DAB5005139A9 /* WCPhotoManipulator.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7F85A5C02244E436005139A9 /* BitmapUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F85A5BF2244E436005139A9 /* BitmapUtils.swift */; };
 		7F85A5C22244F6A2005139A9 /* ResizeMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F85A5C12244F6A2005139A9 /* ResizeMode.swift */; };
+		CC8D09D522453ACC002508C5 /* UIImage+PhotoManipulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8D09D422453ACC002508C5 /* UIImage+PhotoManipulator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +34,7 @@
 		7F85A5B52244DAB5005139A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7F85A5BF2244E436005139A9 /* BitmapUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitmapUtils.swift; sourceTree = "<group>"; };
 		7F85A5C12244F6A2005139A9 /* ResizeMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResizeMode.swift; sourceTree = "<group>"; };
+		CC8D09D422453ACC002508C5 /* UIImage+PhotoManipulator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+PhotoManipulator.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 				7F85A5A92244DAB5005139A9 /* Info.plist */,
 				7F85A5BF2244E436005139A9 /* BitmapUtils.swift */,
 				7F85A5C12244F6A2005139A9 /* ResizeMode.swift */,
+				CC8D09D422453ACC002508C5 /* UIImage+PhotoManipulator.swift */,
 			);
 			path = WCPhotoManipulator;
 			sourceTree = "<group>";
@@ -203,6 +206,7 @@
 			files = (
 				7F85A5C22244F6A2005139A9 /* ResizeMode.swift in Sources */,
 				7F85A5C02244E436005139A9 /* BitmapUtils.swift in Sources */,
+				CC8D09D522453ACC002508C5 /* UIImage+PhotoManipulator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
