@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name         = "WCPhotoManipulator"
-  s.version      = "0.0.3"
+  s.version      = "0.0.4"
   s.summary  = "An image processing library for iOS"
   s.homepage     = "https://github.com/guhungry/ios-photo-manipulator"
 
@@ -17,7 +17,5 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, "9.0"
   s.source       = { :git => "https://github.com/guhungry/ios-photo-manipulator.git", :tag => "#{s.version}" }
-  s.source_files  = "WCPhotoManipulator/**/*.swift"
-
-  s.swift_version = "4.2"
+  s.source_files  = "WCPhotoManipulator/**/*.{h,m}"
 end
