@@ -66,7 +66,7 @@
     switch (resizeMode) {
         case ResizeModeStretch:
             
-            return (CGRect){CGPointZero, [BitmapUtils floor:destScale scale:destScale]};
+            return (CGRect){CGPointZero, [BitmapUtils ceilSize:destSize scale:destScale]};
             
         case ResizeModeContain:
             
