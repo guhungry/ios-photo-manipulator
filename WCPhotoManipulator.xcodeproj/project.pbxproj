@@ -10,10 +10,14 @@
 		7F85A5AF2244DAB5005139A9 /* WCPhotoManipulator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F85A5A52244DAB5005139A9 /* WCPhotoManipulator.framework */; };
 		7F85A5B42244DAB5005139A9 /* WCPhotoManipulatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F85A5B32244DAB5005139A9 /* WCPhotoManipulatorTests.swift */; };
 		7F85A5B62244DAB5005139A9 /* WCPhotoManipulator.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F85A5A82244DAB5005139A9 /* WCPhotoManipulator.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CC18CACE224887E400BFB221 /* MimeUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = CC18CACC224887E300BFB221 /* MimeUtils.h */; };
+		CC18CACF224887E400BFB221 /* MimeUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = CC18CACD224887E400BFB221 /* MimeUtils.m */; };
 		CC8D09E822463019002508C5 /* BitmapUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = CC8D09E622463019002508C5 /* BitmapUtils.h */; };
 		CC8D09E922463019002508C5 /* BitmapUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = CC8D09E722463019002508C5 /* BitmapUtils.m */; };
 		CC8D09EC22463061002508C5 /* UIImage+PhotoManipulator.h in Headers */ = {isa = PBXBuildFile; fileRef = CC8D09EA22463061002508C5 /* UIImage+PhotoManipulator.h */; };
 		CC8D09ED22463061002508C5 /* UIImage+PhotoManipulator.m in Sources */ = {isa = PBXBuildFile; fileRef = CC8D09EB22463061002508C5 /* UIImage+PhotoManipulator.m */; };
+		CC8D09F122479FEC002508C5 /* FileUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = CC8D09EF22479FEC002508C5 /* FileUtils.h */; };
+		CC8D09F222479FEC002508C5 /* FileUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = CC8D09F022479FEC002508C5 /* FileUtils.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,11 +37,15 @@
 		7F85A5AE2244DAB5005139A9 /* WCPhotoManipulatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WCPhotoManipulatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F85A5B32244DAB5005139A9 /* WCPhotoManipulatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WCPhotoManipulatorTests.swift; sourceTree = "<group>"; };
 		7F85A5B52244DAB5005139A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CC18CACC224887E300BFB221 /* MimeUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MimeUtils.h; sourceTree = "<group>"; };
+		CC18CACD224887E400BFB221 /* MimeUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MimeUtils.m; sourceTree = "<group>"; };
 		CC8D09E622463019002508C5 /* BitmapUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BitmapUtils.h; sourceTree = "<group>"; };
 		CC8D09E722463019002508C5 /* BitmapUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BitmapUtils.m; sourceTree = "<group>"; };
 		CC8D09EA22463061002508C5 /* UIImage+PhotoManipulator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+PhotoManipulator.h"; sourceTree = "<group>"; };
 		CC8D09EB22463061002508C5 /* UIImage+PhotoManipulator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+PhotoManipulator.m"; sourceTree = "<group>"; };
 		CC8D09EE2246469F002508C5 /* ResizeMode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ResizeMode.h; sourceTree = "<group>"; };
+		CC8D09EF22479FEC002508C5 /* FileUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FileUtils.h; sourceTree = "<group>"; };
+		CC8D09F022479FEC002508C5 /* FileUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FileUtils.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,13 +88,17 @@
 		7F85A5A72244DAB5005139A9 /* WCPhotoManipulator */ = {
 			isa = PBXGroup;
 			children = (
-				7F85A5A82244DAB5005139A9 /* WCPhotoManipulator.h */,
-				7F85A5A92244DAB5005139A9 /* Info.plist */,
-				CC8D09EE2246469F002508C5 /* ResizeMode.h */,
 				CC8D09E622463019002508C5 /* BitmapUtils.h */,
 				CC8D09E722463019002508C5 /* BitmapUtils.m */,
+				CC8D09EF22479FEC002508C5 /* FileUtils.h */,
+				CC8D09F022479FEC002508C5 /* FileUtils.m */,
+				7F85A5A92244DAB5005139A9 /* Info.plist */,
+				CC18CACC224887E300BFB221 /* MimeUtils.h */,
+				CC18CACD224887E400BFB221 /* MimeUtils.m */,
+				CC8D09EE2246469F002508C5 /* ResizeMode.h */,
 				CC8D09EA22463061002508C5 /* UIImage+PhotoManipulator.h */,
 				CC8D09EB22463061002508C5 /* UIImage+PhotoManipulator.m */,
+				7F85A5A82244DAB5005139A9 /* WCPhotoManipulator.h */,
 			);
 			path = WCPhotoManipulator;
 			sourceTree = "<group>";
@@ -109,7 +121,9 @@
 			files = (
 				CC8D09EC22463061002508C5 /* UIImage+PhotoManipulator.h in Headers */,
 				7F85A5B62244DAB5005139A9 /* WCPhotoManipulator.h in Headers */,
+				CC8D09F122479FEC002508C5 /* FileUtils.h in Headers */,
 				CC8D09E822463019002508C5 /* BitmapUtils.h in Headers */,
+				CC18CACE224887E400BFB221 /* MimeUtils.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -211,8 +225,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC8D09F222479FEC002508C5 /* FileUtils.m in Sources */,
 				CC8D09E922463019002508C5 /* BitmapUtils.m in Sources */,
 				CC8D09ED22463061002508C5 /* UIImage+PhotoManipulator.m in Sources */,
+				CC18CACF224887E400BFB221 /* MimeUtils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
