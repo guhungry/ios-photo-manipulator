@@ -16,6 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (NSString *)cachePath;
 + (void)cleanDirectory:(NSString *)path prefix:(NSString *)prefix;
 + (void)saveImageFile:(UIImage *)image mimeType:(NSString *)mimeType quality:(CGFloat)quality file:(NSString *)file;
++ (UIImage *)imageFromUrl:(NSURL *)url;
 
 @end
 
