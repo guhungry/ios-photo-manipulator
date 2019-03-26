@@ -38,7 +38,7 @@
 }
 
 + (UIImage *)imageFromUrl:(NSURL *)url {
-    if ([url.scheme isEqual:@"file"]) return [UIImage imageWithContentsOfFile:url.absoluteString];
+    if ([url.scheme isEqual:@"file"]) return [UIImage imageWithContentsOfFile:url.path];
     
     NSData *data = [[NSData alloc] initWithContentsOfURL:url];
     return [UIImage imageWithData:data];
