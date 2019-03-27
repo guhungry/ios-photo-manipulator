@@ -16,6 +16,6 @@ Pod::Spec.new do |s|
   s.author       = { "Woraphot Chokratanasombat" => "guhungry@gmail.com" }
 
   s.platform     = :ios, "9.0"
-  s.source       = { :git => "https://github.com/guhungry/ios-photo-manipulator.git", :tag => "#{s.version}" }
+  s.source       = { :git => "https://github.com/guhungry/ios-photo-manipulator.git", :tag => "v#{s.version}" }
   s.source_files  = "WCPhotoManipulator/**/*.{h,m}"
 end
