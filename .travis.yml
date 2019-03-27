@@ -18,7 +18,7 @@ before_install:
 
 script:
   - ci/buildViaTravis.sh
-  #- sonar-scanner
+  - sonar-scanner
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
