@@ -18,4 +18,4 @@ else
   xcodebuild clean build test -project WCPhotoManipulator.xcodeproj -scheme WCPhotoManipulator -sdk iphonesimulator -destination 'platform=iOS Simulator,OS=12.1,name=iPhone X' -enableCodeCoverage YES -configuration Debug GCC_INSTRUMENT_PROGRAM_FLOW_ARCS=YES GCC_GENERATE_TEST_COVERAGE_FILES=YES | xcpretty -c
 fi
 
-#./xccov-to-sonarqube-generic.sh ~/Library/Developer/Xcode/DerivedData/*/Logs/Test/*/*/*.xccovarchive/ > sonarqube-generic-coverage.xml
+./xccov-to-sonarqube-generic.sh ~/Library/Developer/Xcode/DerivedData/*/Logs/Test/*/*/*.xccovarchive/ > sonarqube-generic-coverage.xml
