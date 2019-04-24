@@ -11,7 +11,19 @@
 		7F49547E22701398004F8851 /* MimeUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F49547522701398004F8851 /* MimeUtils.m */; };
 		7F49547F22701398004F8851 /* UIImage+PhotoManipulator.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F49547922701398004F8851 /* UIImage+PhotoManipulator.m */; };
 		7F49548022701398004F8851 /* BitmapUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F49547B22701398004F8851 /* BitmapUtils.m */; };
+		7FB4F589227085F100D84D9D /* libWCPhotoManipulator.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F4954582270118D004F8851 /* libWCPhotoManipulator.a */; };
+		7FB4F5902270863C00D84D9D /* WCPhotoManipulatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FB4F58F2270863C00D84D9D /* WCPhotoManipulatorTests.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7FB4F58A227085F100D84D9D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7F4954502270118D004F8851 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7F4954572270118D004F8851;
+			remoteInfo = WCPhotoManipulator;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		7F4954562270118D004F8851 /* CopyFiles */ = {
@@ -38,6 +50,9 @@
 		7F49547B22701398004F8851 /* BitmapUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BitmapUtils.m; sourceTree = "<group>"; };
 		7F49547C22701398004F8851 /* UIImage+PhotoManipulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+PhotoManipulator.h"; sourceTree = "<group>"; };
 		7F495481227013A9004F8851 /* WCPhotoManipulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCPhotoManipulator.h; sourceTree = "<group>"; };
+		7FB4F584227085F100D84D9D /* WCPhotoManipulatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WCPhotoManipulatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7FB4F588227085F100D84D9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7FB4F58F2270863C00D84D9D /* WCPhotoManipulatorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCPhotoManipulatorTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +63,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7FB4F581227085F100D84D9D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7FB4F589227085F100D84D9D /* libWCPhotoManipulator.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -55,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				7F49545A2270118D004F8851 /* WCPhotoManipulator */,
+				7FB4F585227085F100D84D9D /* WCPhotoManipulatorTests */,
 				7F4954592270118D004F8851 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -63,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				7F4954582270118D004F8851 /* libWCPhotoManipulator.a */,
+				7FB4F584227085F100D84D9D /* WCPhotoManipulatorTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -85,6 +110,15 @@
 			path = WCPhotoManipulator;
 			sourceTree = "<group>";
 		};
+		7FB4F585227085F100D84D9D /* WCPhotoManipulatorTests */ = {
+			isa = PBXGroup;
+			children = (
+				7FB4F58F2270863C00D84D9D /* WCPhotoManipulatorTests.m */,
+				7FB4F588227085F100D84D9D /* Info.plist */,
+			);
+			path = WCPhotoManipulatorTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -105,16 +139,38 @@
 			productReference = 7F4954582270118D004F8851 /* libWCPhotoManipulator.a */;
 			productType = "com.apple.product-type.library.static";
 		};
+		7FB4F583227085F100D84D9D /* WCPhotoManipulatorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7FB4F58C227085F100D84D9D /* Build configuration list for PBXNativeTarget "WCPhotoManipulatorTests" */;
+			buildPhases = (
+				7FB4F580227085F100D84D9D /* Sources */,
+				7FB4F581227085F100D84D9D /* Frameworks */,
+				7FB4F582227085F100D84D9D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7FB4F58B227085F100D84D9D /* PBXTargetDependency */,
+			);
+			name = WCPhotoManipulatorTests;
+			productName = WCPhotoManipulatorTests;
+			productReference = 7FB4F584227085F100D84D9D /* WCPhotoManipulatorTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		7F4954502270118D004F8851 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 1010;
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = "Woraphot Chokratanasombat";
 				TargetAttributes = {
 					7F4954572270118D004F8851 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					7FB4F583227085F100D84D9D = {
 						CreatedOnToolsVersion = 10.1;
 					};
 				};
@@ -132,9 +188,20 @@
 			projectRoot = "";
 			targets = (
 				7F4954572270118D004F8851 /* WCPhotoManipulator */,
+				7FB4F583227085F100D84D9D /* WCPhotoManipulatorTests */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7FB4F582227085F100D84D9D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		7F4954542270118D004F8851 /* Sources */ = {
@@ -148,7 +215,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7FB4F580227085F100D84D9D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7FB4F5902270863C00D84D9D /* WCPhotoManipulatorTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7FB4F58B227085F100D84D9D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7F4954572270118D004F8851 /* WCPhotoManipulator */;
+			targetProxy = 7FB4F58A227085F100D84D9D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		7F49545F2270118D004F8851 /* Debug */ = {
@@ -285,6 +368,38 @@
 			};
 			name = Release;
 		};
+		7FB4F58D227085F100D84D9D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = WCPhotoManipulatorTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.guhungry.photomanipulator.WCPhotoManipulatorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7FB4F58E227085F100D84D9D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = WCPhotoManipulatorTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.guhungry.photomanipulator.WCPhotoManipulatorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -302,6 +417,15 @@
 			buildConfigurations = (
 				7F4954622270118D004F8851 /* Debug */,
 				7F4954632270118D004F8851 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7FB4F58C227085F100D84D9D /* Build configuration list for PBXNativeTarget "WCPhotoManipulatorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7FB4F58D227085F100D84D9D /* Debug */,
+				7FB4F58E227085F100D84D9D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
