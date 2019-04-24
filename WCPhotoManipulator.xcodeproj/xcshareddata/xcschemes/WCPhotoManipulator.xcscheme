@@ -14,8 +14,8 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "7F85A5A42244DAB4005139A9"
-               BuildableName = "WCPhotoManipulator.framework"
+               BlueprintIdentifier = "7F4954572270118D004F8851"
+               BuildableName = "libWCPhotoManipulator.a"
                BlueprintName = "WCPhotoManipulator"
                ReferencedContainer = "container:WCPhotoManipulator.xcodeproj">
             </BuildableReference>
@@ -28,26 +28,7 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "7F85A5AD2244DAB5005139A9"
-               BuildableName = "WCPhotoManipulatorTests.xctest"
-               BlueprintName = "WCPhotoManipulatorTests"
-               ReferencedContainer = "container:WCPhotoManipulator.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "7F85A5A42244DAB4005139A9"
-            BuildableName = "WCPhotoManipulator.framework"
-            BlueprintName = "WCPhotoManipulator"
-            ReferencedContainer = "container:WCPhotoManipulator.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -64,8 +45,8 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "7F85A5A42244DAB4005139A9"
-            BuildableName = "WCPhotoManipulator.framework"
+            BlueprintIdentifier = "7F4954572270118D004F8851"
+            BuildableName = "libWCPhotoManipulator.a"
             BlueprintName = "WCPhotoManipulator"
             ReferencedContainer = "container:WCPhotoManipulator.xcodeproj">
          </BuildableReference>
@@ -82,8 +63,8 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "7F85A5A42244DAB4005139A9"
-            BuildableName = "WCPhotoManipulator.framework"
+            BlueprintIdentifier = "7F4954572270118D004F8851"
+            BuildableName = "libWCPhotoManipulator.a"
             BlueprintName = "WCPhotoManipulator"
             ReferencedContainer = "container:WCPhotoManipulator.xcodeproj">
          </BuildableReference>
