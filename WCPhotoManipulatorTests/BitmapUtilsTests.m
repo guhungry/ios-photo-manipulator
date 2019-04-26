@@ -7,6 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "BitmapUtils.h"
 
 @interface BitmapUtilsTests : XCTestCase
 
@@ -22,16 +23,32 @@
     // Put teardown code here. This method is called after the invocation of each test method in the class.
 }
 
-- (void)testExample {
-    // This is an example of a functional test case.
-    // Use XCTAssert and related functions to verify your tests produce the correct results.
+////////////////////////////
+/// ceil
+///////////////////////////
+- (void)testCeil_ShouldReturnValueCorrectly {
+    XCTAssertEqual([BitmapUtils ceil:5 scale:1], 5);
+    XCTAssertEqual([BitmapUtils ceil:4.8 scale:1], 5);
+    XCTAssertEqual([BitmapUtils ceil:4.5 scale:1], 5);
+    XCTAssertEqual([BitmapUtils ceil:4.1 scale:1], 5);
+    XCTAssertEqual([BitmapUtils ceil:5 scale:2], 5);
+    XCTAssertEqual([BitmapUtils ceil:4.8 scale:2], 5);
+    XCTAssertEqual([BitmapUtils ceil:4.5 scale:2], 4.5);
+    XCTAssertEqual([BitmapUtils ceil:4.1 scale:2], 4.5);
 }
 
-- (void)testPerformanceExample {
-    // This is an example of a performance test case.
-    [self measureBlock:^{
-        // Put the code you want to measure the time of here.
-    }];
+////////////////////////////
+/// floor
+///////////////////////////
+- (void)testFloor_ShouldReturnValueCorrectly {
+    XCTAssertEqual([BitmapUtils floor:5 scale:1], 5);
+    XCTAssertEqual([BitmapUtils floor:4.8 scale:1], 4);
+    XCTAssertEqual([BitmapUtils floor:4.5 scale:1], 4);
+    XCTAssertEqual([BitmapUtils floor:4.1 scale:1], 4);
+    XCTAssertEqual([BitmapUtils floor:5 scale:2], 5);
+    XCTAssertEqual([BitmapUtils floor:4.8 scale:2], 4.5);
+    XCTAssertEqual([BitmapUtils floor:4.5 scale:2], 4.5);
+    XCTAssertEqual([BitmapUtils floor:4.1 scale:2], 4);
 }
 
 @end
