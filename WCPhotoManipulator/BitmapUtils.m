@@ -64,10 +64,6 @@
     }
     
     switch (resizeMode) {
-        case ResizeModeStretch:
-            
-            return (CGRect){CGPointZero, [BitmapUtils ceilSize:destSize scale:destScale]};
-            
         case ResizeModeContain:
             
             if (targetAspect <= aspect) { // target is taller than content
@@ -110,6 +106,11 @@
                     [BitmapUtils ceilSize:sourceSize scale:destScale]
                 };
             }
+
+        case ResizeModeStretch:
+        default:
+
+            return (CGRect){CGPointZero, [BitmapUtils ceilSize:destSize scale:destScale]};
     }
 }
 
