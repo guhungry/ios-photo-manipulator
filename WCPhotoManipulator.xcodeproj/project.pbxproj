@@ -14,6 +14,8 @@
 		7FB4F589227085F100D84D9D /* libWCPhotoManipulator.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F4954582270118D004F8851 /* libWCPhotoManipulator.a */; };
 		7FB4F5902270863C00D84D9D /* WCPhotoManipulatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FB4F58F2270863C00D84D9D /* WCPhotoManipulatorTests.m */; };
 		7FB4F5FC2272F5E200D84D9D /* FileUtilsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FB4F5FB2272F5E200D84D9D /* FileUtilsTests.m */; };
+		7FB4F60E2273038A00D84D9D /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7FB4F60C2273038900D84D9D /* background.jpg */; };
+		7FB4F60F2273038A00D84D9D /* overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FB4F60D2273038900D84D9D /* overlay.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,8 @@
 		7FB4F588227085F100D84D9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7FB4F58F2270863C00D84D9D /* WCPhotoManipulatorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCPhotoManipulatorTests.m; sourceTree = "<group>"; };
 		7FB4F5FB2272F5E200D84D9D /* FileUtilsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FileUtilsTests.m; sourceTree = "<group>"; };
+		7FB4F60C2273038900D84D9D /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
+		7FB4F60D2273038900D84D9D /* overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = overlay.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,11 +119,21 @@
 		7FB4F585227085F100D84D9D /* WCPhotoManipulatorTests */ = {
 			isa = PBXGroup;
 			children = (
+				7FB4F60B2273034600D84D9D /* Images */,
 				7FB4F58F2270863C00D84D9D /* WCPhotoManipulatorTests.m */,
 				7FB4F5FB2272F5E200D84D9D /* FileUtilsTests.m */,
 				7FB4F588227085F100D84D9D /* Info.plist */,
 			);
 			path = WCPhotoManipulatorTests;
+			sourceTree = "<group>";
+		};
+		7FB4F60B2273034600D84D9D /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				7FB4F60C2273038900D84D9D /* background.jpg */,
+				7FB4F60D2273038900D84D9D /* overlay.png */,
+			);
+			path = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,6 +215,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FB4F60F2273038A00D84D9D /* overlay.png in Resources */,
+				7FB4F60E2273038A00D84D9D /* background.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
