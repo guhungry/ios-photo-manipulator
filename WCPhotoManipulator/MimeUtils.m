@@ -20,7 +20,7 @@
 
 + (NSString *)toExtension:(NSString *)type {
     if ([type isEqual:MimeUtils.PNG]) return @".png";
-    else return @".png";
+    else return @".jpg";
 }
 
 @end

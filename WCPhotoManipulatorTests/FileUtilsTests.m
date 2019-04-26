@@ -8,6 +8,7 @@
 
 #import <XCTest/XCTest.h>
 #import "FileUtils.h"
+#import "MimeUtils.h"
 
 @interface FileUtilsTests : XCTestCase
 
@@ -35,9 +36,9 @@
     path = nil;
 }
 
-- (void)testCreateTempFile_ShouldReturnFileWithPrefix {
+- (void)testCreateTempFile_WhenPNG_ShouldReturnFileWithPrefix {
     NSString *prefix = @"TEST_";
-    NSString *path = [FileUtils createTempFile:prefix mimeType:@"image/jpeg"];
+    NSString *path = [FileUtils createTempFile:prefix mimeType:MimeUtils.PNG];
     NSString *name = [path lastPathComponent];
     
     XCTAssertNotNil(path);
@@ -50,23 +51,38 @@
     name = nil;
 }
 
+- (void)testCreateTempFile_WhenJPEG_ShouldReturnFileWithPrefix {
+    NSString *prefix = @"JPG_";
+    NSString *path = [FileUtils createTempFile:prefix mimeType:MimeUtils.JPEG];
+    NSString *name = [path lastPathComponent];
+    
+    XCTAssertNotNil(path);
+    XCTAssertTrue([path hasPrefix:[FileUtils cachePath]]);
+    XCTAssertTrue([name hasPrefix:prefix]);
+    XCTAssertTrue([name hasSuffix:@".jpg"]);
+    
+    prefix = nil;
+    path = nil;
+    name = nil;
+}
+
 - (void)testImageToData_WhenOuptutJpeg_ShouldReturnJpeg {
     UIImage *image = [UIImage imageNamed:@"overlay" inBundle:[NSBundle bundleForClass:[self class]] compatibleWithTraitCollection:nil];
-    NSData *data = [FileUtils imageToData:image mimeType:@"image/jpeg" quality:100];
+    NSData *data = [FileUtils imageToData:image mimeType:MimeUtils.JPEG quality:100];
     
     XCTAssertNotNil(data);
-    XCTAssertEqual([self imageMimeType:data], @"image/jpeg");
+    XCTAssertEqual([self imageMimeType:data], MimeUtils.JPEG);
     
     image = nil;
     data = nil;
 }
 
-- (void)testImageToData_WhenOuptutJpeg_ShouldReturnPng {
+- (void)testImageToData_WhenOuptutPNG_ShouldReturnPng {
     UIImage *image = [UIImage imageNamed:@"overlay" inBundle:[NSBundle bundleForClass:[self class]] compatibleWithTraitCollection:nil];
-    NSData *data = [FileUtils imageToData:image mimeType:@"image/png" quality:100];
+    NSData *data = [FileUtils imageToData:image mimeType:MimeUtils.PNG quality:100];
     
     XCTAssertNotNil(data);
-    XCTAssertEqual([self imageMimeType:data], @"image/png");
+    XCTAssertEqual([self imageMimeType:data], MimeUtils.PNG);
     
     image = nil;
     data = nil;
