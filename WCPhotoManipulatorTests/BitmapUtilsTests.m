@@ -51,4 +51,18 @@
     XCTAssertEqual([BitmapUtils floor:4.1 scale:2], 4);
 }
 
+////////////////////////////
+/// ceilSize
+///////////////////////////
+- (void)testCeilSize_ShouldReturnValueCorrectly {
+    XCTAssertTrue(CGSizeEqualToSize([BitmapUtils ceilSize:CGSizeMake(5, 6) scale:1], CGSizeMake(5, 6)));
+    XCTAssertTrue(CGSizeEqualToSize([BitmapUtils ceilSize:CGSizeMake(4.8, 5.8) scale:1], CGSizeMake(5, 6)));
+    XCTAssertTrue(CGSizeEqualToSize([BitmapUtils ceilSize:CGSizeMake(4.5, 5.5) scale:1], CGSizeMake(5, 6)));
+    XCTAssertTrue(CGSizeEqualToSize([BitmapUtils ceilSize:CGSizeMake(4.1, 5.1) scale:1], CGSizeMake(5, 6)));
+    XCTAssertTrue(CGSizeEqualToSize([BitmapUtils ceilSize:CGSizeMake(5, 6) scale:2], CGSizeMake(5, 6)));
+    XCTAssertTrue(CGSizeEqualToSize([BitmapUtils ceilSize:CGSizeMake(4.8, 5.8) scale:2], CGSizeMake(5, 6)));
+    XCTAssertTrue(CGSizeEqualToSize([BitmapUtils ceilSize:CGSizeMake(4.5, 5.5) scale:2], CGSizeMake(4.5, 5.5)));
+    XCTAssertTrue(CGSizeEqualToSize([BitmapUtils ceilSize:CGSizeMake(4.1, 5.1) scale:2], CGSizeMake(4.5, 5.5)));
+}
+
 @end
