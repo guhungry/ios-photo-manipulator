@@ -108,6 +108,50 @@
     image = nil;
 }
 
+- (void)testSaveImageFile_WhenPNG_ShouldSavePNG {
+    NSString *path = [FileUtils createTempFile:@"PNG_" mimeType:MimeUtils.PNG];
+    UIImage *image = [UIImage imageNamed:@"overlay" inBundle:[NSBundle bundleForClass:[self class]] compatibleWithTraitCollection:nil];
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    
+    XCTAssertFalse([fileManager fileExistsAtPath:path]);
+    
+    [FileUtils saveImageFile:image mimeType:path quality:100 file:path];
+    
+    XCTAssertTrue([fileManager fileExistsAtPath:path]);
+    
+    NSDictionary<NSFileAttributeKey, id> *attributes = [fileManager attributesOfItemAtPath:path error:nil];
+    XCTAssertNotNil(attributes);
+    XCTAssertTrue([attributes fileSize] > 0);
+    
+    [fileManager removeItemAtPath:path error:nil];
+    
+    path = nil;
+    image = nil;
+    fileManager = nil;
+}
+
+- (void)testSaveImageFile_WhenJPEG_ShouldSaveJEPG {
+    NSString *path = [FileUtils createTempFile:@"JPEG_" mimeType:MimeUtils.JPEG];
+    UIImage *image = [UIImage imageNamed:@"overlay" inBundle:[NSBundle bundleForClass:[self class]] compatibleWithTraitCollection:nil];
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    
+    XCTAssertFalse([fileManager fileExistsAtPath:path]);
+    
+    [FileUtils saveImageFile:image mimeType:path quality:100 file:path];
+    
+    XCTAssertTrue([fileManager fileExistsAtPath:path]);
+    
+    NSDictionary<NSFileAttributeKey, id> *attributes = [fileManager attributesOfItemAtPath:path error:nil];
+    XCTAssertNotNil(attributes);
+    XCTAssertTrue([attributes fileSize] > 0);
+    
+    [fileManager removeItemAtPath:path error:nil];
+    
+    path = nil;
+    image = nil;
+    fileManager = nil;
+}
+
 - (NSString *)imageMimeType:(NSData *)data {
     uint8_t c;
     [data getBytes:&c length:1];
