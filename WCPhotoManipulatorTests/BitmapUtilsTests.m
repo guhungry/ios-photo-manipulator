@@ -95,4 +95,17 @@
     XCTAssertNil([BitmapUtils transform:image size:CGSizeMake(6, 8) scale:0 transform:CGAffineTransformIdentity]);
 }
 
+- (void)testTransform_WhenValid_ShouldReturnNewImage {
+    image = [UIImage imageNamed:@"overlay" inBundle:[NSBundle bundleForClass:[self class]] compatibleWithTraitCollection:nil];
+    
+    XCTAssertEqual(image.size.width, 200);
+    XCTAssertEqual(image.size.height, 141);
+    XCTAssertEqual(image.scale, 1);
+    
+    image = [BitmapUtils transform:image size:CGSizeMake(79, 55) scale:1 transform:CGAffineTransformIdentity];
+    XCTAssertEqual(image.size.width, 79);
+    XCTAssertEqual(image.size.height, 55);
+    XCTAssertEqual(image.scale, 1);
+}
+
 @end
