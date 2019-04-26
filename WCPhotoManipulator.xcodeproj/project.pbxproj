@@ -12,10 +12,10 @@
 		7F49547F22701398004F8851 /* UIImage+PhotoManipulator.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F49547922701398004F8851 /* UIImage+PhotoManipulator.m */; };
 		7F49548022701398004F8851 /* BitmapUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F49547B22701398004F8851 /* BitmapUtils.m */; };
 		7FB4F589227085F100D84D9D /* libWCPhotoManipulator.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F4954582270118D004F8851 /* libWCPhotoManipulator.a */; };
-		7FB4F5902270863C00D84D9D /* WCPhotoManipulatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FB4F58F2270863C00D84D9D /* WCPhotoManipulatorTests.m */; };
 		7FB4F5FC2272F5E200D84D9D /* FileUtilsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FB4F5FB2272F5E200D84D9D /* FileUtilsTests.m */; };
 		7FB4F60E2273038A00D84D9D /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7FB4F60C2273038900D84D9D /* background.jpg */; };
 		7FB4F60F2273038A00D84D9D /* overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FB4F60D2273038900D84D9D /* overlay.png */; };
+		7FB4F61122731FF800D84D9D /* BitmapUtilsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FB4F61022731FF800D84D9D /* BitmapUtilsTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,10 +55,10 @@
 		7F495481227013A9004F8851 /* WCPhotoManipulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCPhotoManipulator.h; sourceTree = "<group>"; };
 		7FB4F584227085F100D84D9D /* WCPhotoManipulatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WCPhotoManipulatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FB4F588227085F100D84D9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7FB4F58F2270863C00D84D9D /* WCPhotoManipulatorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCPhotoManipulatorTests.m; sourceTree = "<group>"; };
 		7FB4F5FB2272F5E200D84D9D /* FileUtilsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FileUtilsTests.m; sourceTree = "<group>"; };
 		7FB4F60C2273038900D84D9D /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
 		7FB4F60D2273038900D84D9D /* overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = overlay.png; sourceTree = "<group>"; };
+		7FB4F61022731FF800D84D9D /* BitmapUtilsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BitmapUtilsTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,7 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				7FB4F60B2273034600D84D9D /* Images */,
-				7FB4F58F2270863C00D84D9D /* WCPhotoManipulatorTests.m */,
+				7FB4F61022731FF800D84D9D /* BitmapUtilsTests.m */,
 				7FB4F5FB2272F5E200D84D9D /* FileUtilsTests.m */,
 				7FB4F588227085F100D84D9D /* Info.plist */,
 			);
@@ -238,7 +238,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7FB4F5902270863C00D84D9D /* WCPhotoManipulatorTests.m in Sources */,
+				7FB4F61122731FF800D84D9D /* BitmapUtilsTests.m in Sources */,
 				7FB4F5FC2272F5E200D84D9D /* FileUtilsTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

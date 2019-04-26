@@ -1,18 +1,18 @@
 //
-//  WCPhotoManipulatorTests.m
+//  BitmapUtilsTests.m
 //  WCPhotoManipulatorTests
 //
-//  Created by Woraphot Chokratanasombat on 24/4/2562 BE.
+//  Created by Woraphot Chokratanasombat on 26/4/2562 BE.
 //  Copyright © 2562 Woraphot Chokratanasombat. All rights reserved.
 //
 
 #import <XCTest/XCTest.h>
 
-@interface WCPhotoManipulatorTests : XCTestCase
+@interface BitmapUtilsTests : XCTestCase
 
 @end
 
-@implementation WCPhotoManipulatorTests
+@implementation BitmapUtilsTests
 
 - (void)setUp {
     // Put setup code here. This method is called before the invocation of each test method in the class.
