@@ -13,7 +13,7 @@
 
 + (NSString *)createTempFile:(NSString *)prefix mimeType:(NSString *)mimeType {
     NSString *extension = [MimeUtils toExtension:mimeType];
-    NSString *fileName = [[[NSUUID UUID] UUIDString] stringByAppendingString:extension];
+    NSString *fileName = [NSString stringWithFormat:@"%@%@%@", prefix, [[NSUUID UUID] UUIDString], extension];
     return [FileUtils.cachePath stringByAppendingPathComponent:fileName];
 }
 
