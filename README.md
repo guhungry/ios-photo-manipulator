@@ -1,4 +1,9 @@
 # iOS Photo Manipulator
+[![Build Status](https://travis-ci.com/guhungry/ios-photo-manipulator.svg?branch=master)](https://travis-ci.com/guhungry/ios-photo-manipulator)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=guhungry_ios-photo-manipulator&metric=alert_status)](https://sonarcloud.io/dashboard?id=guhungry_ios-photo-manipulator)
+[![codecov](https://codecov.io/gh/guhungry/ios-photo-manipulator/branch/master/graph/badge.svg)](https://codecov.io/gh/guhungry/ios-photo-manipulator)
+[![cocoapods](https://cocoapod-badges.herokuapp.com/v/WCPhotoManipulator/badge.png)](https://cocoapods.org/pods/WCPhotoManipulator)
+
 Image processing library to edit image programmatically for iOS.
 
 ## Installation
