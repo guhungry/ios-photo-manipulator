@@ -26,8 +26,8 @@
     NSArray *files = [FileUtils filesIn:path withPrefix:prefix];
     NSFileManager *fileManager = [NSFileManager defaultManager];
     
-    [files enumerateObjectsUsingBlock:^(NSString *path, NSUInteger idx, BOOL *stop) {
-        [fileManager removeItemAtPath:path error:nil];
+    [files enumerateObjectsUsingBlock:^(NSString *file, __unused NSUInteger idx, __unused BOOL *stop) {
+        [fileManager removeItemAtPath:file error:nil];
     }];
 }
 + (NSArray *)filesIn:(NSString *)path withPrefix:(NSString *)prefix {
@@ -35,7 +35,7 @@
     files = [files filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"self BEGINSWITH[cd] %@", prefix]];
     
     NSMutableArray *result = [NSMutableArray array];
-    [files enumerateObjectsUsingBlock:^(NSString *name, NSUInteger idx, BOOL *stop) {
+    [files enumerateObjectsUsingBlock:^(NSString *name, __unused NSUInteger idx, __unused BOOL *stop) {
         [result addObject:[path stringByAppendingPathComponent:name]];
     }];
     return result;
