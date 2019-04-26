@@ -82,7 +82,7 @@ Create temp file into cache directory with prefix
 | prefix     | NSString              | Yes      | Temp file name prefix                           |
 | mimeType   | NSString              | Yes      | Mime type of image. Default = image/jpeg        |
 
-### [FileUtils cachePath] **TO BE IMPLEMENT**
+### [FileUtils cachePath]
 Get cache path of app
 
 ### [FileUtils cleanDirectory]
