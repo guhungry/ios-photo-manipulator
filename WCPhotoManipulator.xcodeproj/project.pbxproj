@@ -16,6 +16,7 @@
 		7FB4F60E2273038A00D84D9D /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7FB4F60C2273038900D84D9D /* background.jpg */; };
 		7FB4F60F2273038A00D84D9D /* overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FB4F60D2273038900D84D9D /* overlay.png */; };
 		7FB4F61122731FF800D84D9D /* BitmapUtilsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FB4F61022731FF800D84D9D /* BitmapUtilsTests.m */; };
+		CCCAB6862273503800ACD74A /* UIImage+PhotoManipulatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CCCAB6852273503800ACD74A /* UIImage+PhotoManipulatorTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		7FB4F60C2273038900D84D9D /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
 		7FB4F60D2273038900D84D9D /* overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = overlay.png; sourceTree = "<group>"; };
 		7FB4F61022731FF800D84D9D /* BitmapUtilsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BitmapUtilsTests.m; sourceTree = "<group>"; };
+		CCCAB6852273503800ACD74A /* UIImage+PhotoManipulatorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "UIImage+PhotoManipulatorTests.m"; path = "WCPhotoManipulatorTests/UIImage+PhotoManipulatorTests.m"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +124,7 @@
 				7FB4F60B2273034600D84D9D /* Images */,
 				7FB4F61022731FF800D84D9D /* BitmapUtilsTests.m */,
 				7FB4F5FB2272F5E200D84D9D /* FileUtilsTests.m */,
+				CCCAB6852273503800ACD74A /* UIImage+PhotoManipulatorTests.m */,
 				7FB4F588227085F100D84D9D /* Info.plist */,
 			);
 			path = WCPhotoManipulatorTests;
@@ -239,6 +242,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7FB4F61122731FF800D84D9D /* BitmapUtilsTests.m in Sources */,
+				CCCAB6862273503800ACD74A /* UIImage+PhotoManipulatorTests.m in Sources */,
 				7FB4F5FC2272F5E200D84D9D /* FileUtilsTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -398,6 +402,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_BUNDLE_IDENTIFIER = com.guhungry.photomanipulator.WCPhotoManipulatorTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -414,6 +419,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_BUNDLE_IDENTIFIER = com.guhungry.photomanipulator.WCPhotoManipulatorTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
