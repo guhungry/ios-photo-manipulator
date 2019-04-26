@@ -72,6 +72,26 @@
     data = nil;
 }
 
+- (void)testImageFromUrl_WhenLocalFile_ShouldHaveData {
+    NSURL *path = [[NSBundle bundleForClass:[self class]] URLForResource:@"overlay" withExtension:@"png"];
+    
+    UIImage *image = [FileUtils imageFromUrl:path];
+    XCTAssertNotNil(image);
+    
+    path = nil;
+    image = nil;
+}
+
+- (void)testImageFromUrl_WhenUrl_ShouldHaveData {
+    NSURL *path = [NSURL URLWithString:@"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/200px-React-icon.svg.png"];
+    
+    UIImage *image = [FileUtils imageFromUrl:path];
+    XCTAssertNotNil(image);
+    
+    path = nil;
+    image = nil;
+}
+
 - (NSString *)imageMimeType:(NSData *)data {
     uint8_t c;
     [data getBytes:&c length:1];
