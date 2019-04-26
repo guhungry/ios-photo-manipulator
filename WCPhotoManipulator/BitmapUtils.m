@@ -107,7 +107,7 @@
                 };
             }
 
-        case ResizeModeStretch:
+        // ResizeModeStretch
         default:
 
             return (CGRect){CGPointZero, [BitmapUtils ceilSize:destSize scale:destScale]};
