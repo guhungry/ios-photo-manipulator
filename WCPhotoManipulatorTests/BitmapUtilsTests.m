@@ -13,14 +13,16 @@
 
 @end
 
-@implementation BitmapUtilsTests
+@implementation BitmapUtilsTests {
+    UIImage *image;
+}
 
 - (void)setUp {
     // Put setup code here. This method is called before the invocation of each test method in the class.
 }
 
 - (void)tearDown {
-    // Put teardown code here. This method is called after the invocation of each test method in the class.
+    image = nil;
 }
 
 ////////////////////////////
@@ -79,6 +81,18 @@
     XCTAssertEqual(transform.b, 0);
     XCTAssertEqual(transform.c, 0);
     XCTAssertEqual(transform.d, (CGFloat)35 / 90);
+}
+
+////////////////////////////
+/// transform
+///////////////////////////
+- (void)testTransform_WhenNoSizeOrScale_ShouldReturnNil {
+    image = [UIImage new];
+    
+    XCTAssertNil([BitmapUtils transform:image size:CGSizeMake(0, 0) scale:0 transform:CGAffineTransformIdentity]);
+    XCTAssertNil([BitmapUtils transform:image size:CGSizeMake(0, 6) scale:7 transform:CGAffineTransformIdentity]);
+    XCTAssertNil([BitmapUtils transform:image size:CGSizeMake(6, 0) scale:7 transform:CGAffineTransformIdentity]);
+    XCTAssertNil([BitmapUtils transform:image size:CGSizeMake(6, 8) scale:0 transform:CGAffineTransformIdentity]);
 }
 
 @end

@@ -21,15 +21,15 @@
 
 @end
 
-@implementation FileUtilsTests
-
-NSString *prefix;
-NSString *path;
-NSString *name;
-UIImage *image;
-NSData *data;
-NSURL *url;
-NSFileManager *fileManager;
+@implementation FileUtilsTests {
+    NSString *prefix;
+    NSString *path;
+    NSString *name;
+    UIImage *image;
+    NSData *data;
+    NSURL *url;
+    NSFileManager *fileManager;
+}
 
 - (void)setUp {
     fileManager = [NSFileManager defaultManager];
