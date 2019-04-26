@@ -65,4 +65,20 @@
     XCTAssertTrue(CGSizeEqualToSize([BitmapUtils ceilSize:CGSizeMake(4.1, 5.1) scale:2], CGSizeMake(4.5, 5.5)));
 }
 
+////////////////////////////
+/// transformFromTargetRect
+///////////////////////////
+- (void)testTransformFromTargetRect_ShouldReturnValueCorrectly {
+    CGSize sourceSize = CGSizeMake(40, 90);
+    CGRect targetRect = CGRectMake(30, 50, 92, 35);
+    CGAffineTransform transform = [BitmapUtils transformFromTargetRect:sourceSize targetRect:targetRect];
+    
+    XCTAssertEqual(transform.tx, 30);
+    XCTAssertEqual(transform.ty, 50);
+    XCTAssertEqual(transform.a, (CGFloat)92 / 40);
+    XCTAssertEqual(transform.b, 0);
+    XCTAssertEqual(transform.c, 0);
+    XCTAssertEqual(transform.d, (CGFloat)35 / 90);
+}
+
 @end
