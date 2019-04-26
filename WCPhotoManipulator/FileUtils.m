@@ -23,7 +23,22 @@
 }
 
 + (void)cleanDirectory:(NSString *)path prefix:(NSString *)prefix {
+    NSArray *files = [FileUtils filesIn:path withPrefix:prefix];
+    NSFileManager *fileManager = [NSFileManager defaultManager];
     
+    [files enumerateObjectsUsingBlock:^(NSString *path, NSUInteger idx, BOOL *stop) {
+        [fileManager removeItemAtPath:path error:nil];
+    }];
+}
++ (NSArray *)filesIn:(NSString *)path withPrefix:(NSString *)prefix {
+    NSArray *files = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:path error:nil];
+    files = [files filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"self BEGINSWITH[cd] %@", prefix]];
+    
+    NSMutableArray *result = [NSMutableArray array];
+    [files enumerateObjectsUsingBlock:^(NSString *name, NSUInteger idx, BOOL *stop) {
+        [result addObject:[path stringByAppendingPathComponent:name]];
+    }];
+    return result;
 }
 
 + (void)saveImageFile:(UIImage *)image mimeType:(NSString *)mimeType quality:(CGFloat)quality file:(NSString *)file {
