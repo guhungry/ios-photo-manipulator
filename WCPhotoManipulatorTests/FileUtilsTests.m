@@ -17,6 +17,7 @@
 @interface FileUtils (Private)
 
 + (NSData *)imageToData:(UIImage *)image mimeType:(NSString *)mimeType quality:(CGFloat)quality;
++ (NSArray *)filesIn:(NSString *)path withPrefix:(NSString *)prefix;
 
 @end
 
@@ -31,6 +32,7 @@ NSURL *url;
 NSFileManager *fileManager;
 
 - (void)setUp {
+    fileManager = [NSFileManager defaultManager];
 }
 
 - (void)tearDown {
@@ -49,6 +51,9 @@ NSFileManager *fileManager;
     XCTAssertNotNil(path);
 }
 
+////////////////////////////
+/// createTempFile
+///////////////////////////
 - (void)testCreateTempFile_WhenPNG_ShouldReturnFileWithPrefix {
     prefix = @"TEST_";
     path = [FileUtils createTempFile:prefix mimeType:MimeUtils.PNG];
@@ -71,6 +76,9 @@ NSFileManager *fileManager;
     XCTAssertTrue([name hasSuffix:@".jpg"]);
 }
 
+////////////////////////////
+/// imageToData
+///////////////////////////
 - (void)testImageToData_WhenOuptutJpeg_ShouldReturnJpeg {
     image = [UIImage imageNamed:@"overlay" inBundle:[NSBundle bundleForClass:[self class]] compatibleWithTraitCollection:nil];
     data = [FileUtils imageToData:image mimeType:MimeUtils.JPEG quality:100];
@@ -87,6 +95,9 @@ NSFileManager *fileManager;
     XCTAssertEqual([self imageMimeType:data], MimeUtils.PNG);
 }
 
+////////////////////////////
+/// imageFromUrl
+///////////////////////////
 - (void)testImageFromUrl_WhenLocalFile_ShouldHaveData {
     url = [[NSBundle bundleForClass:[self class]] URLForResource:@"overlay" withExtension:@"png"];
     
@@ -101,10 +112,12 @@ NSFileManager *fileManager;
     XCTAssertNotNil(image);
 }
 
+////////////////////////////
+/// saveImageFile
+///////////////////////////
 - (void)testSaveImageFile_WhenPNG_ShouldSavePNG {
     path = [FileUtils createTempFile:@"PNG_" mimeType:MimeUtils.PNG];
     image = [UIImage imageNamed:@"overlay" inBundle:[NSBundle bundleForClass:[self class]] compatibleWithTraitCollection:nil];
-    fileManager = [NSFileManager defaultManager];
     
     XCTAssertFalse([fileManager fileExistsAtPath:path]);
     
@@ -122,7 +135,6 @@ NSFileManager *fileManager;
 - (void)testSaveImageFile_WhenJPEG_ShouldSaveJEPG {
     path = [FileUtils createTempFile:@"JPEG_" mimeType:MimeUtils.JPEG];
     image = [UIImage imageNamed:@"overlay" inBundle:[NSBundle bundleForClass:[self class]] compatibleWithTraitCollection:nil];
-    fileManager = [NSFileManager defaultManager];
     
     XCTAssertFalse([fileManager fileExistsAtPath:path]);
     
@@ -135,6 +147,26 @@ NSFileManager *fileManager;
     XCTAssertTrue([attributes fileSize] > 0);
     
     [fileManager removeItemAtPath:path error:nil];
+}
+
+////////////////////////////
+/// cleanDirectory
+///////////////////////////
+- (void)testCleanDirectory {
+    prefix = @"PREFIX_";
+    data = [[NSData alloc] init];
+    path = NSTemporaryDirectory();
+    
+    [fileManager createFileAtPath:[path stringByAppendingPathComponent:[NSString stringWithFormat:@"%@%@", prefix, @"bee1.png"]] contents:data attributes:nil];
+    [fileManager createFileAtPath:[path stringByAppendingPathComponent:[NSString stringWithFormat:@"%@%@", prefix, @"bee2.png"]] contents:data attributes:nil];
+    
+    NSArray *files = [FileUtils filesIn:path withPrefix:prefix];
+    XCTAssertTrue(files.count == 2);
+    
+    [FileUtils cleanDirectory:path prefix:prefix];
+    
+    files = [FileUtils filesIn:path withPrefix:prefix];
+    XCTAssertTrue(files.count == 0);
 }
 
 - (NSString *)imageMimeType:(NSData *)data {
