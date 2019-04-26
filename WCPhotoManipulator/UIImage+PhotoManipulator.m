@@ -23,8 +23,8 @@
 - (UIImage *)resize:(CGSize)targetSize scale:(CGFloat)scale {
     CGRect targetRect = [BitmapUtils targetRect:self.size destSize:targetSize destScale:1 resizeMode:ResizeModeContain];
     CGAffineTransform transform = [BitmapUtils transformFromTargetRect:self.size targetRect:targetRect];
-    
-    return [BitmapUtils transform:self size:targetSize scale:self.scale transform:transform];
+
+    return [BitmapUtils transform:self size:targetSize scale:scale transform:transform];
 }
 - (UIImage *)crop:(CGRect)region targetSize:(CGSize)targetSize {
     return [[self crop:region] resize:targetSize scale:self.scale];
