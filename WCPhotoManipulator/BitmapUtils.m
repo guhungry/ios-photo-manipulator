@@ -115,16 +115,16 @@
 }
 
 // CGFloat
-+ (CGFloat)ceilValue:(CGFloat)value scale:(CGFloat)scale {
++ (CGFloat)ceil:(CGFloat)value scale:(CGFloat)scale {
     return ceil(value * scale) / scale;
 }
 
 + (CGFloat)floor:(CGFloat)value scale:(CGFloat)scale {
-    return ceil(value * scale) / scale;
+    return floor(value * scale) / scale;
 }
 
 // CGSize
 + (CGSize)ceilSize:(CGSize)size scale:(CGFloat)scale {
-    return CGSizeMake([BitmapUtils ceilValue:size.width scale:scale], [BitmapUtils ceilValue:size.height scale:scale]);
+    return CGSizeMake([BitmapUtils ceil:size.width scale:scale], [BitmapUtils ceil:size.height scale:scale]);
 }
 @end

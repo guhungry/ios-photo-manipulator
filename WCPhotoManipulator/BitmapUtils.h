@@ -18,7 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (CGRect)targetRect:(CGSize)sourceSize destSize:(CGSize)destSize destScale:(CGFloat)destScale resizeMode:(ResizeMode)resizeMode;
 
 // CGFloat
-+ (CGFloat)ceilValue:(CGFloat)value scale:(CGFloat)scale;
++ (CGFloat)ceil:(CGFloat)value scale:(CGFloat)scale;
 + (CGFloat)floor:(CGFloat)value scale:(CGFloat)scale;
 
 // CGSize
