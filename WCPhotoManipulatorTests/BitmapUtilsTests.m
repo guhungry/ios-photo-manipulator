@@ -232,7 +232,29 @@
     XCTAssertEqual(targetRect.origin.y, 0);
     XCTAssertEqual(targetRect.size.width, 45);
     XCTAssertEqual(targetRect.size.height, 90);
+}
+
+- (void)testTargetRect_WhenZeroSizeHeightWidth {
+    // Dest Size = Zero: Use Source Size
+    CGRect targetRect = [BitmapUtils targetRect:CGSizeMake(60, 30) destSize:CGSizeMake(0, 0) destScale:1 resizeMode:ResizeModeContain];
+    XCTAssertEqual(targetRect.origin.x, 0);
+    XCTAssertEqual(targetRect.origin.y, 0);
+    XCTAssertEqual(targetRect.size.width, 60);
+    XCTAssertEqual(targetRect.size.height, 30);
     
+    // Dest Height = Zero: Use Source Aspect Ratio
+    targetRect = [BitmapUtils targetRect:CGSizeMake(30, 60) destSize:CGSizeMake(90, 0) destScale:1 resizeMode:ResizeModeContain];
+    XCTAssertEqual(targetRect.origin.x, 0);
+    XCTAssertEqual(targetRect.origin.y, 0);
+    XCTAssertEqual(targetRect.size.width, 90);
+    XCTAssertEqual(targetRect.size.height, 180);
+    
+    // Dest Width = Zero: Use Source Aspect Ratio
+    targetRect = [BitmapUtils targetRect:CGSizeMake(30, 60) destSize:CGSizeMake(0, 90) destScale:1 resizeMode:ResizeModeContain];
+    XCTAssertEqual(targetRect.origin.x, 0);
+    XCTAssertEqual(targetRect.origin.y, 0);
+    XCTAssertEqual(targetRect.size.width, 45);
+    XCTAssertEqual(targetRect.size.height, 90);
 }
 
 @end
