@@ -9,6 +9,7 @@
 #import <XCTest/XCTest.h>
 #import "FileUtils.h"
 #import "MimeUtils.h"
+#import "Helpers/UIImage+Testing.h"
 
 @interface FileUtilsTests : XCTestCase
 
@@ -80,7 +81,7 @@
 /// imageToData
 ///////////////////////////
 - (void)testImageToData_WhenOuptutJpeg_ShouldReturnJpeg {
-    image = [UIImage imageNamed:@"overlay" inBundle:[NSBundle bundleForClass:[self class]] compatibleWithTraitCollection:nil];
+    image = [UIImage imageNamedTest:@"overlay.png"];
     data = [FileUtils imageToData:image mimeType:MimeUtils.JPEG quality:100];
     
     XCTAssertNotNil(data);

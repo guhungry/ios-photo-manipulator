@@ -8,6 +8,7 @@
 
 #import <XCTest/XCTest.h>
 #import "UIImage+PhotoManipulator.h"
+#import "Helpers/UIImage+Testing.h"
 
 @interface UIImage_PhotoManipulatorTests : XCTestCase
 
@@ -26,11 +27,13 @@
 }
 
 - (void)testHasAlpha_ShouldReturnCorrectly {
-    image = [UIImage imageNamed:@"overlay" inBundle:[NSBundle bundleForClass:[self class]] compatibleWithTraitCollection:nil];
+    image = [UIImage imageNamedTest:@"overlay.png"];
+    XCTAssertNotNil(image);
     XCTAssertTrue([image respondsToSelector:@selector(hasAlpha)]);
     XCTAssertTrue([image hasAlpha]);
 
-    image = [UIImage imageNamed:@"background" inBundle:[NSBundle bundleForClass:[self class]] compatibleWithTraitCollection:nil];
+    image = [UIImage imageNamedTest:@"background.jpg"];
+    XCTAssertNotNil(image);
     XCTAssertFalse([image hasAlpha]);
 }
 

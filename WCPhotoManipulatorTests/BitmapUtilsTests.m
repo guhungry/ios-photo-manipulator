@@ -8,6 +8,7 @@
 
 #import <XCTest/XCTest.h>
 #import "BitmapUtils.h"
+#import "Helpers/UIImage+Testing.h"
 
 @interface BitmapUtilsTests : XCTestCase
 
@@ -96,7 +97,7 @@
 }
 
 - (void)testTransform_WhenValid_ShouldReturnNewImage {
-    image = [UIImage imageNamed:@"overlay" inBundle:[NSBundle bundleForClass:[self class]] compatibleWithTraitCollection:nil];
+    image = [UIImage imageNamedTest:@"overlay.png"];
     
     XCTAssertEqual(image.size.width, 200);
     XCTAssertEqual(image.size.height, 141);
