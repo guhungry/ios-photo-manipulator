@@ -70,7 +70,6 @@
                 
                 sourceSize.width = destSize.width;
                 sourceSize.height = sourceSize.width / aspect;
-                
             } else { // target is wider than content
                 
                 sourceSize.height = destSize.height;
@@ -95,20 +94,18 @@
                     {[BitmapUtils floor:((destSize.width - sourceSize.width) / 2) scale:destScale], 0},
                     [BitmapUtils ceilSize:sourceSize scale:destScale]
                 };
-                
-            } else { // target is wider than content
-                
-                sourceSize.width = destSize.width;
-                sourceSize.height = sourceSize.width / aspect;
-                destSize.height = destSize.width / targetAspect;
-                return (CGRect){
-                    {0, [BitmapUtils floor:((destSize.height - sourceSize.height) / 2) scale:destScale]},
-                    [BitmapUtils ceilSize:sourceSize scale:destScale]
-                };
             }
+            
+            // target is wider than content
+            sourceSize.width = destSize.width;
+            sourceSize.height = sourceSize.width / aspect;
+            destSize.height = destSize.width / targetAspect;
+            return (CGRect){
+                {0, [BitmapUtils floor:((destSize.height - sourceSize.height) / 2) scale:destScale]},
+                [BitmapUtils ceilSize:sourceSize scale:destScale]
+            };
 
-        // ResizeModeStretch
-        default:
+        default: // ResizeModeStretch
 
             return (CGRect){CGPointZero, [BitmapUtils ceilSize:destSize scale:destScale]};
     }
