@@ -8,6 +8,7 @@
 
 #import <XCTest/XCTest.h>
 #import "BitmapUtils.h"
+#import "Helpers/UIImage+Testing.h"
 
 @interface BitmapUtilsTests : XCTestCase
 
@@ -96,7 +97,7 @@
 }
 
 - (void)testTransform_WhenValid_ShouldReturnNewImage {
-    image = [UIImage imageNamed:@"overlay" inBundle:[NSBundle bundleForClass:[self class]] compatibleWithTraitCollection:nil];
+    image = [UIImage imageNamedTest:@"overlay.png"];
     
     XCTAssertEqual(image.size.width, 200);
     XCTAssertEqual(image.size.height, 141);
@@ -106,6 +107,154 @@
     XCTAssertEqual(image.size.width, 79);
     XCTAssertEqual(image.size.height, 55);
     XCTAssertEqual(image.scale, 1);
+}
+
+////////////////////////////
+/// targetRect
+///////////////////////////
+- (void)testTargetRect_WhenStrech_ShouldOriginZero {
+    // Bigger
+    CGRect targetRect = [BitmapUtils targetRect:CGSizeMake(80, 90) destSize:CGSizeMake(60, 30) destScale:1 resizeMode:ResizeModeStretch];
+    XCTAssertEqual(targetRect.origin.x, 0);
+    XCTAssertEqual(targetRect.origin.y, 0);
+    XCTAssertEqual(targetRect.size.width, 60);
+    XCTAssertEqual(targetRect.size.height, 30);
+    
+    // Smaller
+    targetRect = [BitmapUtils targetRect:CGSizeMake(20, 10) destSize:CGSizeMake(60, 30) destScale:1 resizeMode:ResizeModeStretch];
+    XCTAssertEqual(targetRect.origin.x, 0);
+    XCTAssertEqual(targetRect.origin.y, 0);
+    XCTAssertEqual(targetRect.size.width, 60);
+    XCTAssertEqual(targetRect.size.height, 30);
+}
+
+- (void)testTargetRect_WhenCoverAndBigger_ShouldTransformCorrectly {
+    // Bigger
+    CGRect targetRect = [BitmapUtils targetRect:CGSizeMake(80, 90) destSize:CGSizeMake(60, 30) destScale:1 resizeMode:ResizeModeCover];
+    XCTAssertEqual(targetRect.origin.x, 0);
+    XCTAssertEqual(targetRect.origin.y, -19);
+    XCTAssertEqual(targetRect.size.width, 60);
+    XCTAssertEqual(targetRect.size.height, 68);
+    
+    targetRect = [BitmapUtils targetRect:CGSizeMake(90, 80) destSize:CGSizeMake(60, 30) destScale:1 resizeMode:ResizeModeCover];
+    XCTAssertEqual(targetRect.origin.x, 0);
+    XCTAssertEqual(targetRect.origin.y, -12);
+    XCTAssertEqual(targetRect.size.width, 60);
+    XCTAssertEqual(targetRect.size.height, 54);
+    
+    targetRect = [BitmapUtils targetRect:CGSizeMake(80, 90) destSize:CGSizeMake(30, 60) destScale:1 resizeMode:ResizeModeCover];
+    XCTAssertEqual(targetRect.origin.x, -12);
+    XCTAssertEqual(targetRect.origin.y, 0);
+    XCTAssertEqual(targetRect.size.width, 54);
+    XCTAssertEqual(targetRect.size.height, 60);
+    
+    targetRect = [BitmapUtils targetRect:CGSizeMake(90, 80) destSize:CGSizeMake(30, 60) destScale:1 resizeMode:ResizeModeCover];
+    XCTAssertEqual(targetRect.origin.x, -19);
+    XCTAssertEqual(targetRect.origin.y, 0);
+    XCTAssertEqual(targetRect.size.width, 68);
+    XCTAssertEqual(targetRect.size.height, 60);
+}
+
+- (void)testTargetRect_WhenCoverAndSmaller_ShouldTransformCorrectly {
+    // Bigger
+    CGRect targetRect = [BitmapUtils targetRect:CGSizeMake(60, 30) destSize:CGSizeMake(80, 90) destScale:1 resizeMode:ResizeModeCover];
+    XCTAssertEqual(targetRect.origin.x, -50);
+    XCTAssertEqual(targetRect.origin.y, 0);
+    XCTAssertEqual(targetRect.size.width, 180);
+    XCTAssertEqual(targetRect.size.height, 90);
+    
+    targetRect = [BitmapUtils targetRect:CGSizeMake(30, 60) destSize:CGSizeMake(80, 90) destScale:1 resizeMode:ResizeModeCover];
+    XCTAssertEqual(targetRect.origin.x, 0);
+    XCTAssertEqual(targetRect.origin.y, -35);
+    XCTAssertEqual(targetRect.size.width, 80);
+    XCTAssertEqual(targetRect.size.height, 160);
+    
+    targetRect = [BitmapUtils targetRect:CGSizeMake(60, 30) destSize:CGSizeMake(90, 80) destScale:1 resizeMode:ResizeModeCover];
+    XCTAssertEqual(targetRect.origin.x, -35);
+    XCTAssertEqual(targetRect.origin.y, 0);
+    XCTAssertEqual(targetRect.size.width, 160);
+    XCTAssertEqual(targetRect.size.height, 80);
+    
+    targetRect = [BitmapUtils targetRect:CGSizeMake(30, 60) destSize:CGSizeMake(90, 80) destScale:1 resizeMode:ResizeModeCover];
+    XCTAssertEqual(targetRect.origin.x, 0);
+    XCTAssertEqual(targetRect.origin.y, -50);
+    XCTAssertEqual(targetRect.size.width, 90);
+    XCTAssertEqual(targetRect.size.height, 180);
+}
+
+- (void)testTargetRect_WhenContainBigger_ShouldTransformCorrectly {
+    CGRect targetRect = [BitmapUtils targetRect:CGSizeMake(80, 90) destSize:CGSizeMake(60, 30) destScale:1 resizeMode:ResizeModeContain];
+    XCTAssertEqual(targetRect.origin.x, 16);
+    XCTAssertEqual(targetRect.origin.y, 0);
+    XCTAssertEqual(targetRect.size.width, 27);
+    XCTAssertEqual(targetRect.size.height, 30);
+    
+    targetRect = [BitmapUtils targetRect:CGSizeMake(90, 80) destSize:CGSizeMake(60, 30) destScale:1 resizeMode:ResizeModeContain];
+    XCTAssertEqual(targetRect.origin.x, 13);
+    XCTAssertEqual(targetRect.origin.y, 0);
+    XCTAssertEqual(targetRect.size.width, 34);
+    XCTAssertEqual(targetRect.size.height, 30);
+    
+    targetRect = [BitmapUtils targetRect:CGSizeMake(80, 90) destSize:CGSizeMake(30, 60) destScale:1 resizeMode:ResizeModeContain];
+    XCTAssertEqual(targetRect.origin.x, 0);
+    XCTAssertEqual(targetRect.origin.y, 13);
+    XCTAssertEqual(targetRect.size.width, 30);
+    XCTAssertEqual(targetRect.size.height, 34);
+    
+    targetRect = [BitmapUtils targetRect:CGSizeMake(90, 80) destSize:CGSizeMake(30, 60) destScale:1 resizeMode:ResizeModeContain];
+    XCTAssertEqual(targetRect.origin.x, 0);
+    XCTAssertEqual(targetRect.origin.y, 16);
+    XCTAssertEqual(targetRect.size.width, 30);
+    XCTAssertEqual(targetRect.size.height, 27);
+}
+
+- (void)testTargetRect_WhenContainSmaller_ShouldTransformCorrectly {
+    CGRect targetRect = [BitmapUtils targetRect:CGSizeMake(60, 30) destSize:CGSizeMake(90, 80) destScale:1 resizeMode:ResizeModeContain];
+    XCTAssertEqual(targetRect.origin.x, 0);
+    XCTAssertEqual(targetRect.origin.y, 17);
+    XCTAssertEqual(targetRect.size.width, 90);
+    XCTAssertEqual(targetRect.size.height, 45);
+    
+    targetRect = [BitmapUtils targetRect:CGSizeMake(30, 60) destSize:CGSizeMake(90, 80) destScale:1 resizeMode:ResizeModeContain];
+    XCTAssertEqual(targetRect.origin.x, 25);
+    XCTAssertEqual(targetRect.origin.y, 0);
+    XCTAssertEqual(targetRect.size.width, 40);
+    XCTAssertEqual(targetRect.size.height, 80);
+    
+    targetRect = [BitmapUtils targetRect:CGSizeMake(60, 30) destSize:CGSizeMake(80, 90) destScale:1 resizeMode:ResizeModeContain];
+    XCTAssertEqual(targetRect.origin.x, 0);
+    XCTAssertEqual(targetRect.origin.y, 25);
+    XCTAssertEqual(targetRect.size.width, 80);
+    XCTAssertEqual(targetRect.size.height, 40);
+    
+    targetRect = [BitmapUtils targetRect:CGSizeMake(30, 60) destSize:CGSizeMake(80, 90) destScale:1 resizeMode:ResizeModeContain];
+    XCTAssertEqual(targetRect.origin.x, 17);
+    XCTAssertEqual(targetRect.origin.y, 0);
+    XCTAssertEqual(targetRect.size.width, 45);
+    XCTAssertEqual(targetRect.size.height, 90);
+}
+
+- (void)testTargetRect_WhenZeroSizeHeightWidth {
+    // Dest Size = Zero: Use Source Size
+    CGRect targetRect = [BitmapUtils targetRect:CGSizeMake(60, 30) destSize:CGSizeMake(0, 0) destScale:1 resizeMode:ResizeModeContain];
+    XCTAssertEqual(targetRect.origin.x, 0);
+    XCTAssertEqual(targetRect.origin.y, 0);
+    XCTAssertEqual(targetRect.size.width, 60);
+    XCTAssertEqual(targetRect.size.height, 30);
+    
+    // Dest Height = Zero: Use Source Aspect Ratio
+    targetRect = [BitmapUtils targetRect:CGSizeMake(30, 60) destSize:CGSizeMake(90, 0) destScale:1 resizeMode:ResizeModeContain];
+    XCTAssertEqual(targetRect.origin.x, 0);
+    XCTAssertEqual(targetRect.origin.y, 0);
+    XCTAssertEqual(targetRect.size.width, 90);
+    XCTAssertEqual(targetRect.size.height, 180);
+    
+    // Dest Width = Zero: Use Source Aspect Ratio
+    targetRect = [BitmapUtils targetRect:CGSizeMake(30, 60) destSize:CGSizeMake(0, 90) destScale:1 resizeMode:ResizeModeContain];
+    XCTAssertEqual(targetRect.origin.x, 0);
+    XCTAssertEqual(targetRect.origin.y, 0);
+    XCTAssertEqual(targetRect.size.width, 45);
+    XCTAssertEqual(targetRect.size.height, 90);
 }
 
 @end

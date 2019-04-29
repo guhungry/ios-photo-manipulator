@@ -16,6 +16,7 @@
 		7FB4F60E2273038A00D84D9D /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7FB4F60C2273038900D84D9D /* background.jpg */; };
 		7FB4F60F2273038A00D84D9D /* overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FB4F60D2273038900D84D9D /* overlay.png */; };
 		7FB4F61122731FF800D84D9D /* BitmapUtilsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FB4F61022731FF800D84D9D /* BitmapUtilsTests.m */; };
+		7FB4F6152276D5B400D84D9D /* UIImage+Testing.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FB4F6142276D5B400D84D9D /* UIImage+Testing.m */; };
 		CCCAB6862273503800ACD74A /* UIImage+PhotoManipulatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CCCAB6852273503800ACD74A /* UIImage+PhotoManipulatorTests.m */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +61,8 @@
 		7FB4F60C2273038900D84D9D /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
 		7FB4F60D2273038900D84D9D /* overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = overlay.png; sourceTree = "<group>"; };
 		7FB4F61022731FF800D84D9D /* BitmapUtilsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BitmapUtilsTests.m; sourceTree = "<group>"; };
+		7FB4F6132276D5B400D84D9D /* UIImage+Testing.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+Testing.h"; sourceTree = "<group>"; };
+		7FB4F6142276D5B400D84D9D /* UIImage+Testing.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Testing.m"; sourceTree = "<group>"; };
 		CCCAB6852273503800ACD74A /* UIImage+PhotoManipulatorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "UIImage+PhotoManipulatorTests.m"; path = "WCPhotoManipulatorTests/UIImage+PhotoManipulatorTests.m"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -121,6 +124,7 @@
 		7FB4F585227085F100D84D9D /* WCPhotoManipulatorTests */ = {
 			isa = PBXGroup;
 			children = (
+				7FB4F6122276D55000D84D9D /* Helpers */,
 				7FB4F60B2273034600D84D9D /* Images */,
 				7FB4F61022731FF800D84D9D /* BitmapUtilsTests.m */,
 				7FB4F5FB2272F5E200D84D9D /* FileUtilsTests.m */,
@@ -137,6 +141,15 @@
 				7FB4F60D2273038900D84D9D /* overlay.png */,
 			);
 			path = Images;
+			sourceTree = "<group>";
+		};
+		7FB4F6122276D55000D84D9D /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				7FB4F6132276D5B400D84D9D /* UIImage+Testing.h */,
+				7FB4F6142276D5B400D84D9D /* UIImage+Testing.m */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -243,6 +256,7 @@
 			files = (
 				7FB4F61122731FF800D84D9D /* BitmapUtilsTests.m in Sources */,
 				CCCAB6862273503800ACD74A /* UIImage+PhotoManipulatorTests.m in Sources */,
+				7FB4F6152276D5B400D84D9D /* UIImage+Testing.m in Sources */,
 				7FB4F5FC2272F5E200D84D9D /* FileUtilsTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
