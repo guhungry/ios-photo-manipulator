@@ -73,4 +73,24 @@
     XCTAssertTrue([actualColor isEqual:expectedColor]);
 }
 
+- (void)testDrawText_WhenNoScale_ShouldReturnCorrectly {
+    image = [UIImage imageNamedTest:@"background.jpg"];
+    XCTAssertNotNil(image);
+    
+    image = [image drawText:@"Test Text To Draw" position:CGPointMake(15, 66) color:UIColor.blueColor size:42 thickness:5];
+    XCTAssertNotNil(image);
+    XCTAssertEqual(image.size.width, 800);
+    XCTAssertEqual(image.size.height, 530);
+}
+
+- (void)testDrawText_WhenHasScale_ShouldReturnCorrectly {
+    image = [UIImage imageNamedTest:@"background.jpg"];
+    XCTAssertNotNil(image);
+    
+    image = [image drawText:@"Test Text To Draw" position:CGPointMake(15, 66) color:UIColor.greenColor size:42 thickness:0 scale:2];
+    XCTAssertNotNil(image);
+    XCTAssertEqual(image.size.width, 800);
+    XCTAssertEqual(image.size.height, 530);
+}
+
 @end
