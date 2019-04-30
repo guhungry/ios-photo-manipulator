@@ -37,4 +37,17 @@
     XCTAssertFalse([image hasAlpha]);
 }
 
+- (void)testCrop_ShouldReturnCorrectly {
+    image = [UIImage imageNamedTest:@"background.jpg"];
+    UIColor *expectedColor = [image colorAt:CGPointMake(52, 89)];
+    XCTAssertNotNil(image);
+    
+    image = [image crop:CGRectMake(52, 89, 65, 74)];
+    UIColor *actualColor = [image colorAt:CGPointMake(0, 0)];
+    XCTAssertNotNil(image);
+    XCTAssertEqual(image.size.width, 65);
+    XCTAssertEqual(image.size.height, 74);
+    XCTAssertTrue([actualColor isEqual:expectedColor]);
+}
+
 @end
