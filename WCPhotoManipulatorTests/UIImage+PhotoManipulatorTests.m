@@ -16,14 +16,15 @@
 
 @implementation UIImage_PhotoManipulatorTests {
     UIImage *image;
+    UIImage *overlay;
 }
 
 - (void)setUp {
-    // Put setup code here. This method is called before the invocation of each test method in the class.
 }
 
 - (void)tearDown {
     image = nil;
+    overlay = nil;
 }
 
 - (void)testHasAlpha_ShouldReturnCorrectly {
@@ -88,6 +89,28 @@
     XCTAssertNotNil(image);
     
     image = [image drawText:@"Test Text To Draw" position:CGPointMake(15, 66) color:UIColor.greenColor size:42 thickness:0 scale:2];
+    XCTAssertNotNil(image);
+    XCTAssertEqual(image.size.width, 800);
+    XCTAssertEqual(image.size.height, 530);
+}
+
+- (void)testOverlayImage_WhenNoScale_ShouldReturnCorrectly {
+    image = [UIImage imageNamedTest:@"background.jpg"];
+    overlay = [UIImage imageNamedTest:@"overlay.png"];
+    XCTAssertNotNil(image);
+    
+    image = [image overlayImage:overlay position:CGPointMake(66, 115)];
+    XCTAssertNotNil(image);
+    XCTAssertEqual(image.size.width, 800);
+    XCTAssertEqual(image.size.height, 530);
+}
+
+- (void)testOverlayImage_WhenHasScale_ShouldReturnCorrectly {
+    image = [UIImage imageNamedTest:@"background.jpg"];
+    overlay = [UIImage imageNamedTest:@"overlay.png"];
+    XCTAssertNotNil(image);
+    
+    image = [image overlayImage:overlay position:CGPointMake(99, 12) scale:3];
     XCTAssertNotNil(image);
     XCTAssertEqual(image.size.width, 800);
     XCTAssertEqual(image.size.height, 530);
