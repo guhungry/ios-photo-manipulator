@@ -50,4 +50,14 @@
     XCTAssertTrue([actualColor isEqual:expectedColor]);
 }
 
+- (void)testResize_ShouldReturnSizeCorrectly {
+    image = [UIImage imageNamedTest:@"background.jpg"];
+    XCTAssertNotNil(image);
+    
+    image = [image resize:CGSizeMake(55, 99) scale:1];
+    XCTAssertNotNil(image);
+    XCTAssertEqual(image.size.width, 55);
+    XCTAssertEqual(image.size.height, 99);
+}
+
 @end
