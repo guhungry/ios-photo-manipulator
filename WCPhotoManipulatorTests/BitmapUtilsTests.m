@@ -96,17 +96,35 @@
     XCTAssertNil([BitmapUtils transform:image size:CGSizeMake(6, 8) scale:0 transform:CGAffineTransformIdentity]);
 }
 
-- (void)testTransform_WhenValid_ShouldReturnNewImage {
-    image = [UIImage imageNamedTest:@"overlay.png"];
-    
-    XCTAssertEqual(image.size.width, 200);
-    XCTAssertEqual(image.size.height, 141);
+- (void)testTransform_WhenValidSamePosition_ShouldReturnNewImage {
+    image = [UIImage imageNamedTest:@"background.jpg"];
+    UIColor *expectedColor = [image colorAt:CGPointMake(70, 55)];
+    XCTAssertEqual(image.size.width, 800);
+    XCTAssertEqual(image.size.height, 530);
     XCTAssertEqual(image.scale, 1);
     
-    image = [BitmapUtils transform:image size:CGSizeMake(79, 55) scale:1 transform:CGAffineTransformIdentity];
-    XCTAssertEqual(image.size.width, 79);
-    XCTAssertEqual(image.size.height, 55);
+    image = [BitmapUtils transform:image size:CGSizeMake(800, 530) scale:1 transform:CGAffineTransformIdentity];
+    UIColor *actualColor = [image colorAt:CGPointMake(70, 55)];
+    XCTAssertEqual(image.size.width, 800);
+    XCTAssertEqual(image.size.height, 530);
     XCTAssertEqual(image.scale, 1);
+    XCTAssert([actualColor isEqual:expectedColor]);
+}
+
+- (void)testTransform_WhenValidDiffPosition_ShouldReturnNewImage {
+    image = [UIImage imageNamedTest:@"background.jpg"];
+    UIColor *expectedColor = [image colorAt:CGPointMake(22, 46)];
+    XCTAssertEqual(image.size.width, 800);
+    XCTAssertEqual(image.size.height, 530);
+    XCTAssertEqual(image.scale, 1);
+    
+    CGAffineTransform translate = [BitmapUtils transformFromTargetRect:CGSizeMake(800, 530) targetRect:CGRectMake(35, 43, 800, 530)];
+    image = [BitmapUtils transform:image size:CGSizeMake(800, 530) scale:1 transform:translate];
+    UIColor *actualColor = [image colorAt:CGPointMake(57, 89)];
+    XCTAssertEqual(image.size.width, 800);
+    XCTAssertEqual(image.size.height, 530);
+    XCTAssertEqual(image.scale, 1);
+    XCTAssert([actualColor isEqual:expectedColor]);
 }
 
 ////////////////////////////

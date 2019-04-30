@@ -13,6 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface UIImage (Testing)
 
 +(UIImage*)imageNamedTest:(NSString *)name;
+-(UIColor*)colorAt:(CGPoint)location;
 
 @end
 
