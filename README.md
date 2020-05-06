@@ -5,6 +5,7 @@
 [![cocoapods](https://cocoapod-badges.herokuapp.com/v/WCPhotoManipulator/badge.png)](https://cocoapods.org/pods/WCPhotoManipulator)
 
 Image processing library to edit image programmatically for iOS.
+This library is used by [react-native-photo-manipulator](https://github.com/guhungry/react-native-photo-manipulator/).
 
 ## Installation
 Add dependency `Podfile`
@@ -18,7 +19,7 @@ target 'Demo' do
   # use_frameworks!
 
   # Add WCPhotoManipulator
-  pod 'WCPhotoManipulator', :git => 'https://github.com/guhungry/ios-photo-manipulator.git', :tag => 'v0.0.8'
+  pod 'WCPhotoManipulator', :git => 'https://github.com/guhungry/ios-photo-manipulator.git', :tag => 'v1.0.0'
 
 end
 ```
