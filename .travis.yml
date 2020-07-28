@@ -1,5 +1,6 @@
 language: objective-c
-osx_image: xcode10.1
+osx_image: xcode11.6
+os: osx
 
 addons:
   sonarcloud:
@@ -10,8 +11,8 @@ addons:
 before_install:
   - env
   - locale
-  - gem install xcpretty --no-rdoc --no-ri --no-document --quiet
-  - gem update cocoapods --no-rdoc --no-ri --no-document --quiet
+  - gem install xcpretty --no-document --quiet
+  - gem update cocoapods --no-document --quiet
   - xcpretty --version
   - xcodebuild -version
   - xcodebuild -showsdks
@@ -22,7 +23,3 @@ script:
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
-
-env:
-  global:
-    secure: "auUu13pwYmbprBP7RvN1WqL01yBaN0l9YFSfV31U8MameHFSrLD+F1kmz2EUz3SAdEYNzsGT0eAPVXZMC1fSGnQx60QVuInX+58g3O4egyIk9M1eRhMTDTqelpyIOLR31b5RT4aueszOjZdoqjYSmtTwiigBHvgOFODKOW0OeJY+HylIq60rMV1udFnhFpYNWALX1uw5O3x9FZx9gzQhKuTxzwp+396ldiIYglpfM+vzXHQXDpCEGMY7SPtvx9NOvmDTvv/TEYxsS6c3hdIY8FheuqYHW0agnAHO/Hj7x9nB4b8tqb+vuTyiI6wZDFqJUhE3lpKySwuY7cjK/tGn+BLPxV721ZfnTUIxtR/OUHZCLos8Yahkfe5COK/DhqpTxLow7+qL3ZlPpV0Sj7R6JZxdWUCJIKYzT9BlzIk+hDuGcNTbn2cPnkQHqKug3YiXHA84gSN/h3mm+dEy1fgjogC2p09DROVFJN8IuL/rgeHNZyB3eTk6aJPCJbXcNSFF/Q6lwg9tpDzQQHjm3jN1/WDUzxILWith7D5AtBXaDl8qptHSr4QiTDjkIMjLUwS73svKKWNGfMG3a1rSssbu/iCiNxUeAMgYBzhk3X3Eki6z6Aw/gWX4HK7oqDgu/RqAIkVda63438Q4PRmNAzwrKyM2KJIuMRxE8NWTFgN/QEg="
