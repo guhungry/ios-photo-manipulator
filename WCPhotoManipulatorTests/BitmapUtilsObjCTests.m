@@ -7,19 +7,18 @@
 //
 
 #import <XCTest/XCTest.h>
-#import "BitmapUtils.h"
+#import "WCPhotoManipulator-Swift.h"
 #import "Helpers/UIImage+Testing.h"
 
-@interface BitmapUtilsTests : XCTestCase
+@interface BitmapUtilsObjCTests : XCTestCase
 
 @end
 
-@implementation BitmapUtilsTests {
+@implementation BitmapUtilsObjCTests {
     UIImage *image;
 }
 
 - (void)setUp {
-    // Put setup code here. This method is called before the invocation of each test method in the class.
 }
 
 - (void)tearDown {
@@ -113,6 +112,7 @@
 
 - (void)testTransform_WhenValidDiffPosition_ShouldReturnNewImage {
     image = [UIImage imageNamedTest:@"background.jpg"];
+
     UIColor *expectedColor = [image colorAt:CGPointMake(22, 46)];
     XCTAssertEqual(image.size.width, 800);
     XCTAssertEqual(image.size.height, 530);

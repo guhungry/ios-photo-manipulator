@@ -7,14 +7,14 @@
 //
 
 #import <XCTest/XCTest.h>
-#import "UIImage+PhotoManipulator.h"
+#import "WCPhotoManipulator-Swift.h"
 #import "Helpers/UIImage+Testing.h"
 
-@interface UIImage_PhotoManipulatorTests : XCTestCase
+@interface UIImage_PhotoManipulatorObjCTests : XCTestCase
 
 @end
 
-@implementation UIImage_PhotoManipulatorTests {
+@implementation UIImage_PhotoManipulatorObjCTests {
     UIImage *image;
     UIImage *overlay;
 }
@@ -115,5 +115,4 @@
     XCTAssertEqual(image.size.width, 800);
     XCTAssertEqual(image.size.height, 530);
 }
-
 @end

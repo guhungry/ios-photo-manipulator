@@ -2,8 +2,8 @@
 //  WCPhotoManipulator.h
 //  WCPhotoManipulator
 //
-//  Created by Woraphot Chokratanasombat on 22/3/2562 BE.
-//  Copyright © 2562 Woraphot Chokratanasombat. All rights reserved.
+//  Created by Woraphot Chokratanasombat on 29/7/20.
+//  Copyright © 2020 Woraphot Chokratanasombat. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
