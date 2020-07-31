@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name         = "WCPhotoManipulator"
-  s.version      = "2.0.0-alpha1"
+  s.version      = "2.0.0-alpha2"
   s.summary  = "An image processing library for iOS"
   s.homepage     = "https://github.com/guhungry/ios-photo-manipulator"
 
