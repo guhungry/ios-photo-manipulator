@@ -8,6 +8,6 @@
 
 import Foundation
 
-@objc enum ResizeMode: Int {
+@objc public enum ResizeMode: Int {
     case Stretch, Contain, Cover
 }

@@ -8,8 +8,8 @@
 
 import UIKit
 
-@objc class BitmapUtils: NSObject {
-    @objc class func transform(_ image: UIImage, size: CGSize, scale: CGFloat, transform: CGAffineTransform) -> UIImage? {
+@objc public class BitmapUtils: NSObject {
+    @objc public class func transform(_ image: UIImage, size: CGSize, scale: CGFloat, transform: CGAffineTransform) -> UIImage? {
         if size.width <= 0 || size.height <= 0 || scale <= 0 {
             return nil
         }
@@ -22,14 +22,14 @@ import UIKit
         return result
     }
     
-    @objc class func transformFromTargetRect(_ sourceSize: CGSize, targetRect: CGRect) -> CGAffineTransform {
+    @objc public class func transformFromTargetRect(_ sourceSize: CGSize, targetRect: CGRect) -> CGAffineTransform {
         return CGAffineTransform
             .identity
             .translatedBy(x: targetRect.origin.x, y: targetRect.origin.y)
             .scaledBy(x: targetRect.size.width / sourceSize.width, y: targetRect.size.height / sourceSize.height)
     }
     
-    @objc class func targetRect(_ sourceSize: CGSize, destSize: CGSize, destScale: CGFloat, resizeMode: ResizeMode) -> CGRect {
+    @objc public class func targetRect(_ sourceSize: CGSize, destSize: CGSize, destScale: CGFloat, resizeMode: ResizeMode) -> CGRect {
         
         if destSize == CGSize.zero {
             return CGRect(origin: CGPoint.zero, size: sourceSize)
@@ -124,15 +124,15 @@ import UIKit
     }
 
     // CGFloat
-    @objc class func ceil(_ value: CGFloat, scale: CGFloat) -> CGFloat {
+    @objc public class func ceil(_ value: CGFloat, scale: CGFloat) -> CGFloat {
         return (value * scale).rounded(.up) / scale
     }
-    @objc class func floor(_ value: CGFloat, scale: CGFloat) -> CGFloat {
+    @objc public class func floor(_ value: CGFloat, scale: CGFloat) -> CGFloat {
         return (value * scale).rounded(.down) / scale
     }
 
     // CGSize
-    @objc class func ceilSize(_ size: CGSize, scale: CGFloat) -> CGSize {
+    @objc public class func ceilSize(_ size: CGSize, scale: CGFloat) -> CGSize {
         return CGSize(
             width: ceil(size.width, scale: scale),
             height: ceil(size.height, scale: scale)

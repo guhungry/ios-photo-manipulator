@@ -9,18 +9,18 @@
 import Foundation
 import UIKit
 
-@objc class FileUtils: NSObject {
-    @objc class func createTempFile(_ prefix: String, mimeType: String) -> String {
+@objc public class FileUtils: NSObject {
+    @objc public class func createTempFile(_ prefix: String, mimeType: String) -> String {
         let ext = MimeUtils.toExtension(mimeType)
         let filename = "\(prefix)\(UUID().uuidString)\(ext)"
         return (cachePath() as NSString).appendingPathComponent(filename)
     }
     
-    @objc class func cachePath() -> String {
+    @objc public class func cachePath() -> String {
         return NSSearchPathForDirectoriesInDomains(.cachesDirectory, .userDomainMask, true)[0]
     }
     
-    @objc class func cleanDirectory(_ path: String, prefix: String) {
+    @objc public class func cleanDirectory(_ path: String, prefix: String) {
         let fileManager = FileManager.default
         
         filesIn(path, withPrefix: prefix).forEach { it in
@@ -36,13 +36,13 @@ import UIKit
         ?? []
     }
     
-    @objc class func saveImageFile(_ image: UIImage, mimeType: String, quality: CGFloat, file: String) {
+    @objc public class func saveImageFile(_ image: UIImage, mimeType: String, quality: CGFloat, file: String) {
         let data = imageToData(image, mimeType:mimeType, quality:quality)
         
         try? data?.write(to: URL(fileURLWithPath: file), options: .atomic)
     }
 
-    @objc class func imageFromUrl(_ url: URL) -> UIImage? {
+    @objc public class func imageFromUrl(_ url: URL) -> UIImage? {
         if url.scheme == "file" {
             return UIImage(contentsOfFile: url.path)
         }
