@@ -1,8 +1,8 @@
 #!/bin/bash
 # This script will build the project.
+set -eo pipefail
 
 function build() {
-  set -o pipefail
   mkdir DerivedData
 
  build-wrapper-macosx-x86 --out-dir DerivedData/compilation-database \
