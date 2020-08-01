@@ -23,13 +23,13 @@ target 'Demo' do
 
 end
 ```
-
-## Usage UIImage+PhotoManipulator
-
+## Usage
 Import using
 ```objc
-#import <WCPhotoManipulator/UIImage+PhotoManipulator.h>
+@import WCPhotoManipulator;
 ```
+
+## Usage UIImage+PhotoManipulator
 
 ### [image crop]
 Crop image from specified `cropRegion`
@@ -69,11 +69,6 @@ Overlay image on top of background image
 
 
 ## Usage FileUtils
-
-Import using
-```objc
-#import <WCPhotoManipulator/FileUtils.h>
-```
 
 ### [FileUtils createTempFile]
 Create temp file into cache directory with prefix
@@ -115,15 +110,9 @@ Open file from uri as input stream
 
 ## Usage MimeUtils
 
-Import using
-```objc
-#import <WCPhotoManipulator/FileUtils.h>
-```
-
 ### [MimeUtils toExtension]
 Get image file extension from mimeType (Support .jpg, .png and .webp)
 
 | NAME       | TYPE                  | REQUIRED | DESCRIPTION                                     |
 |------------|-----------------------|----------|-------------------------------------------------|
 | mimeType   | String                | Yes      | Image mime type                                 |
-
