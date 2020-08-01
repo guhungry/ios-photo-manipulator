@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		CC92AF5124D250160061CC87 /* FoolSonarcloud.m in Sources */ = {isa = PBXBuildFile; fileRef = CC92AF5024D250160061CC87 /* FoolSonarcloud.m */; };
+		CC92AF6A24D545070061CC87 /* BitmapUtilsSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC92AF6924D545070061CC87 /* BitmapUtilsSwiftTests.swift */; };
+		CC92AF6C24D558500061CC87 /* FileUtilsSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC92AF6B24D558500061CC87 /* FileUtilsSwiftTests.swift */; };
+		CC92AF6F24D55E950061CC87 /* NSData+Testing.m in Sources */ = {isa = PBXBuildFile; fileRef = CC92AF6E24D55E950061CC87 /* NSData+Testing.m */; };
+		CC92AF7124D5CD9F0061CC87 /* UIImage+PhotoManipulatorSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC92AF7024D5CD9F0061CC87 /* UIImage+PhotoManipulatorSwiftTests.swift */; };
 		CCC2503C24CFDE4B000BAC48 /* MimeUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC2503B24CFDE4B000BAC48 /* MimeUtils.swift */; };
 		CCC2504B24CFDE89000BAC48 /* libWCPhotoManipulator.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CCC2503824CFDE4B000BAC48 /* libWCPhotoManipulator.a */; };
 		CCC2505724CFE206000BAC48 /* MimeUtilsObjCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CCC2505624CFE206000BAC48 /* MimeUtilsObjCTests.m */; };
@@ -50,6 +54,11 @@
 		CC92AF4E24D1E1050061CC87 /* WCPhotoManipulator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WCPhotoManipulator.h; sourceTree = "<group>"; };
 		CC92AF4F24D250160061CC87 /* FoolSonarcloud.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FoolSonarcloud.h; sourceTree = "<group>"; };
 		CC92AF5024D250160061CC87 /* FoolSonarcloud.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FoolSonarcloud.m; sourceTree = "<group>"; };
+		CC92AF6924D545070061CC87 /* BitmapUtilsSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitmapUtilsSwiftTests.swift; sourceTree = "<group>"; };
+		CC92AF6B24D558500061CC87 /* FileUtilsSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileUtilsSwiftTests.swift; sourceTree = "<group>"; };
+		CC92AF6D24D55E950061CC87 /* NSData+Testing.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSData+Testing.h"; sourceTree = "<group>"; };
+		CC92AF6E24D55E950061CC87 /* NSData+Testing.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSData+Testing.m"; sourceTree = "<group>"; };
+		CC92AF7024D5CD9F0061CC87 /* UIImage+PhotoManipulatorSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+PhotoManipulatorSwiftTests.swift"; sourceTree = "<group>"; };
 		CCC2503824CFDE4B000BAC48 /* libWCPhotoManipulator.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libWCPhotoManipulator.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCC2503B24CFDE4B000BAC48 /* MimeUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MimeUtils.swift; sourceTree = "<group>"; };
 		CCC2504624CFDE89000BAC48 /* WCPhotoManipulatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WCPhotoManipulatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -130,11 +139,14 @@
 				CCC2506024D000DA000BAC48 /* Helpers */,
 				CCC2506424D000E3000BAC48 /* Images */,
 				CCC2507124D066A2000BAC48 /* BitmapUtilsObjCTests.m */,
+				CC92AF6924D545070061CC87 /* BitmapUtilsSwiftTests.swift */,
 				CCC2505A24CFF272000BAC48 /* FileUtilsObjCTests.m */,
+				CC92AF6B24D558500061CC87 /* FileUtilsSwiftTests.swift */,
 				CCC2504A24CFDE89000BAC48 /* Info.plist */,
 				CCC2505624CFE206000BAC48 /* MimeUtilsObjCTests.m */,
 				CCC2506924D05A87000BAC48 /* MimeUtilsSwiftTests.swift */,
 				CCC2507324D0818E000BAC48 /* UIImage+PhotoManipulatorObjCTests.m */,
+				CC92AF7024D5CD9F0061CC87 /* UIImage+PhotoManipulatorSwiftTests.swift */,
 				CCC2505524CFE205000BAC48 /* WCPhotoManipulatorTests-Bridging-Header.h */,
 			);
 			path = WCPhotoManipulatorTests;
@@ -143,6 +155,8 @@
 		CCC2506024D000DA000BAC48 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				CC92AF6D24D55E950061CC87 /* NSData+Testing.h */,
+				CC92AF6E24D55E950061CC87 /* NSData+Testing.m */,
 				CCC2506124D000DA000BAC48 /* UIImage+Testing.h */,
 				CCC2506224D000DA000BAC48 /* UIImage+Testing.m */,
 			);
@@ -269,6 +283,10 @@
 				CCC2507424D0818E000BAC48 /* UIImage+PhotoManipulatorObjCTests.m in Sources */,
 				CCC2507224D066A2000BAC48 /* BitmapUtilsObjCTests.m in Sources */,
 				CCC2506A24D05A87000BAC48 /* MimeUtilsSwiftTests.swift in Sources */,
+				CC92AF6A24D545070061CC87 /* BitmapUtilsSwiftTests.swift in Sources */,
+				CC92AF6C24D558500061CC87 /* FileUtilsSwiftTests.swift in Sources */,
+				CC92AF6F24D55E950061CC87 /* NSData+Testing.m in Sources */,
+				CC92AF7124D5CD9F0061CC87 /* UIImage+PhotoManipulatorSwiftTests.swift in Sources */,
 				CCC2506324D000DA000BAC48 /* UIImage+Testing.m in Sources */,
 				CCC2505B24CFF272000BAC48 /* FileUtilsObjCTests.m in Sources */,
 			);
