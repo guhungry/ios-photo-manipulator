@@ -46,7 +46,10 @@ import UIKit
         if url.scheme == "file" {
             return UIImage(contentsOfFile: url.path)
         }
-        return UIImage(data: try! Data(contentsOf: url))
+        guard let data = try? Data(contentsOf: url) else {
+            return nil
+        }
+        return UIImage(data: data)
     }
 
     @objc internal class func imageToData(_ image: UIImage, mimeType: String, quality: CGFloat) -> Data? {
