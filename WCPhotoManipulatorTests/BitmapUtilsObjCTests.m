@@ -18,9 +18,6 @@
     UIImage *image;
 }
 
-- (void)setUp {
-}
-
 - (void)tearDown {
     image = nil;
 }
