@@ -8,6 +8,7 @@
 
 #import <XCTest/XCTest.h>
 #import "UIImage+Testing.h"
+#import "NSData+Testing.h"
 #import "WCPhotoManipulator-Swift.h"
 
 @interface FileUtilsObjCTests : XCTestCase
@@ -87,15 +88,15 @@
     data = [FileUtils imageToData:image mimeType:MimeUtils.JPEG quality:100];
     
     XCTAssertNotNil(data);
-    XCTAssert([[self imageMimeType:data] isEqualToString:MimeUtils.JPEG]);
+    XCTAssert([[data mimeType] isEqualToString:MimeUtils.JPEG]);
 }
 
 - (void)testImageToData_WhenOuptutPNG_ShouldReturnPng {
-    image = [UIImage imageNamed:@"overlay" inBundle:[NSBundle bundleForClass:[self class]] compatibleWithTraitCollection:nil];
+    image = [UIImage imageNamedTest:@"overlay.png"];
     data = [FileUtils imageToData:image mimeType:MimeUtils.PNG quality:100];
     
     XCTAssertNotNil(data);
-    XCTAssert([[self imageMimeType:data] isEqualToString:MimeUtils.PNG]);
+    XCTAssert([[data mimeType] isEqualToString:MimeUtils.PNG]);
 }
 
 ////////////////////////////
@@ -120,11 +121,11 @@
 ///////////////////////////
 - (void)testSaveImageFile_WhenPNG_ShouldSavePNG {
     path = [FileUtils createTempFile:@"PNG_" mimeType:MimeUtils.PNG];
-    image = [UIImage imageNamed:@"overlay" inBundle:[NSBundle bundleForClass:[self class]] compatibleWithTraitCollection:nil];
+    image = [UIImage imageNamedTest:@"overlay.png"];
     
     XCTAssertFalse([fileManager fileExistsAtPath:path]);
     
-    [FileUtils saveImageFile:image mimeType:path quality:100 file:path];
+    [FileUtils saveImageFile:image mimeType:MimeUtils.PNG quality:100 file:path];
     
     XCTAssertTrue([fileManager fileExistsAtPath:path]);
     
@@ -137,11 +138,11 @@
 
 - (void)testSaveImageFile_WhenJPEG_ShouldSaveJEPG {
     path = [FileUtils createTempFile:@"JPEG_" mimeType:MimeUtils.JPEG];
-    image = [UIImage imageNamed:@"overlay" inBundle:[NSBundle bundleForClass:[self class]] compatibleWithTraitCollection:nil];
+    image = [UIImage imageNamedTest:@"overlay.png"];
     
     XCTAssertFalse([fileManager fileExistsAtPath:path]);
     
-    [FileUtils saveImageFile:image mimeType:path quality:100 file:path];
+    [FileUtils saveImageFile:image mimeType:MimeUtils.JPEG quality:100 file:path];
     
     XCTAssertTrue([fileManager fileExistsAtPath:path]);
     
@@ -170,24 +171,6 @@
     
     files = [FileUtils filesIn:path withPrefix:prefix];
     XCTAssertEqual(files.count, 0);
-}
-
-- (NSString *)imageMimeType:(NSData *)data {
-    uint8_t c;
-    [data getBytes:&c length:1];
-    
-    switch (c) {
-        case 0xFF:
-            return @"image/jpeg";
-        case 0x89:
-            return @"image/png";
-        case 0x47:
-            return @"image/gif";
-        case 0x49:
-        case 0x4D:
-            return @"image/tiff";
-    }
-    return nil;
 }
 
 @end

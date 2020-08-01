@@ -28,7 +28,7 @@ import UIKit
         }
     }
     
-    @objc private class func filesIn(_ path: String, withPrefix prefix: String) -> [String] {
+    @objc internal class func filesIn(_ path: String, withPrefix prefix: String) -> [String] {
         return (try? FileManager.default
             .contentsOfDirectory(atPath: path)
             .filter({it in it.starts(with: prefix)})
@@ -49,7 +49,7 @@ import UIKit
         return UIImage(data: try! Data(contentsOf: url))
     }
 
-    @objc private class func imageToData(_ image: UIImage, mimeType: String, quality: CGFloat) -> Data? {
+    @objc internal class func imageToData(_ image: UIImage, mimeType: String, quality: CGFloat) -> Data? {
         if (MimeUtils.PNG() == mimeType) {
             return image.pngData()
         }
