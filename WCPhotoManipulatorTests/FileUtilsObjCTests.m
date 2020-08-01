@@ -1,17 +1,16 @@
 //
-//  FileUtilsTests.m
+//  FileUtilsObjCTests.m
 //  WCPhotoManipulatorTests
 //
-//  Created by Woraphot Chokratanasombat on 26/4/2562 BE.
-//  Copyright © 2562 Woraphot Chokratanasombat. All rights reserved.
+//  Created by Woraphot Chokratanasombat on 28/7/20.
+//  Copyright © 2020 Woraphot Chokratanasombat. All rights reserved.
 //
 
 #import <XCTest/XCTest.h>
-#import "FileUtils.h"
-#import "MimeUtils.h"
-#import "Helpers/UIImage+Testing.h"
+#import "UIImage+Testing.h"
+#import "WCPhotoManipulator-Swift.h"
 
-@interface FileUtilsTests : XCTestCase
+@interface FileUtilsObjCTests : XCTestCase
 
 @end
 
@@ -22,7 +21,7 @@
 
 @end
 
-@implementation FileUtilsTests {
+@implementation FileUtilsObjCTests {
     NSString *prefix;
     NSString *path;
     NSString *name;
@@ -46,10 +45,13 @@
     fileManager = nil;
 }
 
+
 - (void)testCachePath_MustNotNil {
     path = [FileUtils cachePath];
+    NSString *expected = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) objectAtIndex:0];
     
     XCTAssertNotNil(path);
+    XCTAssert([path isEqualToString:expected]);
 }
 
 ////////////////////////////
@@ -85,7 +87,7 @@
     data = [FileUtils imageToData:image mimeType:MimeUtils.JPEG quality:100];
     
     XCTAssertNotNil(data);
-    XCTAssertEqual([self imageMimeType:data], MimeUtils.JPEG);
+    XCTAssert([[self imageMimeType:data] isEqualToString:MimeUtils.JPEG]);
 }
 
 - (void)testImageToData_WhenOuptutPNG_ShouldReturnPng {
@@ -93,7 +95,7 @@
     data = [FileUtils imageToData:image mimeType:MimeUtils.PNG quality:100];
     
     XCTAssertNotNil(data);
-    XCTAssertEqual([self imageMimeType:data], MimeUtils.PNG);
+    XCTAssert([[self imageMimeType:data] isEqualToString:MimeUtils.PNG]);
 }
 
 ////////////////////////////
@@ -162,12 +164,12 @@
     [fileManager createFileAtPath:[path stringByAppendingPathComponent:[NSString stringWithFormat:@"%@%@", prefix, @"bee2.png"]] contents:data attributes:nil];
     
     NSArray *files = [FileUtils filesIn:path withPrefix:prefix];
-    XCTAssertTrue(files.count == 2);
+    XCTAssertEqual(files.count, 2);
     
     [FileUtils cleanDirectory:path prefix:prefix];
     
     files = [FileUtils filesIn:path withPrefix:prefix];
-    XCTAssertTrue(files.count == 0);
+    XCTAssertEqual(files.count, 0);
 }
 
 - (NSString *)imageMimeType:(NSData *)data {
@@ -189,4 +191,3 @@
 }
 
 @end
-

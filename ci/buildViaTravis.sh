@@ -1,11 +1,11 @@
 #!/bin/bash
 # This script will build the project.
+set -eo pipefail
 
 function build() {
-  set -o pipefail
   mkdir DerivedData
 
-  build-wrapper-macosx-x86 --out-dir DerivedData/compilation-database \
+ build-wrapper-macosx-x86 --out-dir DerivedData/compilation-database \
   xcodebuild clean build test -project WCPhotoManipulator.xcodeproj -scheme WCPhotoManipulator -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone SE (2nd generation),OS=13.6' -enableCodeCoverage YES -configuration Debug GCC_INSTRUMENT_PROGRAM_FLOW_ARCS=YES GCC_GENERATE_TEST_COVERAGE_FILES=YES | xcpretty -c
 }
 

@@ -3,35 +3,39 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 53;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7F49547D22701398004F8851 /* FileUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F49547422701398004F8851 /* FileUtils.m */; };
-		7F49547E22701398004F8851 /* MimeUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F49547522701398004F8851 /* MimeUtils.m */; };
-		7F49547F22701398004F8851 /* UIImage+PhotoManipulator.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F49547922701398004F8851 /* UIImage+PhotoManipulator.m */; };
-		7F49548022701398004F8851 /* BitmapUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F49547B22701398004F8851 /* BitmapUtils.m */; };
-		7FB4F589227085F100D84D9D /* libWCPhotoManipulator.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F4954582270118D004F8851 /* libWCPhotoManipulator.a */; };
-		7FB4F5FC2272F5E200D84D9D /* FileUtilsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FB4F5FB2272F5E200D84D9D /* FileUtilsTests.m */; };
-		7FB4F60E2273038A00D84D9D /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7FB4F60C2273038900D84D9D /* background.jpg */; };
-		7FB4F60F2273038A00D84D9D /* overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FB4F60D2273038900D84D9D /* overlay.png */; };
-		7FB4F61122731FF800D84D9D /* BitmapUtilsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FB4F61022731FF800D84D9D /* BitmapUtilsTests.m */; };
-		7FB4F6152276D5B400D84D9D /* UIImage+Testing.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FB4F6142276D5B400D84D9D /* UIImage+Testing.m */; };
-		CCCAB6862273503800ACD74A /* UIImage+PhotoManipulatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CCCAB6852273503800ACD74A /* UIImage+PhotoManipulatorTests.m */; };
+		CC92AF5124D250160061CC87 /* FoolSonarcloud.m in Sources */ = {isa = PBXBuildFile; fileRef = CC92AF5024D250160061CC87 /* FoolSonarcloud.m */; };
+		CCC2503C24CFDE4B000BAC48 /* MimeUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC2503B24CFDE4B000BAC48 /* MimeUtils.swift */; };
+		CCC2504B24CFDE89000BAC48 /* libWCPhotoManipulator.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CCC2503824CFDE4B000BAC48 /* libWCPhotoManipulator.a */; };
+		CCC2505724CFE206000BAC48 /* MimeUtilsObjCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CCC2505624CFE206000BAC48 /* MimeUtilsObjCTests.m */; };
+		CCC2505924CFF0C1000BAC48 /* FileUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC2505824CFF0C1000BAC48 /* FileUtils.swift */; };
+		CCC2505B24CFF272000BAC48 /* FileUtilsObjCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CCC2505A24CFF272000BAC48 /* FileUtilsObjCTests.m */; };
+		CCC2506324D000DA000BAC48 /* UIImage+Testing.m in Sources */ = {isa = PBXBuildFile; fileRef = CCC2506224D000DA000BAC48 /* UIImage+Testing.m */; };
+		CCC2506724D000E3000BAC48 /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CCC2506524D000E3000BAC48 /* background.jpg */; };
+		CCC2506824D000E3000BAC48 /* overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = CCC2506624D000E3000BAC48 /* overlay.png */; };
+		CCC2506A24D05A87000BAC48 /* MimeUtilsSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC2506924D05A87000BAC48 /* MimeUtilsSwiftTests.swift */; };
+		CCC2506C24D05C97000BAC48 /* BitmapUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC2506B24D05C97000BAC48 /* BitmapUtils.swift */; };
+		CCC2506E24D05EE7000BAC48 /* ResizeMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC2506D24D05EE7000BAC48 /* ResizeMode.swift */; };
+		CCC2507024D060C9000BAC48 /* UIImage+PhotoManipulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC2506F24D060C9000BAC48 /* UIImage+PhotoManipulator.swift */; };
+		CCC2507224D066A2000BAC48 /* BitmapUtilsObjCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CCC2507124D066A2000BAC48 /* BitmapUtilsObjCTests.m */; };
+		CCC2507424D0818E000BAC48 /* UIImage+PhotoManipulatorObjCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CCC2507324D0818E000BAC48 /* UIImage+PhotoManipulatorObjCTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		7FB4F58A227085F100D84D9D /* PBXContainerItemProxy */ = {
+		CCC2504C24CFDE89000BAC48 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 7F4954502270118D004F8851 /* Project object */;
+			containerPortal = CCC2503024CFDE4B000BAC48 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 7F4954572270118D004F8851;
+			remoteGlobalIDString = CCC2503724CFDE4B000BAC48;
 			remoteInfo = WCPhotoManipulator;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		7F4954562270118D004F8851 /* CopyFiles */ = {
+		CCC2503624CFDE4B000BAC48 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "include/$(PRODUCT_NAME)";
@@ -43,125 +47,127 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		7F4954582270118D004F8851 /* libWCPhotoManipulator.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libWCPhotoManipulator.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		7F49547322701398004F8851 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7F49547422701398004F8851 /* FileUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileUtils.m; sourceTree = "<group>"; };
-		7F49547522701398004F8851 /* MimeUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MimeUtils.m; sourceTree = "<group>"; };
-		7F49547622701398004F8851 /* BitmapUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BitmapUtils.h; sourceTree = "<group>"; };
-		7F49547722701398004F8851 /* MimeUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MimeUtils.h; sourceTree = "<group>"; };
-		7F49547822701398004F8851 /* ResizeMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResizeMode.h; sourceTree = "<group>"; };
-		7F49547922701398004F8851 /* UIImage+PhotoManipulator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+PhotoManipulator.m"; sourceTree = "<group>"; };
-		7F49547A22701398004F8851 /* FileUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileUtils.h; sourceTree = "<group>"; };
-		7F49547B22701398004F8851 /* BitmapUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BitmapUtils.m; sourceTree = "<group>"; };
-		7F49547C22701398004F8851 /* UIImage+PhotoManipulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+PhotoManipulator.h"; sourceTree = "<group>"; };
-		7F495481227013A9004F8851 /* WCPhotoManipulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCPhotoManipulator.h; sourceTree = "<group>"; };
-		7FB4F584227085F100D84D9D /* WCPhotoManipulatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WCPhotoManipulatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		7FB4F588227085F100D84D9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7FB4F5FB2272F5E200D84D9D /* FileUtilsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FileUtilsTests.m; sourceTree = "<group>"; };
-		7FB4F60C2273038900D84D9D /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
-		7FB4F60D2273038900D84D9D /* overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = overlay.png; sourceTree = "<group>"; };
-		7FB4F61022731FF800D84D9D /* BitmapUtilsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BitmapUtilsTests.m; sourceTree = "<group>"; };
-		7FB4F6132276D5B400D84D9D /* UIImage+Testing.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+Testing.h"; sourceTree = "<group>"; };
-		7FB4F6142276D5B400D84D9D /* UIImage+Testing.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Testing.m"; sourceTree = "<group>"; };
-		CCCAB6852273503800ACD74A /* UIImage+PhotoManipulatorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "UIImage+PhotoManipulatorTests.m"; path = "WCPhotoManipulatorTests/UIImage+PhotoManipulatorTests.m"; sourceTree = SOURCE_ROOT; };
+		CC92AF4E24D1E1050061CC87 /* WCPhotoManipulator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WCPhotoManipulator.h; sourceTree = "<group>"; };
+		CC92AF4F24D250160061CC87 /* FoolSonarcloud.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FoolSonarcloud.h; sourceTree = "<group>"; };
+		CC92AF5024D250160061CC87 /* FoolSonarcloud.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FoolSonarcloud.m; sourceTree = "<group>"; };
+		CCC2503824CFDE4B000BAC48 /* libWCPhotoManipulator.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libWCPhotoManipulator.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		CCC2503B24CFDE4B000BAC48 /* MimeUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MimeUtils.swift; sourceTree = "<group>"; };
+		CCC2504624CFDE89000BAC48 /* WCPhotoManipulatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WCPhotoManipulatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CCC2504A24CFDE89000BAC48 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CCC2505124CFE1D2000BAC48 /* WCPhotoManipulator-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WCPhotoManipulator-Bridging-Header.h"; sourceTree = "<group>"; };
+		CCC2505524CFE205000BAC48 /* WCPhotoManipulatorTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WCPhotoManipulatorTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		CCC2505624CFE206000BAC48 /* MimeUtilsObjCTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MimeUtilsObjCTests.m; sourceTree = "<group>"; };
+		CCC2505824CFF0C1000BAC48 /* FileUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileUtils.swift; sourceTree = "<group>"; };
+		CCC2505A24CFF272000BAC48 /* FileUtilsObjCTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FileUtilsObjCTests.m; sourceTree = "<group>"; };
+		CCC2506124D000DA000BAC48 /* UIImage+Testing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Testing.h"; sourceTree = "<group>"; };
+		CCC2506224D000DA000BAC48 /* UIImage+Testing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Testing.m"; sourceTree = "<group>"; };
+		CCC2506524D000E3000BAC48 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
+		CCC2506624D000E3000BAC48 /* overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = overlay.png; sourceTree = "<group>"; };
+		CCC2506924D05A87000BAC48 /* MimeUtilsSwiftTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MimeUtilsSwiftTests.swift; sourceTree = "<group>"; };
+		CCC2506B24D05C97000BAC48 /* BitmapUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitmapUtils.swift; sourceTree = "<group>"; };
+		CCC2506D24D05EE7000BAC48 /* ResizeMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResizeMode.swift; sourceTree = "<group>"; };
+		CCC2506F24D060C9000BAC48 /* UIImage+PhotoManipulator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+PhotoManipulator.swift"; sourceTree = "<group>"; };
+		CCC2507124D066A2000BAC48 /* BitmapUtilsObjCTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BitmapUtilsObjCTests.m; sourceTree = "<group>"; };
+		CCC2507324D0818E000BAC48 /* UIImage+PhotoManipulatorObjCTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+PhotoManipulatorObjCTests.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		7F4954552270118D004F8851 /* Frameworks */ = {
+		CCC2503524CFDE4B000BAC48 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7FB4F581227085F100D84D9D /* Frameworks */ = {
+		CCC2504324CFDE89000BAC48 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7FB4F589227085F100D84D9D /* libWCPhotoManipulator.a in Frameworks */,
+				CCC2504B24CFDE89000BAC48 /* libWCPhotoManipulator.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		7F49544F2270118D004F8851 = {
+		CCC2502F24CFDE4B000BAC48 = {
 			isa = PBXGroup;
 			children = (
-				7F49545A2270118D004F8851 /* WCPhotoManipulator */,
-				7FB4F585227085F100D84D9D /* WCPhotoManipulatorTests */,
-				7F4954592270118D004F8851 /* Products */,
+				CCC2503A24CFDE4B000BAC48 /* WCPhotoManipulator */,
+				CCC2504724CFDE89000BAC48 /* WCPhotoManipulatorTests */,
+				CCC2503924CFDE4B000BAC48 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		7F4954592270118D004F8851 /* Products */ = {
+		CCC2503924CFDE4B000BAC48 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7F4954582270118D004F8851 /* libWCPhotoManipulator.a */,
-				7FB4F584227085F100D84D9D /* WCPhotoManipulatorTests.xctest */,
+				CCC2503824CFDE4B000BAC48 /* libWCPhotoManipulator.a */,
+				CCC2504624CFDE89000BAC48 /* WCPhotoManipulatorTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		7F49545A2270118D004F8851 /* WCPhotoManipulator */ = {
+		CCC2503A24CFDE4B000BAC48 /* WCPhotoManipulator */ = {
 			isa = PBXGroup;
 			children = (
-				7F49547622701398004F8851 /* BitmapUtils.h */,
-				7F49547B22701398004F8851 /* BitmapUtils.m */,
-				7F49547A22701398004F8851 /* FileUtils.h */,
-				7F49547422701398004F8851 /* FileUtils.m */,
-				7F49547322701398004F8851 /* Info.plist */,
-				7F49547722701398004F8851 /* MimeUtils.h */,
-				7F49547522701398004F8851 /* MimeUtils.m */,
-				7F49547822701398004F8851 /* ResizeMode.h */,
-				7F49547C22701398004F8851 /* UIImage+PhotoManipulator.h */,
-				7F49547922701398004F8851 /* UIImage+PhotoManipulator.m */,
-				7F495481227013A9004F8851 /* WCPhotoManipulator.h */,
+				CCC2506B24D05C97000BAC48 /* BitmapUtils.swift */,
+				CCC2505824CFF0C1000BAC48 /* FileUtils.swift */,
+				CC92AF4F24D250160061CC87 /* FoolSonarcloud.h */,
+				CC92AF5024D250160061CC87 /* FoolSonarcloud.m */,
+				CCC2503B24CFDE4B000BAC48 /* MimeUtils.swift */,
+				CCC2506D24D05EE7000BAC48 /* ResizeMode.swift */,
+				CCC2506F24D060C9000BAC48 /* UIImage+PhotoManipulator.swift */,
+				CCC2505124CFE1D2000BAC48 /* WCPhotoManipulator-Bridging-Header.h */,
+				CC92AF4E24D1E1050061CC87 /* WCPhotoManipulator.h */,
 			);
 			path = WCPhotoManipulator;
 			sourceTree = "<group>";
 		};
-		7FB4F585227085F100D84D9D /* WCPhotoManipulatorTests */ = {
+		CCC2504724CFDE89000BAC48 /* WCPhotoManipulatorTests */ = {
 			isa = PBXGroup;
 			children = (
-				7FB4F6122276D55000D84D9D /* Helpers */,
-				7FB4F60B2273034600D84D9D /* Images */,
-				7FB4F61022731FF800D84D9D /* BitmapUtilsTests.m */,
-				7FB4F5FB2272F5E200D84D9D /* FileUtilsTests.m */,
-				CCCAB6852273503800ACD74A /* UIImage+PhotoManipulatorTests.m */,
-				7FB4F588227085F100D84D9D /* Info.plist */,
+				CCC2506024D000DA000BAC48 /* Helpers */,
+				CCC2506424D000E3000BAC48 /* Images */,
+				CCC2507124D066A2000BAC48 /* BitmapUtilsObjCTests.m */,
+				CCC2505A24CFF272000BAC48 /* FileUtilsObjCTests.m */,
+				CCC2504A24CFDE89000BAC48 /* Info.plist */,
+				CCC2505624CFE206000BAC48 /* MimeUtilsObjCTests.m */,
+				CCC2506924D05A87000BAC48 /* MimeUtilsSwiftTests.swift */,
+				CCC2507324D0818E000BAC48 /* UIImage+PhotoManipulatorObjCTests.m */,
+				CCC2505524CFE205000BAC48 /* WCPhotoManipulatorTests-Bridging-Header.h */,
 			);
 			path = WCPhotoManipulatorTests;
 			sourceTree = "<group>";
 		};
-		7FB4F60B2273034600D84D9D /* Images */ = {
+		CCC2506024D000DA000BAC48 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				7FB4F60C2273038900D84D9D /* background.jpg */,
-				7FB4F60D2273038900D84D9D /* overlay.png */,
-			);
-			path = Images;
-			sourceTree = "<group>";
-		};
-		7FB4F6122276D55000D84D9D /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				7FB4F6132276D5B400D84D9D /* UIImage+Testing.h */,
-				7FB4F6142276D5B400D84D9D /* UIImage+Testing.m */,
+				CCC2506124D000DA000BAC48 /* UIImage+Testing.h */,
+				CCC2506224D000DA000BAC48 /* UIImage+Testing.m */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		CCC2506424D000E3000BAC48 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				CCC2506524D000E3000BAC48 /* background.jpg */,
+				CCC2506624D000E3000BAC48 /* overlay.png */,
+			);
+			path = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		7F4954572270118D004F8851 /* WCPhotoManipulator */ = {
+		CCC2503724CFDE4B000BAC48 /* WCPhotoManipulator */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7F4954612270118D004F8851 /* Build configuration list for PBXNativeTarget "WCPhotoManipulator" */;
+			buildConfigurationList = CCC2503F24CFDE4B000BAC48 /* Build configuration list for PBXNativeTarget "WCPhotoManipulator" */;
 			buildPhases = (
-				7F4954542270118D004F8851 /* Sources */,
-				7F4954552270118D004F8851 /* Frameworks */,
-				7F4954562270118D004F8851 /* CopyFiles */,
+				CCC2503424CFDE4B000BAC48 /* Sources */,
+				CCC2503524CFDE4B000BAC48 /* Frameworks */,
+				CCC2503624CFDE4B000BAC48 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -169,111 +175,117 @@
 			);
 			name = WCPhotoManipulator;
 			productName = WCPhotoManipulator;
-			productReference = 7F4954582270118D004F8851 /* libWCPhotoManipulator.a */;
+			productReference = CCC2503824CFDE4B000BAC48 /* libWCPhotoManipulator.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		7FB4F583227085F100D84D9D /* WCPhotoManipulatorTests */ = {
+		CCC2504524CFDE89000BAC48 /* WCPhotoManipulatorTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7FB4F58C227085F100D84D9D /* Build configuration list for PBXNativeTarget "WCPhotoManipulatorTests" */;
+			buildConfigurationList = CCC2504E24CFDE89000BAC48 /* Build configuration list for PBXNativeTarget "WCPhotoManipulatorTests" */;
 			buildPhases = (
-				7FB4F580227085F100D84D9D /* Sources */,
-				7FB4F581227085F100D84D9D /* Frameworks */,
-				7FB4F582227085F100D84D9D /* Resources */,
+				CCC2504224CFDE89000BAC48 /* Sources */,
+				CCC2504324CFDE89000BAC48 /* Frameworks */,
+				CCC2504424CFDE89000BAC48 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				7FB4F58B227085F100D84D9D /* PBXTargetDependency */,
+				CCC2504D24CFDE89000BAC48 /* PBXTargetDependency */,
 			);
 			name = WCPhotoManipulatorTests;
 			productName = WCPhotoManipulatorTests;
-			productReference = 7FB4F584227085F100D84D9D /* WCPhotoManipulatorTests.xctest */;
+			productReference = CCC2504624CFDE89000BAC48 /* WCPhotoManipulatorTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		7F4954502270118D004F8851 /* Project object */ = {
+		CCC2503024CFDE4B000BAC48 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1010;
-				LastUpgradeCheck = 1010;
+				LastSwiftUpdateCheck = 1150;
+				LastUpgradeCheck = 1150;
 				ORGANIZATIONNAME = "Woraphot Chokratanasombat";
 				TargetAttributes = {
-					7F4954572270118D004F8851 = {
-						CreatedOnToolsVersion = 10.1;
+					CCC2503724CFDE4B000BAC48 = {
+						CreatedOnToolsVersion = 11.5;
+						LastSwiftMigration = 1150;
 					};
-					7FB4F583227085F100D84D9D = {
-						CreatedOnToolsVersion = 10.1;
+					CCC2504524CFDE89000BAC48 = {
+						CreatedOnToolsVersion = 11.5;
+						LastSwiftMigration = 1150;
 					};
 				};
 			};
-			buildConfigurationList = 7F4954532270118D004F8851 /* Build configuration list for PBXProject "WCPhotoManipulator" */;
-			compatibilityVersion = "Xcode 11.4";
+			buildConfigurationList = CCC2503324CFDE4B000BAC48 /* Build configuration list for PBXProject "WCPhotoManipulator" */;
+			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = 7F49544F2270118D004F8851;
-			productRefGroup = 7F4954592270118D004F8851 /* Products */;
+			mainGroup = CCC2502F24CFDE4B000BAC48;
+			productRefGroup = CCC2503924CFDE4B000BAC48 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				7F4954572270118D004F8851 /* WCPhotoManipulator */,
-				7FB4F583227085F100D84D9D /* WCPhotoManipulatorTests */,
+				CCC2503724CFDE4B000BAC48 /* WCPhotoManipulator */,
+				CCC2504524CFDE89000BAC48 /* WCPhotoManipulatorTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		7FB4F582227085F100D84D9D /* Resources */ = {
+		CCC2504424CFDE89000BAC48 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7FB4F60F2273038A00D84D9D /* overlay.png in Resources */,
-				7FB4F60E2273038A00D84D9D /* background.jpg in Resources */,
+				CCC2506824D000E3000BAC48 /* overlay.png in Resources */,
+				CCC2506724D000E3000BAC48 /* background.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		7F4954542270118D004F8851 /* Sources */ = {
+		CCC2503424CFDE4B000BAC48 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7F49547D22701398004F8851 /* FileUtils.m in Sources */,
-				7F49547F22701398004F8851 /* UIImage+PhotoManipulator.m in Sources */,
-				7F49548022701398004F8851 /* BitmapUtils.m in Sources */,
-				7F49547E22701398004F8851 /* MimeUtils.m in Sources */,
+				CCC2506C24D05C97000BAC48 /* BitmapUtils.swift in Sources */,
+				CCC2507024D060C9000BAC48 /* UIImage+PhotoManipulator.swift in Sources */,
+				CCC2503C24CFDE4B000BAC48 /* MimeUtils.swift in Sources */,
+				CC92AF5124D250160061CC87 /* FoolSonarcloud.m in Sources */,
+				CCC2506E24D05EE7000BAC48 /* ResizeMode.swift in Sources */,
+				CCC2505924CFF0C1000BAC48 /* FileUtils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7FB4F580227085F100D84D9D /* Sources */ = {
+		CCC2504224CFDE89000BAC48 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7FB4F61122731FF800D84D9D /* BitmapUtilsTests.m in Sources */,
-				CCCAB6862273503800ACD74A /* UIImage+PhotoManipulatorTests.m in Sources */,
-				7FB4F6152276D5B400D84D9D /* UIImage+Testing.m in Sources */,
-				7FB4F5FC2272F5E200D84D9D /* FileUtilsTests.m in Sources */,
+				CCC2505724CFE206000BAC48 /* MimeUtilsObjCTests.m in Sources */,
+				CCC2507424D0818E000BAC48 /* UIImage+PhotoManipulatorObjCTests.m in Sources */,
+				CCC2507224D066A2000BAC48 /* BitmapUtilsObjCTests.m in Sources */,
+				CCC2506A24D05A87000BAC48 /* MimeUtilsSwiftTests.swift in Sources */,
+				CCC2506324D000DA000BAC48 /* UIImage+Testing.m in Sources */,
+				CCC2505B24CFF272000BAC48 /* FileUtilsObjCTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		7FB4F58B227085F100D84D9D /* PBXTargetDependency */ = {
+		CCC2504D24CFDE89000BAC48 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 7F4954572270118D004F8851 /* WCPhotoManipulator */;
-			targetProxy = 7FB4F58A227085F100D84D9D /* PBXContainerItemProxy */;
+			target = CCC2503724CFDE4B000BAC48 /* WCPhotoManipulator */;
+			targetProxy = CCC2504C24CFDE89000BAC48 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		7F49545F2270118D004F8851 /* Debug */ = {
+		CCC2503D24CFDE4B000BAC48 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -305,7 +317,6 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -324,15 +335,17 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
-		7F4954602270118D004F8851 /* Release */ = {
+		CCC2503E24CFDE4B000BAC48 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -364,7 +377,6 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -377,66 +389,92 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		7F4954622270118D004F8851 /* Debug */ = {
+		CCC2504024CFDE4B000BAC48 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "WCPhotoManipulator/WCPhotoManipulator-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		7F4954632270118D004F8851 /* Release */ = {
+		CCC2504124CFDE4B000BAC48 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "WCPhotoManipulator/WCPhotoManipulator-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
-		7FB4F58D227085F100D84D9D /* Debug */ = {
+		CCC2504F24CFDE89000BAC48 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = "$(TARGET_TEMP_DIR)/../WCPhotoManipulator.build/DerivedSources";
 				INFOPLIST_FILE = WCPhotoManipulatorTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				OTHER_LDFLAGS = "-all_load";
-				PRODUCT_BUNDLE_IDENTIFIER = com.guhungry.photomanipulator.WCPhotoManipulatorTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.guhungry.WCPhotoManipulatorTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "WCPhotoManipulatorTests/WCPhotoManipulatorTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		7FB4F58E227085F100D84D9D /* Release */ = {
+		CCC2505024CFDE89000BAC48 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = "$(TARGET_TEMP_DIR)/../WCPhotoManipulator.build/DerivedSources";
 				INFOPLIST_FILE = WCPhotoManipulatorTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				OTHER_LDFLAGS = "-all_load";
-				PRODUCT_BUNDLE_IDENTIFIER = com.guhungry.photomanipulator.WCPhotoManipulatorTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.guhungry.WCPhotoManipulatorTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "WCPhotoManipulatorTests/WCPhotoManipulatorTests-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -444,34 +482,34 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		7F4954532270118D004F8851 /* Build configuration list for PBXProject "WCPhotoManipulator" */ = {
+		CCC2503324CFDE4B000BAC48 /* Build configuration list for PBXProject "WCPhotoManipulator" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				7F49545F2270118D004F8851 /* Debug */,
-				7F4954602270118D004F8851 /* Release */,
+				CCC2503D24CFDE4B000BAC48 /* Debug */,
+				CCC2503E24CFDE4B000BAC48 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7F4954612270118D004F8851 /* Build configuration list for PBXNativeTarget "WCPhotoManipulator" */ = {
+		CCC2503F24CFDE4B000BAC48 /* Build configuration list for PBXNativeTarget "WCPhotoManipulator" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				7F4954622270118D004F8851 /* Debug */,
-				7F4954632270118D004F8851 /* Release */,
+				CCC2504024CFDE4B000BAC48 /* Debug */,
+				CCC2504124CFDE4B000BAC48 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7FB4F58C227085F100D84D9D /* Build configuration list for PBXNativeTarget "WCPhotoManipulatorTests" */ = {
+		CCC2504E24CFDE89000BAC48 /* Build configuration list for PBXNativeTarget "WCPhotoManipulatorTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				7FB4F58D227085F100D84D9D /* Debug */,
-				7FB4F58E227085F100D84D9D /* Release */,
+				CCC2504F24CFDE89000BAC48 /* Debug */,
+				CCC2505024CFDE89000BAC48 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 7F4954502270118D004F8851 /* Project object */;
+	rootObject = CCC2503024CFDE4B000BAC48 /* Project object */;
 }
