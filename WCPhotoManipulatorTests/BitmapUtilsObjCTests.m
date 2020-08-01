@@ -110,6 +110,21 @@
     XCTAssert([actualColor isEqual:expectedColor]);
 }
 
+- (void)testTransform_WhenValidSamePositionAndTransparentImage_ShouldReturnNewImage {
+    image = [UIImage imageNamedTest:@"overlay.png"];
+    UIColor *expectedColor = [image colorAt:CGPointMake(70, 55)];
+    XCTAssertEqual(image.size.width, 200);
+    XCTAssertEqual(image.size.height, 141);
+    XCTAssertEqual(image.scale, 1);
+    
+    image = [BitmapUtils transform:image size:CGSizeMake(200, 141) scale:1 transform:CGAffineTransformIdentity];
+    UIColor *actualColor = [image colorAt:CGPointMake(70, 55)];
+    XCTAssertEqual(image.size.width, 200);
+    XCTAssertEqual(image.size.height, 141);
+    XCTAssertEqual(image.scale, 1);
+    XCTAssert([actualColor isEqual:expectedColor]);
+}
+
 - (void)testTransform_WhenValidDiffPosition_ShouldReturnNewImage {
     image = [UIImage imageNamedTest:@"background.jpg"];
 
