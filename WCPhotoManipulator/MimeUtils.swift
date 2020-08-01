@@ -8,14 +8,11 @@
 import Foundation
 
 @objc public class MimeUtils: NSObject {
-    @objc public class func PNG() -> String {
-        return "image/png"
-    }
-    @objc public class func JPEG() -> String {
-        return "image/jpeg"
-    }
+    @objc public static let PNG = "image/png"
+    @objc public static let JPEG = "image/jpeg"
+
     @objc public class func toExtension(_ type: String) -> String {
-        if type == PNG() {
+        if type == PNG {
             return ".png"
         }
         return ".jpg"

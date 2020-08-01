@@ -37,7 +37,7 @@ class FileUtilsSwiftTests: XCTestCase {
     ///////////////////////////
     func testCeil_ShouldReturnValueCorrectly() throws {
         prefix = "TEST_"
-        path = FileUtils.createTempFile(prefix, mimeType:MimeUtils.PNG())
+        path = FileUtils.createTempFile(prefix, mimeType:MimeUtils.PNG)
         file = URL(fileURLWithPath: path).lastPathComponent
         
         XCTAssertNotNil(path)
@@ -48,7 +48,7 @@ class FileUtilsSwiftTests: XCTestCase {
     
     func testCreateTempFile_WhenJPEG_ShouldReturnFileWithPrefix() throws {
         prefix = "JPG_"
-        path = FileUtils.createTempFile(prefix, mimeType:MimeUtils.JPEG())
+        path = FileUtils.createTempFile(prefix, mimeType:MimeUtils.JPEG)
         file = URL(fileURLWithPath: path).lastPathComponent
         
         XCTAssertNotNil(path)
@@ -62,18 +62,18 @@ class FileUtilsSwiftTests: XCTestCase {
     ///////////////////////////
     func testImageToData_WhenOuptutJpeg_ShouldReturnJpeg() throws {
         image = UIImage.init(namedTest: "overlay.png")
-        data = FileUtils.imageToData(image, mimeType: MimeUtils.JPEG(), quality: 100)
+        data = FileUtils.imageToData(image, mimeType: MimeUtils.JPEG, quality: 100)
         
         XCTAssertNotNil(data)
-        XCTAssertEqual((data as NSData).mimeType(), MimeUtils.JPEG())
+        XCTAssertEqual((data as NSData).mimeType(), MimeUtils.JPEG)
     }
     
     func testImageToData_WhenOuptutPNG_ShouldReturnPng() throws {
         image = UIImage.init(namedTest: "overlay.png")
-        data = FileUtils.imageToData(image, mimeType: MimeUtils.PNG(), quality: 100)
+        data = FileUtils.imageToData(image, mimeType: MimeUtils.PNG, quality: 100)
         
         XCTAssertNotNil(data)
-        XCTAssertEqual((data as NSData).mimeType(), MimeUtils.PNG())
+        XCTAssertEqual((data as NSData).mimeType(), MimeUtils.PNG)
     }
 
     ////////////////////////////
@@ -97,12 +97,12 @@ class FileUtilsSwiftTests: XCTestCase {
     /// saveImageFile
     ///////////////////////////
     func testSaveImageFile_WhenPNG_ShouldSavePNG() throws {
-        path = FileUtils.createTempFile("PNG_", mimeType:MimeUtils.PNG())
+        path = FileUtils.createTempFile("PNG_", mimeType:MimeUtils.PNG)
         image = UIImage.init(namedTest: "overlay.png")
         
         XCTAssertFalse(fileManager.fileExists(atPath: path))
         
-        FileUtils.saveImageFile(image, mimeType:MimeUtils.PNG(), quality:100, file:path)
+        FileUtils.saveImageFile(image, mimeType:MimeUtils.PNG, quality:100, file:path)
         
         XCTAssertTrue(fileManager.fileExists(atPath: path))
         
@@ -112,12 +112,12 @@ class FileUtilsSwiftTests: XCTestCase {
     }
     
     func testSaveImageFile_WhenJPEG_ShouldSaveJEPG() throws {
-        path = FileUtils.createTempFile("JPEG_", mimeType:MimeUtils.JPEG())
+        path = FileUtils.createTempFile("JPEG_", mimeType:MimeUtils.JPEG)
         image = UIImage.init(namedTest: "overlay.png")
         
         XCTAssertFalse(fileManager.fileExists(atPath: path))
         
-        FileUtils.saveImageFile(image, mimeType:MimeUtils.JPEG(), quality:100, file:path)
+        FileUtils.saveImageFile(image, mimeType:MimeUtils.JPEG, quality:100, file:path)
         
         XCTAssertTrue(fileManager.fileExists(atPath: path))
         

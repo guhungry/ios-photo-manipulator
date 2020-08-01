@@ -50,7 +50,7 @@ import UIKit
     }
 
     @objc internal class func imageToData(_ image: UIImage, mimeType: String, quality: CGFloat) -> Data? {
-        if (MimeUtils.PNG() == mimeType) {
+        if (MimeUtils.PNG == mimeType) {
             return image.pngData()
         }
         return image.jpegData(compressionQuality: quality / 100)

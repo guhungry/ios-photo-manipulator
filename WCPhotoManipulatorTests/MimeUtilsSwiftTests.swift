@@ -17,11 +17,11 @@ class MimeUtilsSwiftTests: XCTestCase {
     }
 
     func testMimeTypePNG_ShouldReturnCorrectly() throws {
-        XCTAssertEqual(MimeUtils.PNG(), "image/png")
+        XCTAssertEqual(MimeUtils.PNG, "image/png")
     }
 
     func testMimeTypeJPEG_ShouldReturnCorrectly() throws {
-        XCTAssertEqual(MimeUtils.JPEG(), "image/jpeg")
+        XCTAssertEqual(MimeUtils.JPEG, "image/jpeg")
     }
     
     func testToExtension_ShouldReturnCorrectly() throws {
