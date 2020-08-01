@@ -116,6 +116,13 @@
     XCTAssertNotNil(image);
 }
 
+- (void)testImageFromUrl_WhenUrlNotValid_ShouldBeNil {
+    url = [NSURL URLWithString:@"https://invalidhost.notexist/invalid.png"];
+    
+    image = [FileUtils imageFromUrl:url];
+    XCTAssertNil(image);
+}
+
 ////////////////////////////
 /// saveImageFile
 ///////////////////////////

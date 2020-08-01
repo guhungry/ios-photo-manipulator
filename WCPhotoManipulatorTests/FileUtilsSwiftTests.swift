@@ -92,6 +92,13 @@ class FileUtilsSwiftTests: XCTestCase {
         image = FileUtils.imageFromUrl(url)
         XCTAssertNotNil(image)
     }
+    
+    func testImageFromUrl_WhenUrlNotValid_ShouldBeNil() throws {
+        url = URL.init(string: "https://invalidhost.notexist/invalid.png")
+        
+        image = FileUtils.imageFromUrl(url)
+        XCTAssertNil(image)
+    }
 
     ////////////////////////////
     /// saveImageFile
