@@ -10,17 +10,17 @@ import UIKit
 
 public extension UIImage {
     class func hasAlpha(_ image: UIImage) -> Bool {
-        switch (image.cgImage?.alphaInfo) {
+        guard let alpha = image.cgImage?.alphaInfo else {
+            return false
+        }
+        switch (alpha) {
             case .none, .noneSkipLast, .noneSkipFirst: return false;
             default: return true
         }
     }
     
     @objc func hasAlpha() -> Bool {
-        switch (self.cgImage?.alphaInfo) {
-            case .none, .noneSkipLast, .noneSkipFirst: return false;
-            default: return true
-        }
+        return UIImage.hasAlpha(self)
     }
     
     // Crop & Resize
