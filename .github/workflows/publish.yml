@@ -1,0 +1,22 @@
+name: 'Publish CocoaPods'
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  publish:
+    name: Publish CocoaPods
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Publish
+        run: |
+          pod spec lint
+          pod trunk push
+        env:
+          COCOAPODS_TRUNK_TOKEN: "${{ secrets.COCOAPODS_TRUNK_TOKEN }}"
