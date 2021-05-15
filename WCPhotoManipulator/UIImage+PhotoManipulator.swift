@@ -45,13 +45,13 @@ public extension UIImage {
     }
 
     // Text
-    @objc func drawText(_ text: String, position: CGPoint, color: UIColor, size: CGFloat, thickness: CGFloat, scale: CGFloat) -> UIImage? {
+    @objc func drawText(_ text: String, position: CGPoint, color: UIColor, font: UIFont, thickness: CGFloat, scale: CGFloat) -> UIImage? {
         let opaque = !hasAlpha()
         UIGraphicsBeginImageContextWithOptions(self.size, opaque, scale)
         draw(in: CGRect(origin: .zero, size: self.size))
 
         var textStyles: [NSAttributedString.Key: Any] = [
-            .font: UIFont.systemFont(ofSize: size),
+            .font: font,
             .foregroundColor: color,
         ]
         if (thickness > 0) {
@@ -64,6 +64,10 @@ public extension UIImage {
         UIGraphicsEndImageContext()
         
         return result
+    }
+
+    @objc func drawText(_ text: String, position: CGPoint, color: UIColor, size: CGFloat, thickness: CGFloat, scale: CGFloat) -> UIImage? {
+        return drawText(text, position: position, color: color, font: UIFont.systemFont(ofSize: size), thickness: thickness, scale: scale)
     }
     
     @objc func drawText(_ text: String, position: CGPoint, color: UIColor, size: CGFloat, thickness: CGFloat) -> UIImage? {
