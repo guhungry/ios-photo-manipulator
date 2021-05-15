@@ -55,7 +55,7 @@ Print text into image
 | text       | NSString              | Yes      | Text to print in image                                                 |
 | position   | CGPoint               | Yes      | Position to in in `x`, `y`                                             |
 | color      | UIColor*              | Yes      | Text color                                                             |
-| textSize   | CGFloat               | Yes      | Text size                                                              |
+| font       | UIFont                | Yes      | Font to use                                                            |
 | thickness  | Float                 | No       | Outline of text. Default = 0                                           |
 | scale      | CGFloat               | No       | Scale of result image. Default = image.scale                           |
 
