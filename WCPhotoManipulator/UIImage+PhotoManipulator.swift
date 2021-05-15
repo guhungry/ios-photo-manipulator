@@ -66,6 +66,10 @@ public extension UIImage {
         return result
     }
 
+    @objc func drawText(_ text: String, position: CGPoint, color: UIColor, font: UIFont, thickness: CGFloat) -> UIImage? {
+            return drawText(text, position: position, color: color, font:font, thickness: thickness, scale: scale)
+    }
+
     @objc func drawText(_ text: String, position: CGPoint, color: UIColor, size: CGFloat, thickness: CGFloat, scale: CGFloat) -> UIImage? {
         return drawText(text, position: position, color: color, font: UIFont.systemFont(ofSize: size), thickness: thickness, scale: scale)
     }
