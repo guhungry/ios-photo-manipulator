@@ -1,0 +1,43 @@
+name: 'Build and Test'
+
+on:
+  push:
+    branches:
+      - '**'
+  pull_request:
+    branches:
+      - '**'
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  publish:
+    name: Build and Test
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Build
+        shell: bash
+        run: |
+          mkdir -p DerivedData/compilation-database
+          curl -L -O https://sonarcloud.io/static/cpp/build-wrapper-macosx-x86.zip
+          unzip -o build-wrapper-macosx-x86.zip
+          build-wrapper-macosx-x86/build-wrapper-macosx-x86 --out-dir DerivedData/compilation-database xcodebuild clean build test -project WCPhotoManipulator.xcodeproj -scheme WCPhotoManipulator -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone SE (2nd generation)' -enableCodeCoverage YES -configuration Debug GCC_INSTRUMENT_PROGRAM_FLOW_ARCS=YES GCC_GENERATE_TEST_COVERAGE_FILES=YES | xcpretty -c
+          ./xccov-to-sonarqube-generic.sh ~/Library/Developer/Xcode/DerivedData/*/Logs/Test/*.xcresult/ > sonarqube-generic-coverage.xml
+
+      - name: Setup sonarqube
+        uses: warchant/setup-sonar-scanner@v3
+
+      - name: Analyze with SonarCloud
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: sonar-scanner
+          -Dsonar.login=${{ secrets.SONAR_TOKEN }}
+          -Dsonar.organization=guhungry-github
+          -Dsonar.host.url=https://sonarcloud.io/
