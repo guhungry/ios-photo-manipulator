@@ -152,4 +152,15 @@ class FileUtilsSwiftTests: XCTestCase {
         files = FileUtils.filesIn(path, withPrefix: prefix)
         XCTAssertEqual(files.count, 0)
     }
+
+    ////////////////////////////
+    /// filesIn
+    ///////////////////////////
+    func testFilesIn_WithInvalidPath_ShouldReturnEmptyArray() throws {
+        prefix = "PREFIX_"
+        path = "invalid path"
+        
+        let files = FileUtils.filesIn(path, withPrefix: prefix)
+        XCTAssertEqual(files.count, 0)
+    }
 }

@@ -19,6 +19,13 @@ class UIImage_PhotoManipulatorSwiftTests: XCTestCase {
         image = nil
         overlay = nil
     }
+    
+    func testHasAlpha_WhenNoData_ShouldReturnFalse() throws {
+        image = UIImage.init()
+        XCTAssertNotNil(image)
+        XCTAssertTrue(image.responds(to: Selector(("hasAlpha"))))
+        XCTAssertFalse(image.hasAlpha())
+    }
 
     func testHasAlpha_ShouldReturnCorrectly() throws {
         image = UIImage.init(namedTest: "overlay.png")
@@ -66,6 +73,15 @@ class UIImage_PhotoManipulatorSwiftTests: XCTestCase {
         XCTAssertNotNil(image)
         XCTAssertEqual(image.size, CGSize(width: 332, height: 70))
         XCTAssertEqual(actualColor, expectedColor)
+    }
+    
+    func testDrawText_WhenUseFontAndNoScale_ShouldReturnCorrectly() throws {
+        image = UIImage.init(namedTest: "background.jpg")
+        XCTAssertNotNil(image)
+
+        image = image.drawText("Test Text To Draw", position: CGPoint(x: 15, y: 66), color: .blue, font: UIFont.systemFont(ofSize: 102), thickness: 5)
+        XCTAssertNotNil(image)
+        XCTAssertEqual(image.size, CGSize(width: 800, height: 530))
     }
 
     func testDrawText_WhenNoScale_ShouldReturnCorrectly() throws {
