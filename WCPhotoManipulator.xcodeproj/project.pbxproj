@@ -51,7 +51,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		CC92AF4E24D1E1050061CC87 /* WCPhotoManipulator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WCPhotoManipulator.h; sourceTree = "<group>"; };
 		CC92AF4F24D250160061CC87 /* FoolSonarcloud.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FoolSonarcloud.h; sourceTree = "<group>"; };
 		CC92AF5024D250160061CC87 /* FoolSonarcloud.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FoolSonarcloud.m; sourceTree = "<group>"; };
 		CC92AF6924D545070061CC87 /* BitmapUtilsSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitmapUtilsSwiftTests.swift; sourceTree = "<group>"; };
@@ -128,7 +127,6 @@
 				CCC2506D24D05EE7000BAC48 /* ResizeMode.swift */,
 				CCC2506F24D060C9000BAC48 /* UIImage+PhotoManipulator.swift */,
 				CCC2505124CFE1D2000BAC48 /* WCPhotoManipulator-Bridging-Header.h */,
-				CC92AF4E24D1E1050061CC87 /* WCPhotoManipulator.h */,
 			);
 			path = WCPhotoManipulator;
 			sourceTree = "<group>";
