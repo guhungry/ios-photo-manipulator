@@ -45,11 +45,14 @@ public extension UIImage {
     }
 
     // Text
-    @objc func drawText(_ text: String, position: CGPoint, color: UIColor, font: UIFont, thickness: CGFloat, scale: CGFloat) -> UIImage? {
-        let opaque = !hasAlpha()
-        UIGraphicsBeginImageContextWithOptions(self.size, opaque, scale)
-        draw(in: CGRect(origin: .zero, size: self.size))
-
+    @objc func drawText(_ text: String, position: CGPoint, color: UIColor, font: UIFont, thickness: CGFloat, rotation: CGFloat, scale: CGFloat) -> UIImage? {
+        UIGraphicsBeginImageContextWithOptions(self.size, false, scale)
+        if let context = UIGraphicsGetCurrentContext() {
+            context.translateBy(x: position.x, y: position.y)
+            context.rotate (by: -rotation * CGFloat.pi / 180.0) //45˚
+            context.translateBy(x: -position.x, y: -position.y)
+        }
+        
         var textStyles: [NSAttributedString.Key: Any] = [
             .font: font,
             .foregroundColor: color,
@@ -60,22 +63,33 @@ public extension UIImage {
         }
         (text as NSString).draw(at: position, withAttributes: textStyles)
         
+        let rotatedImageWithText = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext()
+        
+
+        let opaque = !hasAlpha()
+        UIGraphicsBeginImageContextWithOptions(self.size, opaque, scale)
+
+        let rect = CGRect(origin: .zero, size: self.size)
+        draw(in: rect)
+        rotatedImageWithText?.draw(at: .zero)
+        
         let result = UIGraphicsGetImageFromCurrentImageContext();
         UIGraphicsEndImageContext()
         
         return result
     }
 
-    @objc func drawText(_ text: String, position: CGPoint, color: UIColor, font: UIFont, thickness: CGFloat) -> UIImage? {
-            return drawText(text, position: position, color: color, font:font, thickness: thickness, scale: scale)
+    @objc func drawText(_ text: String, position: CGPoint, color: UIColor, font: UIFont, thickness: CGFloat, rotation: CGFloat) -> UIImage? {
+            return drawText(text, position: position, color: color, font:font, thickness: thickness, rotation: rotation, scale: scale)
     }
 
-    @objc func drawText(_ text: String, position: CGPoint, color: UIColor, size: CGFloat, thickness: CGFloat, scale: CGFloat) -> UIImage? {
-        return drawText(text, position: position, color: color, font: UIFont.systemFont(ofSize: size), thickness: thickness, scale: scale)
+    @objc func drawText(_ text: String, position: CGPoint, color: UIColor, size: CGFloat, thickness: CGFloat, rotation: CGFloat, scale: CGFloat) -> UIImage? {
+        return drawText(text, position: position, color: color, font: UIFont.systemFont(ofSize: size), thickness: thickness, rotation: rotation, scale: scale)
     }
     
-    @objc func drawText(_ text: String, position: CGPoint, color: UIColor, size: CGFloat, thickness: CGFloat) -> UIImage? {
-        return drawText(text, position: position, color: color, size: size, thickness: thickness, scale: scale)
+    @objc func drawText(_ text: String, position: CGPoint, color: UIColor, size: CGFloat, thickness: CGFloat, rotation: CGFloat) -> UIImage? {
+        return drawText(text, position: position, color: color, size: size, thickness: thickness, rotation: rotation, scale: scale)
     }
     
     // Overlay

@@ -78,7 +78,7 @@
     image = [UIImage imageNamedTest:@"background.jpg"];
     XCTAssertNotNil(image);
     
-    image = [image drawText:@"Test Text To Draw" position:CGPointMake(15, 66) color:UIColor.blueColor size:42 thickness:5];
+    image = [image drawText:@"Test Text To Draw" position:CGPointMake(15, 66) color:UIColor.blueColor size:42 thickness:5 rotation:0];
     XCTAssertNotNil(image);
     XCTAssertEqual(image.size.width, 800);
     XCTAssertEqual(image.size.height, 530);
@@ -88,7 +88,17 @@
     image = [UIImage imageNamedTest:@"background.jpg"];
     XCTAssertNotNil(image);
     
-    image = [image drawText:@"Test Text To Draw" position:CGPointMake(15, 66) color:UIColor.greenColor size:42 thickness:0 scale:2];
+    image = [image drawText:@"Test Text To Draw" position:CGPointMake(15, 66) color:UIColor.greenColor size:42 thickness:0 rotation:0 scale:2];
+    XCTAssertNotNil(image);
+    XCTAssertEqual(image.size.width, 800);
+    XCTAssertEqual(image.size.height, 530);
+}
+
+- (void)testDrawText_WhenHasRotation_ShouldReturnCorrectly {
+    image = [UIImage imageNamedTest:@"background.jpg"];
+    XCTAssertNotNil(image);
+    
+    image = [image drawText:@"Test Rotation Text To Draw" position:CGPointMake(15, 66) color:UIColor.greenColor size:42 thickness:0 rotation:20 scale:2];
     XCTAssertNotNil(image);
     XCTAssertEqual(image.size.width, 800);
     XCTAssertEqual(image.size.height, 530);
