@@ -14,7 +14,7 @@ on:
 jobs:
   publish:
     name: Build and Test
-    runs-on: macos-latest
+    runs-on: macos-13
 
     steps:
       - name: Checkout
@@ -28,7 +28,7 @@ jobs:
           mkdir -p DerivedData/compilation-database
           curl -L -O https://sonarcloud.io/static/cpp/build-wrapper-macosx-x86.zip
           unzip -o build-wrapper-macosx-x86.zip
-          build-wrapper-macosx-x86/build-wrapper-macosx-x86 --out-dir DerivedData/compilation-database xcodebuild clean build test -project WCPhotoManipulator.xcodeproj -scheme WCPhotoManipulator -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone SE (2nd generation)' -enableCodeCoverage YES -configuration Debug | xcpretty -c
+          build-wrapper-macosx-x86/build-wrapper-macosx-x86 --out-dir DerivedData/compilation-database xcodebuild clean test -project WCPhotoManipulator.xcodeproj -scheme WCPhotoManipulator -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 15 Pro' -enableCodeCoverage YES -configuration Debug | xcpretty -c
           ./xccov-to-sonarqube-generic.sh ~/Library/Developer/Xcode/DerivedData/*/Logs/Test/*.xcresult/ > sonarqube-generic-coverage.xml
 
       - name: Setup sonarqube
