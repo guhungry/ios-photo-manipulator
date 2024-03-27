@@ -125,4 +125,37 @@
     XCTAssertEqual(image.size.width, 800);
     XCTAssertEqual(image.size.height, 530);
 }
+
+- (void)testFlip_WhenHasHorizontal_ShouldReturnCorrectly {
+    image = [UIImage imageNamedTest:@"background.jpg"];
+    XCTAssertNotNil(image);
+    
+    image = [image flip:FlipModeHorizontal];
+    XCTAssertNotNil(image);
+    XCTAssertEqual(image.size.width, 800);
+    XCTAssertEqual(image.size.height, 530);
+}
+
+- (void)testFlip_WhenHasVertical_ShouldReturnCorrectly {
+    image = [UIImage imageNamedTest:@"background.jpg"];
+    XCTAssertNotNil(image);
+    
+    image = [image flip:FlipModeVertical];
+    XCTAssertNotNil(image);
+    XCTAssertEqual(image.size.width, 800);
+    XCTAssertEqual(image.size.height, 530);
+}
+
+- (void)testFlip_WhenHasBoth_ShouldReturnCorrectly {
+    image = [UIImage imageNamedTest:@"background.jpg"];
+    XCTAssertNotNil(image);
+    
+    UIImage *image1 = [image flip:FlipModeVertical];
+    UIImage *image2 = [image1 flip:FlipModeHorizontal];
+    UIImage *image3 = [image2 flip:FlipModeVertical];
+    UIImage *image4 = [image3 flip:FlipModeHorizontal];
+    XCTAssertNotNil(image4);
+    XCTAssertEqual(image4.size.width, 800);
+    XCTAssertEqual(image4.size.height, 530);
+}
 @end

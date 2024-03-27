@@ -108,4 +108,15 @@ public extension UIImage {
     @objc func overlayImage(_ overlay: UIImage, position: CGPoint) -> UIImage? {
         return overlayImage(overlay, position: position, scale: scale)
     }
+    
+    // Flip
+    @objc func flip(_ flipMode: FlipMode) -> UIImage {
+        let cgimage = ciImage().transformed(by: flipMode.transform())
+        return UIImage(ciImage: cgimage)
+    }
+    
+    // Flip
+    @objc func ciImage() -> CIImage {
+        return (ciImage != nil) ? ciImage! : CIImage(cgImage: cgImage!)
+    }
 }
