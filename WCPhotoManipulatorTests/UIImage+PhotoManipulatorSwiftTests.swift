@@ -130,4 +130,34 @@ class UIImage_PhotoManipulatorSwiftTests: XCTestCase {
         XCTAssertNotNil(image)
         XCTAssertEqual(image.size, CGSize(width: 800, height: 530))
     }
+    
+    func testFlip_WhenHasHorizontal_ShouldReturnCorrectly() throws {
+        image = UIImage.init(namedTest: "background.jpg")
+        XCTAssertNotNil(image)
+    
+        image = image.flip(.Horizontal)
+        XCTAssertNotNil(image)
+        XCTAssertEqual(image.size, CGSize(width: 800, height: 530))
+    }
+    
+    func testFlip_WhenHasVertical_ShouldReturnCorrectly() throws {
+        image = UIImage.init(namedTest: "background.jpg")
+        XCTAssertNotNil(image)
+    
+        image = image.flip(.Vertical)
+        XCTAssertNotNil(image)
+        XCTAssertEqual(image.size, CGSize(width: 800, height: 530))
+    }
+    
+    func testFlip_WhenHasBoth_ShouldReturnCorrectly() throws {
+        image = UIImage.init(namedTest: "background.jpg")
+        XCTAssertNotNil(image)
+    
+        let image1 = image.flip(.Vertical)
+        let image2 = image1.flip(.Horizontal)
+        let image3 = image2.flip(.Vertical)
+        let image4 = image3.flip(.Horizontal)
+        XCTAssertNotNil(image4)
+        XCTAssertEqual(image4.size, CGSize(width: 800, height: 530))
+    }
 }
