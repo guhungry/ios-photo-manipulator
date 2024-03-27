@@ -56,6 +56,7 @@ Print text into image
 | color      | UIColor*              | Yes      | Text color                                                             |
 | font       | UIFont                | Yes      | Font to use                                                            |
 | thickness  | Float                 | No       | Outline of text. Default = 0                                           |
+| rotation   | Float                 | No       | Rotation angle in degrees                                              |
 | scale      | CGFloat               | No       | Scale of result image. Default = image.scale                           |
 
 ### [image overlayImage]
@@ -65,6 +66,13 @@ Overlay image on top of background image
 |------------|-----------------------|----------|------------------------------------------------------------------------|
 | overlay    | UIImage*              | Yes      | Overlay image                                                          |
 | position   | CGPoint               | Yes      | Position of overlay image in background image                          |
+
+### [image flip]
+Flip the image horizontally and/or vertically
+
+| NAME       | TYPE                  | REQUIRED | DESCRIPTION                                                            |
+|------------|-----------------------|----------|------------------------------------------------------------------------|
+| mode       | FlipMode              | Yes      | Flip mode .Vertical or .Horizontal                                     |
 
 
 ## Usage FileUtils
