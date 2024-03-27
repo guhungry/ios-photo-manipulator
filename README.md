@@ -1,7 +1,7 @@
 # iOS Photo Manipulator
 [![Build and Test](https://github.com/guhungry/ios-photo-manipulator/actions/workflows/build-and-test.yml/badge.svg)](https://github.com/guhungry/ios-photo-manipulator/actions/workflows/build-and-test.yml)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=guhungry_ios-photo-manipulator&metric=alert_status)](https://sonarcloud.io/dashboard?id=guhungry_ios-photo-manipulator)
-[![cocoapods](https://cocoapod-badges.herokuapp.com/v/WCPhotoManipulator/badge.png)](https://cocoapods.org/pods/WCPhotoManipulator)
+[![Cocoapods Version](https://img.shields.io/cocoapods/v/WCPhotoManipulator)](https://cocoapods.org/pods/WCPhotoManipulator)
 
 Image processing library to edit image programmatically for iOS.
 This library is used by [react-native-photo-manipulator](https://github.com/guhungry/react-native-photo-manipulator/).
