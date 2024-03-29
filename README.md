@@ -72,7 +72,7 @@ Flip the image horizontally and/or vertically
 
 | NAME       | TYPE                  | REQUIRED | DESCRIPTION                                                            |
 |------------|-----------------------|----------|------------------------------------------------------------------------|
-| mode       | FlipMode              | Yes      | Flip mode .Vertical or .Horizontal                                     |
+| mode       | FlipMode              | Yes      | Flip mode .Vertical or .Horizontal or .Both                            |
 
 
 ## Usage FileUtils
