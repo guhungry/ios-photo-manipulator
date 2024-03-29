@@ -111,6 +111,8 @@ public extension UIImage {
     
     // Flip
     @objc func flip(_ flipMode: FlipMode) -> UIImage {
+        if (flipMode == .None) { return self }
+
         let cgimage = ciImage().transformed(by: flipMode.transform())
         return UIImage(ciImage: cgimage)
     }
