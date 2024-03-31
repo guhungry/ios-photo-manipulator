@@ -3,7 +3,7 @@
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=guhungry_ios-photo-manipulator&metric=alert_status)](https://sonarcloud.io/dashboard?id=guhungry_ios-photo-manipulator)
 [![Cocoapods Version](https://img.shields.io/cocoapods/v/WCPhotoManipulator)](https://cocoapods.org/pods/WCPhotoManipulator)
 
-Image processing library to edit image programmatically for iOS.
+iOS React Native Image Processing API to edit photo programmatically.
 This library is used by [react-native-photo-manipulator](https://github.com/guhungry/react-native-photo-manipulator/).
 
 ## Installation
