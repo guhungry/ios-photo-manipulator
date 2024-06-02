@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CA10C5262BB331B7008464A7 /* FlipMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA10C5252BB331B7008464A7 /* FlipMode.swift */; };
+		CA11C0FB2C0C1E9B005542AA /* RotationMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA11C0FA2C0C1E9B005542AA /* RotationMode.swift */; };
 		CC92AF5124D250160061CC87 /* FoolSonarcloud.m in Sources */ = {isa = PBXBuildFile; fileRef = CC92AF5024D250160061CC87 /* FoolSonarcloud.m */; };
 		CC92AF6A24D545070061CC87 /* BitmapUtilsSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC92AF6924D545070061CC87 /* BitmapUtilsSwiftTests.swift */; };
 		CC92AF6C24D558500061CC87 /* FileUtilsSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC92AF6B24D558500061CC87 /* FileUtilsSwiftTests.swift */; };
@@ -53,6 +54,7 @@
 
 /* Begin PBXFileReference section */
 		CA10C5252BB331B7008464A7 /* FlipMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlipMode.swift; sourceTree = "<group>"; };
+		CA11C0FA2C0C1E9B005542AA /* RotationMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotationMode.swift; sourceTree = "<group>"; };
 		CC92AF4F24D250160061CC87 /* FoolSonarcloud.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FoolSonarcloud.h; sourceTree = "<group>"; };
 		CC92AF5024D250160061CC87 /* FoolSonarcloud.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FoolSonarcloud.m; sourceTree = "<group>"; };
 		CC92AF6924D545070061CC87 /* BitmapUtilsSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitmapUtilsSwiftTests.swift; sourceTree = "<group>"; };
@@ -123,11 +125,12 @@
 			children = (
 				CCC2506B24D05C97000BAC48 /* BitmapUtils.swift */,
 				CCC2505824CFF0C1000BAC48 /* FileUtils.swift */,
+				CA10C5252BB331B7008464A7 /* FlipMode.swift */,
 				CC92AF4F24D250160061CC87 /* FoolSonarcloud.h */,
 				CC92AF5024D250160061CC87 /* FoolSonarcloud.m */,
 				CCC2503B24CFDE4B000BAC48 /* MimeUtils.swift */,
 				CCC2506D24D05EE7000BAC48 /* ResizeMode.swift */,
-				CA10C5252BB331B7008464A7 /* FlipMode.swift */,
+				CA11C0FA2C0C1E9B005542AA /* RotationMode.swift */,
 				CCC2506F24D060C9000BAC48 /* UIImage+PhotoManipulator.swift */,
 				CCC2505124CFE1D2000BAC48 /* WCPhotoManipulator-Bridging-Header.h */,
 			);
@@ -269,6 +272,7 @@
 			files = (
 				CCC2506C24D05C97000BAC48 /* BitmapUtils.swift in Sources */,
 				CCC2507024D060C9000BAC48 /* UIImage+PhotoManipulator.swift in Sources */,
+				CA11C0FB2C0C1E9B005542AA /* RotationMode.swift in Sources */,
 				CA10C5262BB331B7008464A7 /* FlipMode.swift in Sources */,
 				CCC2503C24CFDE4B000BAC48 /* MimeUtils.swift in Sources */,
 				CC92AF5124D250160061CC87 /* FoolSonarcloud.m in Sources */,
