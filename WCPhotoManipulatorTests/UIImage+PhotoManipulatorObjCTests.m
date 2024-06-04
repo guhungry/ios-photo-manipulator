@@ -158,4 +158,44 @@
     XCTAssertEqual(image4.size.width, 800);
     XCTAssertEqual(image4.size.height, 530);
 }
+
+- (void)testRotate_WhenR90_ShouldReturnCorrectly {
+    image = [UIImage imageNamedTest:@"background.jpg"];
+    XCTAssertNotNil(image);
+    
+    image = [image rotate:RotationModeR90];
+    XCTAssertNotNil(image);
+    XCTAssertEqual(image.size.width, 530);
+    XCTAssertEqual(image.size.height, 800);
+}
+
+- (void)testRotate_WhenR180_ShouldReturnCorrectly {
+    image = [UIImage imageNamedTest:@"background.jpg"];
+    XCTAssertNotNil(image);
+    
+    image = [image rotate:RotationModeR180];
+    XCTAssertNotNil(image);
+    XCTAssertEqual(image.size.width, 800);
+    XCTAssertEqual(image.size.height, 530);
+}
+
+- (void)testRotate_WhenR270_ShouldReturnCorrectly {
+    image = [UIImage imageNamedTest:@"background.jpg"];
+    XCTAssertNotNil(image);
+    
+    image = [image rotate:RotationModeR270];
+    XCTAssertNotNil(image);
+    XCTAssertEqual(image.size.width, 530);
+    XCTAssertEqual(image.size.height, 800);
+}
+
+- (void)testRotate_WhenNone_ShouldReturnCorrectly {
+    image = [UIImage imageNamedTest:@"background.jpg"];
+    XCTAssertNotNil(image);
+    
+    image = [image rotate:RotationModeNone];
+    XCTAssertNotNil(image);
+    XCTAssertEqual(image.size.width, 800);
+    XCTAssertEqual(image.size.height, 530);
+}
 @end

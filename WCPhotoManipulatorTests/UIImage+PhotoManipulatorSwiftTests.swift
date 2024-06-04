@@ -74,7 +74,8 @@ class UIImage_PhotoManipulatorSwiftTests: XCTestCase {
         XCTAssertEqual(image.size, CGSize(width: 332, height: 70))
         XCTAssertEqual(actualColor, expectedColor)
     }
-    
+
+    // Draw Text
     func testDrawText_WhenUseFontAndNoScale_ShouldReturnCorrectly() throws {
         image = UIImage.init(namedTest: "background.jpg")
         XCTAssertNotNil(image)
@@ -111,6 +112,7 @@ class UIImage_PhotoManipulatorSwiftTests: XCTestCase {
         XCTAssertEqual(image.size, CGSize(width: 800, height: 530))
     }
 
+    // Overlay Image
     func testOverlayImage_WhenNoScale_ShouldReturnCorrectly() throws {
         image = UIImage.init(namedTest: "background.jpg")
         overlay = UIImage.init(namedTest: "overlay.png")
@@ -130,7 +132,8 @@ class UIImage_PhotoManipulatorSwiftTests: XCTestCase {
         XCTAssertNotNil(image)
         XCTAssertEqual(image.size, CGSize(width: 800, height: 530))
     }
-    
+
+    // Flip
     func testFlip_WhenHasHorizontal_ShouldReturnCorrectly() throws {
         image = UIImage.init(namedTest: "background.jpg")
         XCTAssertNotNil(image)
@@ -178,5 +181,42 @@ class UIImage_PhotoManipulatorSwiftTests: XCTestCase {
         let image4 = image3.flip(.Horizontal)
         XCTAssertNotNil(image4)
         XCTAssertEqual(image4.size, CGSize(width: 800, height: 530))
+    }
+
+    // Rotate
+    func testRotate_WhenR90_ShouldReturnCorrectly() throws {
+        image = UIImage.init(namedTest: "background.jpg")
+        XCTAssertNotNil(image)
+        
+        let actual = image.rotate(.R90)
+        XCTAssertNotNil(actual)
+        XCTAssertEqual(actual.size, CGSize(width: 530, height: 800))
+    }
+    
+    func testRotate_WhenR180_ShouldReturnCorrectly() throws {
+        image = UIImage.init(namedTest: "background.jpg")
+        XCTAssertNotNil(image)
+        
+        let actual = image.rotate(.R180)
+        XCTAssertNotNil(actual)
+        XCTAssertEqual(actual.size, CGSize(width: 800, height: 530))
+    }
+    
+    func testRotate_WhenR270_ShouldReturnCorrectly() throws {
+        image = UIImage.init(namedTest: "background.jpg")
+        XCTAssertNotNil(image)
+        
+        let actual = image.rotate(.R270)
+        XCTAssertNotNil(actual)
+        XCTAssertEqual(actual.size, CGSize(width: 530, height: 800))
+    }
+    
+    func testRotate_WhenNone_ShouldReturnCorrectly() throws {
+        image = UIImage.init(namedTest: "background.jpg")
+        XCTAssertNotNil(image)
+        
+        let actual = image.rotate(.None)
+        XCTAssertNotNil(actual)
+        XCTAssertEqual(actual.size, CGSize(width: 800, height: 530))
     }
 }

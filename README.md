@@ -68,11 +68,18 @@ Overlay image on top of background image
 | position   | CGPoint               | Yes      | Position of overlay image in background image                          |
 
 ### [image flip]
-Flip the image horizontally and/or vertically
+Flip the image horizontally, vertically or both
 
 | NAME       | TYPE                  | REQUIRED | DESCRIPTION                                                            |
 |------------|-----------------------|----------|------------------------------------------------------------------------|
 | mode       | FlipMode              | Yes      | Flip mode .Vertical or .Horizontal or .Both                            |
+
+### [image rotate]
+Rotate the image 90°, 180° or 270°
+
+| NAME       | TYPE                  | REQUIRED | DESCRIPTION                                                            |
+|------------|-----------------------|----------|------------------------------------------------------------------------|
+| mode       | RotationMode          | Yes      | Rotation mode .R90 (90° Clockwise), .R180 (180° Half Rotation) or .R270 (270° Clockwise, aka 90° Counterclockwise)                            |
 
 
 ## Usage FileUtils
