@@ -13,8 +13,6 @@ import UIKit
     case None = 0, R90 = 90, R180 = 180, R270 = 270
     
     func transform() -> CGAffineTransform {
-        if (self == .None) { return CGAffineTransformIdentity }
-        
         return CGAffineTransformMakeRotation(-CGFloat(self.rawValue) * CGFloat.pi / 180.0)
      }
 }
