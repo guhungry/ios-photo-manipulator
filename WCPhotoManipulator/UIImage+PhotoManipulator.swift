@@ -127,6 +127,7 @@ public extension UIImage {
     
     // Flip
     @objc func ciImage() -> CIImage {
-        return (ciImage != nil) ? ciImage! : CIImage(cgImage: cgImage!)
+        if (ciImage != nil) { return ciImage! }
+        return CIImage(cgImage: cgImage!)
     }
 }
