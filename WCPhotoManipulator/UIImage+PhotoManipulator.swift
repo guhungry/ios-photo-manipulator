@@ -119,7 +119,9 @@ public extension UIImage {
     
     // Flip
     @objc func rotate(_ rotateMode: RotationMode) -> UIImage {
-        if (rotateMode == .None) { return self }
+        if (rotateMode == .None) {
+            return self
+        }
 
         let cgimage = ciImage().transformed(by: rotateMode.transform())
         return UIImage(ciImage: cgimage)
@@ -127,7 +129,10 @@ public extension UIImage {
     
     // Flip
     @objc func ciImage() -> CIImage {
-        if (ciImage != nil) { return ciImage! }
+        if (ciImage != nil) {
+            return ciImage!
+        }
+
         return CIImage(cgImage: cgImage!)
     }
 }
