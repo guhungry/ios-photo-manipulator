@@ -120,7 +120,8 @@ class UIImage_PhotoManipulatorSwiftTests: XCTestCase {
         image = UIImage.init(namedTest: "background.jpg")
         XCTAssertNotNil(image)
 
-        image = image.drawText("Test Text To Rotate Draw", position: CGPoint(x: 15, y: 66), color: .blue, size: 42, thickness: 5, rotation: -30, scale: 2)
+        let style = TextStyle(color: .blue, size: 42, thickness: 5, rotation: -30)
+        image = image.drawText("Test Text To Rotate Draw", position: CGPoint(x: 15, y: 66), style: style, scale: 2)
         XCTAssertNotNil(image)
         XCTAssertEqual(image.size, CGSize(width: 800, height: 530))
     }
