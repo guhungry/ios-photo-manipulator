@@ -102,6 +102,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CADEFF802C41479400DFE3E3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CA10C5252BB331B7008464A7 /* FlipMode.swift */,
+				CCC2506D24D05EE7000BAC48 /* ResizeMode.swift */,
+				CA11C0FA2C0C1E9B005542AA /* RotationMode.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		CCC2502F24CFDE4B000BAC48 = {
 			isa = PBXGroup;
 			children = (
@@ -123,14 +133,12 @@
 		CCC2503A24CFDE4B000BAC48 /* WCPhotoManipulator */ = {
 			isa = PBXGroup;
 			children = (
+				CADEFF802C41479400DFE3E3 /* Models */,
 				CCC2506B24D05C97000BAC48 /* BitmapUtils.swift */,
 				CCC2505824CFF0C1000BAC48 /* FileUtils.swift */,
-				CA10C5252BB331B7008464A7 /* FlipMode.swift */,
 				CC92AF4F24D250160061CC87 /* FoolSonarcloud.h */,
 				CC92AF5024D250160061CC87 /* FoolSonarcloud.m */,
 				CCC2503B24CFDE4B000BAC48 /* MimeUtils.swift */,
-				CCC2506D24D05EE7000BAC48 /* ResizeMode.swift */,
-				CA11C0FA2C0C1E9B005542AA /* RotationMode.swift */,
 				CCC2506F24D060C9000BAC48 /* UIImage+PhotoManipulator.swift */,
 				CCC2505124CFE1D2000BAC48 /* WCPhotoManipulator-Bridging-Header.h */,
 			);
