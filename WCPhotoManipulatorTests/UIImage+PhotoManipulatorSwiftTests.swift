@@ -80,7 +80,7 @@ class UIImage_PhotoManipulatorSwiftTests: XCTestCase {
         image = UIImage.init(namedTest: "background.jpg")
         XCTAssertNotNil(image)
 
-        let style = TextStyle(color: .blue, font: UIFont.systemFont(ofSize: 102), rotation: 14, shadowRadius: 3, shadowOffsetX: 4, shadowOffsetY: 10, shadowColor: UIColor.green)
+        let style = TextStyle(color: .blue, font: UIFont.systemFont(ofSize: 102), thickness: 0, rotation: 14, shadowRadius: 3, shadowOffsetX: 4, shadowOffsetY: 10, shadowColor: UIColor.green)
         image = image.drawText("Draw Shadow", position: CGPoint(x: 15, y: 66), style: style)
         XCTAssertNotNil(image)
         XCTAssertEqual(image.size, CGSize(width: 800, height: 530))

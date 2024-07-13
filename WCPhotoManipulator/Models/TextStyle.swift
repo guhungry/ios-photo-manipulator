@@ -45,7 +45,7 @@ import UIKit
     ///   - shadowOffsetX: The horizontal offset of the shadow. Default is 0.
     ///   - shadowOffsetY: The vertical offset of the shadow. Default is 0.
     ///   - shadowColor: The color of the shadow. Default is nil.
-    @objc public init(color: UIColor, font: UIFont, thickness: CGFloat = 0, rotation: CGFloat = 0, shadowRadius: CGFloat = 0, shadowOffsetX: Int = 0, shadowOffsetY: Int = 0, shadowColor: UIColor? = nil) {
+    @objc public init(color: UIColor, font: UIFont, thickness: CGFloat, rotation: CGFloat, shadowRadius: CGFloat, shadowOffsetX: Int, shadowOffsetY: Int, shadowColor: UIColor?) {
         self.color = color
         self.font = font
         self.thickness = thickness
@@ -61,7 +61,7 @@ import UIKit
     ///   - color: The color of the text.
     ///   - font: The font of the text.
     @objc public convenience init(color: UIColor, font: UIFont) {
-        self.init(color: color, font: font)
+        self.init(color: color, font: font, thickness: 0)
     }
 
     /// Convenience initializer with color, font, and thickness.
@@ -71,7 +71,7 @@ import UIKit
     ///   - font: The font of the text.
     ///   - thickness: The thickness of the text.
     @objc public convenience init(color: UIColor, font: UIFont, thickness: CGFloat) {
-        self.init(color: color, font: font, thickness: thickness)
+        self.init(color: color, font: font, thickness: thickness, rotation: 0)
     }
 
     /// Convenience initializer with color, font, thickness, and rotation.
@@ -82,7 +82,7 @@ import UIKit
     ///   - thickness: The thickness of the text.
     ///   - rotation: The rotation angle of the text in degrees.
     @objc public convenience init(color: UIColor, font: UIFont, thickness: CGFloat, rotation: CGFloat) {
-        self.init(color: color, font: font, thickness: thickness, rotation: rotation)
+        self.init(color: color, font: font, thickness: thickness, rotation: rotation, shadowRadius: 0, shadowOffsetX: 0, shadowOffsetY: 0, shadowColor: nil)
     }
 
     /// Convenience initializer with color, size, and other optional properties.
@@ -96,7 +96,7 @@ import UIKit
     ///   - shadowOffsetX: The horizontal offset of the shadow. Default is 0.
     ///   - shadowOffsetY: The vertical offset of the shadow. Default is 0.
     ///   - shadowColor: The color of the shadow. Default is nil.
-    @objc public convenience init(color: UIColor, size: CGFloat, thickness: CGFloat = 0, rotation: CGFloat = 0, shadowRadius: CGFloat = 0, shadowOffsetX: Int = 0, shadowOffsetY: Int = 0, shadowColor: UIColor? = nil) {
+    @objc public convenience init(color: UIColor, size: CGFloat, thickness: CGFloat, rotation: CGFloat, shadowRadius: CGFloat, shadowOffsetX: Int, shadowOffsetY: Int, shadowColor: UIColor?) {
         self.init(color: color, font: UIFont.systemFont(ofSize: size), thickness: thickness, rotation: rotation, shadowRadius: shadowRadius, shadowOffsetX: shadowOffsetX, shadowOffsetY: shadowOffsetY, shadowColor: shadowColor)
     }
 
@@ -106,7 +106,7 @@ import UIKit
     ///   - color: The color of the text.
     ///   - size: The size of the text's font.
     @objc public convenience init(color: UIColor, size: CGFloat) {
-        self.init(color: color, size: size)
+        self.init(color: color, size: size, thickness: 0)
     }
 
     /// Convenience initializer with color, size, and thickness.
@@ -116,7 +116,7 @@ import UIKit
     ///   - size: The size of the text's font.
     ///   - thickness: The thickness of the text.
     @objc public convenience init(color: UIColor, size: CGFloat, thickness: CGFloat) {
-        self.init(color: color, size: size, thickness: thickness)
+        self.init(color: color, size: size, thickness: thickness, rotation: 0)
     }
 
     /// Convenience initializer with color, size, thickness, and rotation.
@@ -127,7 +127,7 @@ import UIKit
     ///   - thickness: The thickness of the text.
     ///   - rotation: The rotation angle of the text in degrees.
     @objc public convenience init(color: UIColor, size: CGFloat, thickness: CGFloat, rotation: CGFloat) {
-        self.init(color: color, size: size, thickness: thickness, rotation: rotation)
+        self.init(color: color, size: size, thickness: thickness, rotation: rotation, shadowRadius: 0, shadowOffsetX: 0, shadowOffsetY: 0, shadowColor: nil)
     }
 
     public override var description: String {
