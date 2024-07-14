@@ -45,27 +45,29 @@ public extension UIImage {
     }
 
     // Text
-    @objc func drawText(_ text: String, position: CGPoint, color: UIColor, font: UIFont, thickness: CGFloat, rotation: CGFloat, scale: CGFloat) -> UIImage? {
+    @objc func drawText(_ text: String, position: CGPoint, style: TextStyle, scale: CGFloat) -> UIImage? {
         UIGraphicsBeginImageContextWithOptions(self.size, false, scale)
         if let context = UIGraphicsGetCurrentContext() {
             context.translateBy(x: position.x, y: position.y)
-            context.rotate (by: -rotation * CGFloat.pi / 180.0) //45˚
+            context.rotate (by: -style.rotation * CGFloat.pi / 180.0) //45˚
             context.translateBy(x: -position.x, y: -position.y)
         }
-        
         var textStyles: [NSAttributedString.Key: Any] = [
-            .font: font,
-            .foregroundColor: color,
+            .font: style.font,
+            .foregroundColor: style.color,
         ]
-        if (thickness > 0) {
-            textStyles[.strokeColor] = color;
-            textStyles[.strokeWidth] = thickness;
+        if (style.thickness > 0) {
+            textStyles[.strokeColor] = style.color;
+            textStyles[.strokeWidth] = style.thickness;
         }
+        if (style.shadowRadius > 0 && style.shadowColor != nil) {
+            textStyles[.shadow] = style.shadow;
+        }
+        
         (text as NSString).draw(at: position, withAttributes: textStyles)
         
         let rotatedImageWithText = UIGraphicsGetImageFromCurrentImageContext();
         UIGraphicsEndImageContext()
-        
 
         let opaque = !hasAlpha()
         UIGraphicsBeginImageContextWithOptions(self.size, opaque, scale)
@@ -80,14 +82,27 @@ public extension UIImage {
         return result
     }
 
+    @objc func drawText(_ text: String, position: CGPoint, style: TextStyle) -> UIImage? {
+        return drawText(text, position: position, style: style, scale: scale)
+    }
+
+    @available(*, deprecated, message: "Use drawText(, position:, style:, scale:)")
+    @objc func drawText(_ text: String, position: CGPoint, color: UIColor, font: UIFont, thickness: CGFloat, rotation: CGFloat, scale: CGFloat) -> UIImage? {
+        let style = TextStyle(color: color, font: font, thickness: thickness, rotation: rotation)
+        return drawText(text, position: position, style: style, scale: scale)
+    }
+
+    @available(*, deprecated, message: "Use drawText(, position:, style:, scale:)")
     @objc func drawText(_ text: String, position: CGPoint, color: UIColor, font: UIFont, thickness: CGFloat, rotation: CGFloat) -> UIImage? {
             return drawText(text, position: position, color: color, font:font, thickness: thickness, rotation: rotation, scale: scale)
     }
 
+    @available(*, deprecated, message: "Use drawText(, position:, style:, scale:)")
     @objc func drawText(_ text: String, position: CGPoint, color: UIColor, size: CGFloat, thickness: CGFloat, rotation: CGFloat, scale: CGFloat) -> UIImage? {
         return drawText(text, position: position, color: color, font: UIFont.systemFont(ofSize: size), thickness: thickness, rotation: rotation, scale: scale)
     }
     
+    @available(*, deprecated, message: "Use drawText(, position:, style:, scale:)")
     @objc func drawText(_ text: String, position: CGPoint, color: UIColor, size: CGFloat, thickness: CGFloat, rotation: CGFloat) -> UIImage? {
         return drawText(text, position: position, color: color, size: size, thickness: thickness, rotation: rotation, scale: scale)
     }
@@ -111,7 +126,9 @@ public extension UIImage {
     
     // Flip
     @objc func flip(_ flipMode: FlipMode) -> UIImage {
-        if (flipMode == .None) { return self }
+        if (flipMode == .None) {
+            return self
+        }
 
         let cgimage = ciImage().transformed(by: flipMode.transform())
         return UIImage(ciImage: cgimage)

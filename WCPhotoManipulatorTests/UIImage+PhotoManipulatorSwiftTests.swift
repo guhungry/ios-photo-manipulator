@@ -76,11 +76,32 @@ class UIImage_PhotoManipulatorSwiftTests: XCTestCase {
     }
 
     // Draw Text
+    func testDrawText_WhenOnlyColorAndFont_ShouldReturnCorrectly() throws {
+        image = UIImage.init(namedTest: "background.jpg")
+        XCTAssertNotNil(image)
+
+        let style = TextStyle(color: .blue, font: UIFont.systemFont(ofSize: 102))
+        image = image.drawText("Only Color And Font", position: CGPoint(x: 15, y: 66), style: style)
+        XCTAssertNotNil(image)
+        XCTAssertEqual(image.size, CGSize(width: 800, height: 530))
+    }
+
+    func testDrawText_WhenUseShadow_ShouldReturnCorrectly() throws {
+        image = UIImage.init(namedTest: "background.jpg")
+        XCTAssertNotNil(image)
+
+        let style = TextStyle(color: .blue, font: UIFont.systemFont(ofSize: 102), thickness: 0, rotation: 14, shadowRadius: 3, shadowOffsetX: 4, shadowOffsetY: 10, shadowColor: UIColor.green)
+        image = image.drawText("Draw Shadow", position: CGPoint(x: 15, y: 66), style: style)
+        XCTAssertNotNil(image)
+        XCTAssertEqual(image.size, CGSize(width: 800, height: 530))
+    }
+
     func testDrawText_WhenUseFontAndNoScale_ShouldReturnCorrectly() throws {
         image = UIImage.init(namedTest: "background.jpg")
         XCTAssertNotNil(image)
 
-        image = image.drawText("Test Text To Draw", position: CGPoint(x: 15, y: 66), color: .blue, font: UIFont.systemFont(ofSize: 102), thickness: 5, rotation: 0)
+        let style = TextStyle(color: .blue, font: UIFont.systemFont(ofSize: 102), thickness: 5, rotation: 0)
+        image = image.drawText("Test Text To Draw", position: CGPoint(x: 15, y: 66), style: style)
         XCTAssertNotNil(image)
         XCTAssertEqual(image.size, CGSize(width: 800, height: 530))
     }
@@ -89,7 +110,8 @@ class UIImage_PhotoManipulatorSwiftTests: XCTestCase {
         image = UIImage.init(namedTest: "background.jpg")
         XCTAssertNotNil(image)
 
-        image = image.drawText("Test Text To Draw", position: CGPoint(x: 15, y: 66), color: .blue, size: 42, thickness: 5, rotation: 0)
+        let style = TextStyle(color: .blue, font: UIFont.systemFont(ofSize: 42), thickness: 5, rotation: 0)
+        image = image.drawText("Test Text To Draw", position: CGPoint(x: 15, y: 66), style: style)
         XCTAssertNotNil(image)
         XCTAssertEqual(image.size, CGSize(width: 800, height: 530))
     }
@@ -98,7 +120,8 @@ class UIImage_PhotoManipulatorSwiftTests: XCTestCase {
         image = UIImage.init(namedTest: "background.jpg")
         XCTAssertNotNil(image)
 
-        image = image.drawText("Test Text To Draw", position: CGPoint(x: 15, y: 66), color: .blue, size: 42, thickness: 5, rotation: 0, scale: 2)
+        let style = TextStyle(color: .blue, font: UIFont.systemFont(ofSize: 42), thickness: 5, rotation: 0)
+        image = image.drawText("Test Text To Draw", position: CGPoint(x: 15, y: 66), style: style, scale: 2)
         XCTAssertNotNil(image)
         XCTAssertEqual(image.size, CGSize(width: 800, height: 530))
     }
@@ -107,7 +130,8 @@ class UIImage_PhotoManipulatorSwiftTests: XCTestCase {
         image = UIImage.init(namedTest: "background.jpg")
         XCTAssertNotNil(image)
 
-        image = image.drawText("Test Text To Rotate Draw", position: CGPoint(x: 15, y: 66), color: .blue, size: 42, thickness: 5, rotation: -30, scale: 2)
+        let style = TextStyle(color: .blue, size: 42, thickness: 5, rotation: -30)
+        image = image.drawText("Test Text To Rotate Draw", position: CGPoint(x: 15, y: 66), style: style, scale: 2)
         XCTAssertNotNil(image)
         XCTAssertEqual(image.size, CGSize(width: 800, height: 530))
     }
