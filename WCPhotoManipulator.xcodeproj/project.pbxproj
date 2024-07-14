@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		CA10C5262BB331B7008464A7 /* FlipMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA10C5252BB331B7008464A7 /* FlipMode.swift */; };
 		CA11C0FB2C0C1E9B005542AA /* RotationMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA11C0FA2C0C1E9B005542AA /* RotationMode.swift */; };
+		CAC665652C445049002FD9A7 /* TextStyleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC665642C445049002FD9A7 /* TextStyleTests.swift */; };
 		CADEFF822C4147EC00DFE3E3 /* TextStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADEFF812C4147EC00DFE3E3 /* TextStyle.swift */; };
 		CC92AF5124D250160061CC87 /* FoolSonarcloud.m in Sources */ = {isa = PBXBuildFile; fileRef = CC92AF5024D250160061CC87 /* FoolSonarcloud.m */; };
 		CC92AF6A24D545070061CC87 /* BitmapUtilsSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC92AF6924D545070061CC87 /* BitmapUtilsSwiftTests.swift */; };
@@ -56,6 +57,7 @@
 /* Begin PBXFileReference section */
 		CA10C5252BB331B7008464A7 /* FlipMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlipMode.swift; sourceTree = "<group>"; };
 		CA11C0FA2C0C1E9B005542AA /* RotationMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotationMode.swift; sourceTree = "<group>"; };
+		CAC665642C445049002FD9A7 /* TextStyleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextStyleTests.swift; sourceTree = "<group>"; };
 		CADEFF812C4147EC00DFE3E3 /* TextStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextStyle.swift; sourceTree = "<group>"; };
 		CC92AF4F24D250160061CC87 /* FoolSonarcloud.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FoolSonarcloud.h; sourceTree = "<group>"; };
 		CC92AF5024D250160061CC87 /* FoolSonarcloud.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FoolSonarcloud.m; sourceTree = "<group>"; };
@@ -104,6 +106,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CAC665632C444FCA002FD9A7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CAC665642C445049002FD9A7 /* TextStyleTests.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		CADEFF802C41479400DFE3E3 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -153,6 +163,7 @@
 			children = (
 				CCC2506024D000DA000BAC48 /* Helpers */,
 				CCC2506424D000E3000BAC48 /* Images */,
+				CAC665632C444FCA002FD9A7 /* Models */,
 				CCC2507124D066A2000BAC48 /* BitmapUtilsObjCTests.m */,
 				CC92AF6924D545070061CC87 /* BitmapUtilsSwiftTests.swift */,
 				CCC2505A24CFF272000BAC48 /* FileUtilsObjCTests.m */,
@@ -305,6 +316,7 @@
 				CC92AF6C24D558500061CC87 /* FileUtilsSwiftTests.swift in Sources */,
 				CC92AF6F24D55E950061CC87 /* NSData+Testing.m in Sources */,
 				CC92AF7124D5CD9F0061CC87 /* UIImage+PhotoManipulatorSwiftTests.swift in Sources */,
+				CAC665652C445049002FD9A7 /* TextStyleTests.swift in Sources */,
 				CCC2506324D000DA000BAC48 /* UIImage+Testing.m in Sources */,
 				CCC2505B24CFF272000BAC48 /* FileUtilsObjCTests.m in Sources */,
 			);
