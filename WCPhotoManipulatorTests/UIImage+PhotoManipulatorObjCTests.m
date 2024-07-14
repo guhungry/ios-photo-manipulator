@@ -74,6 +74,17 @@
     XCTAssertTrue([actualColor isEqual:expectedColor]);
 }
 
+- (void)testDrawText_WhenOnlyColorAndSize_ShouldReturnCorrectly {
+    image = [UIImage imageNamedTest:@"background.jpg"];
+    XCTAssertNotNil(image);
+
+    TextStyle *style = [[TextStyle alloc] initWithColor:UIColor.blueColor size:42];
+    image = [image drawText:@"Only Color And Size" position:CGPointMake(15, 66) style:style];
+    XCTAssertNotNil(image);
+    XCTAssertEqual(image.size.width, 800);
+    XCTAssertEqual(image.size.height, 530);
+}
+
 - (void)testDrawText_WhenNoScale_ShouldReturnCorrectly {
     image = [UIImage imageNamedTest:@"background.jpg"];
     XCTAssertNotNil(image);

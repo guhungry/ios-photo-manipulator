@@ -76,6 +76,16 @@ class UIImage_PhotoManipulatorSwiftTests: XCTestCase {
     }
 
     // Draw Text
+    func testDrawText_WhenOnlyColorAndFont_ShouldReturnCorrectly() throws {
+        image = UIImage.init(namedTest: "background.jpg")
+        XCTAssertNotNil(image)
+
+        let style = TextStyle(color: .blue, font: UIFont.systemFont(ofSize: 102))
+        image = image.drawText("Only Color And Font", position: CGPoint(x: 15, y: 66), style: style)
+        XCTAssertNotNil(image)
+        XCTAssertEqual(image.size, CGSize(width: 800, height: 530))
+    }
+
     func testDrawText_WhenUseShadow_ShouldReturnCorrectly() throws {
         image = UIImage.init(namedTest: "background.jpg")
         XCTAssertNotNil(image)
