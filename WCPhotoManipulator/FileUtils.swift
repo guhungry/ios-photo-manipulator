@@ -51,6 +51,29 @@ import UIKit
         }
         return UIImage(data: data)
     }
+    
+    @objc public class func imageFromString(_ url: String) -> UIImage? {
+        guard isBase64Image(url) else {
+            guard let url = URL(string: url) else {
+                return nil
+            }
+            return imageFromUrl(url)
+        }
+        
+        guard let commaIndex = url.firstIndex(of: ",") else {
+            return nil
+        }
+        
+        let dataIndex = url.index(after: commaIndex)
+        guard let data = Data(base64Encoded: String(url[dataIndex...])) else {
+            return nil
+        }
+        return UIImage(data: data)
+    }
+    
+    private class func isBase64Image(_ url: String) -> Bool {
+        return url.starts(with: "data:")
+    }
 
     @objc internal class func imageToData(_ image: UIImage, mimeType: String, quality: CGFloat) -> Data? {
         if (MimeUtils.PNG == mimeType) {
