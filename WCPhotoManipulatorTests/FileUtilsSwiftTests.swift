@@ -106,6 +106,20 @@ class FileUtilsSwiftTests: XCTestCase {
         image = FileUtils.imageFromString(url)
         XCTAssertNotNil(image)
     }
+    
+    func testImageFromUrl_WhenBase64NotFoundComma_ShouldBeNil() throws {
+        let url = "data:image/png;base64fdafsadfsa"
+
+        image = FileUtils.imageFromString(url)
+        XCTAssertNil(image)
+    }
+    
+    func testImageFromUrl_WhenBase64Data_ShouldBeNil() throws {
+        let url = "data:image/png;base64,&#()$#"
+
+        image = FileUtils.imageFromString(url)
+        XCTAssertNil(image)
+    }
 
     ////////////////////////////
     /// saveImageFile
