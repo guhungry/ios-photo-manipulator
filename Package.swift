@@ -5,7 +5,7 @@ import PackageDescription
 
 let package = Package(
     name: "WCPhotoManipulator",
-    platforms: [.iOS(.v14)],
+    platforms: [.iOS(.v9)],
     products: [
         .library(
             name: "WCPhotoManipulator",
