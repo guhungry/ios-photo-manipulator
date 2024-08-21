@@ -7,13 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "WCPhotoManipulator-Swift.h"
+@import WCPhotoManipulator;
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface UIImage (Testing)
 
 +(UIImage*)imageNamedTest:(NSString *)name;
++(NSString*)urlImageNamedTest:(NSString *)name;
 -(UIColor*)colorAt:(CGPoint)location;
 
 @end

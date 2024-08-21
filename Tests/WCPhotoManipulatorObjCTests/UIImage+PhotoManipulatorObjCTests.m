@@ -7,8 +7,8 @@
 //
 
 #import <XCTest/XCTest.h>
-#import "WCPhotoManipulator-Swift.h"
 #import "Helpers/UIImage+Testing.h"
+@import WCPhotoManipulator;
 
 @interface UIImage_PhotoManipulatorObjCTests : XCTestCase
 

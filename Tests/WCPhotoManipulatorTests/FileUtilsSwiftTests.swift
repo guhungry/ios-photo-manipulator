@@ -65,7 +65,7 @@ class FileUtilsSwiftTests: XCTestCase {
         data = FileUtils.imageToData(image, mimeType: MimeUtils.JPEG, quality: 100)
         
         XCTAssertNotNil(data)
-        XCTAssertEqual((data as NSData).mimeType(), MimeUtils.JPEG)
+        XCTAssertEqual(data.mimeType(), MimeUtils.JPEG)
     }
     
     func testImageToData_WhenOuptutPNG_ShouldReturnPng() throws {
@@ -73,14 +73,14 @@ class FileUtilsSwiftTests: XCTestCase {
         data = FileUtils.imageToData(image, mimeType: MimeUtils.PNG, quality: 100)
         
         XCTAssertNotNil(data)
-        XCTAssertEqual((data as NSData).mimeType(), MimeUtils.PNG)
+        XCTAssertEqual(data.mimeType(), MimeUtils.PNG)
     }
 
     ////////////////////////////
     /// imageFromUrl
     ///////////////////////////
     func testImageFromUrl_WhenLocalFile_ShouldHaveData() throws {
-        url = Bundle(for: type(of: self)).url(forResource: "overlay", withExtension: "png")
+        url = URL(fileURLWithPath: UIImage.urlImageNamedTest("overlay.png") ?? "")
         
         image = FileUtils.imageFromUrl(url)
         XCTAssertNotNil(image)

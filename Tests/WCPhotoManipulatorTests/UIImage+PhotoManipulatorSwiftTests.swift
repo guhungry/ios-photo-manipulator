@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import WCPhotoManipulator
 
 class UIImage_PhotoManipulatorSwiftTests: XCTestCase {
     var image: UIImage! = nil
@@ -23,14 +24,14 @@ class UIImage_PhotoManipulatorSwiftTests: XCTestCase {
     func testHasAlpha_WhenNoData_ShouldReturnFalse() throws {
         image = UIImage.init()
         XCTAssertNotNil(image)
-        XCTAssertTrue(image.responds(to: Selector(("hasAlpha"))))
+        XCTAssertTrue(image.responds(to: #selector(UIImage.hasAlpha as (UIImage) -> () -> Bool)))
         XCTAssertFalse(image.hasAlpha())
     }
 
     func testHasAlpha_ShouldReturnCorrectly() throws {
         image = UIImage.init(namedTest: "overlay.png")
         XCTAssertNotNil(image)
-        XCTAssertTrue(image.responds(to: Selector(("hasAlpha"))))
+        XCTAssertTrue(image.responds(to: #selector(UIImage.hasAlpha as (UIImage) -> () -> Bool)))
         XCTAssertTrue(image.hasAlpha())
     
         

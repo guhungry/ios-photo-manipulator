@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import WCPhotoManipulator
 
 final class TextStyleTests: XCTestCase {
     override func setUpWithError() throws {

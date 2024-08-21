@@ -7,9 +7,9 @@
 //
 
 #import <XCTest/XCTest.h>
-#import "UIImage+Testing.h"
-#import "NSData+Testing.h"
-#import "WCPhotoManipulator-Swift.h"
+#import "Helpers/UIImage+Testing.h"
+#import "Helpers/NSData+Testing.h"
+@import WCPhotoManipulator;
 
 @interface FileUtilsObjCTests : XCTestCase
 
@@ -103,7 +103,7 @@
 /// imageFromUrl
 ///////////////////////////
 - (void)testImageFromUrl_WhenLocalFile_ShouldHaveData {
-    url = [[NSBundle bundleForClass:[self class]] URLForResource:@"overlay" withExtension:@"png"];
+    url = [NSURL fileURLWithPath:[UIImage urlImageNamedTest:@"overlay.png"]];
     
     image = [FileUtils imageFromUrl:url];
     XCTAssertNotNil(image);

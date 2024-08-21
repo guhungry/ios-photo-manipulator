@@ -17,9 +17,17 @@
 @implementation UIImage (Testing)
 
 +(UIImage *)imageNamedTest:(NSString *)name {
-    NSBundle *bundle = [NSBundle bundleForClass:[BundleLocator class]];
-    NSString *path = [bundle pathForResource:name.stringByDeletingPathExtension ofType:name.pathExtension];
-    return [UIImage imageWithContentsOfFile:path];
+    return [UIImage imageWithContentsOfFile:[self urlImageNamedTest:name]];
+}
+
++(NSString *)urlImageNamedTest:(NSString *)name {
+    return [[self bundle] pathForResource:name.stringByDeletingPathExtension ofType:name.pathExtension];
+}
+
++(NSBundle *)bundle {
+    NSURL *url = [[[NSBundle bundleForClass:[BundleLocator class]] resourceURL] URLByAppendingPathComponent:@"WCPhotoManipulator_WCPhotoManipulatorObjCTests.bundle"];
+    
+    return [NSBundle bundleWithURL:url];
 }
 
 -(BOOL)isAlphaFirst {
