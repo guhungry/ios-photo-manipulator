@@ -19,7 +19,7 @@ target 'Demo' do
   # use_frameworks!
 
   # Add WCPhotoManipulator
-  pod 'WCPhotoManipulator', :git => 'https://github.com/guhungry/ios-photo-manipulator.git', :tag => 'v2.4.1'
+  pod 'WCPhotoManipulator', :git => 'https://github.com/guhungry/ios-photo-manipulator.git', :tag => 'v2.4.3'
 
 end
 ```
@@ -30,7 +30,7 @@ Add dependency in `Package.swift`
 ```swift
     dependencies: [
         ...,
-        .package(url: "https://github.com/guhungry/ios-photo-manipulator.git", from: "2.4.2"),
+        .package(url: "https://github.com/guhungry/ios-photo-manipulator.git", from: "2.4.3"),
         ...,
     ],
 ```
