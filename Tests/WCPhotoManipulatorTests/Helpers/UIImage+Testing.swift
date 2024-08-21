@@ -38,7 +38,11 @@ extension UIImage {
         let data: UnsafePointer<UInt8> = CFDataGetBytePtr(pixelData)
 
         let comp = CGFloat(layout.count)
-        let isHDR = CGColorSpaceUsesITUR_2100TF(space)
+        if #available(iOS 14.0, *) {
+            let isHDR = CGColorSpaceUsesITUR_2100TF(space)
+        } else {
+            let isHDR = false
+        }
         let hdr = CGFloat(isHDR ? 2 : 1)
         let pixelInfo = Int((size.width * point.y * scale + point.x * scale) * comp * hdr)
         let i = Array(0 ... Int(comp - 1)).map {
