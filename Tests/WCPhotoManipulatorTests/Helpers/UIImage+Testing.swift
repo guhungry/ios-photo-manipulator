@@ -26,6 +26,14 @@ extension UIImage {
         return Bundle(url: url)
     }
 
+    fileprivate func isHDR(_ space: CGColorSpace) -> Bool {
+        if #available(iOS 14.0, *) {
+            return CGColorSpaceUsesITUR_2100TF(space)
+        } else {
+            return false
+        }
+    }
+    
     func color(at point: CGPoint) -> UIColor? {
         guard
           let cgImage = cgImage,
@@ -38,11 +46,7 @@ extension UIImage {
         let data: UnsafePointer<UInt8> = CFDataGetBytePtr(pixelData)
 
         let comp = CGFloat(layout.count)
-        if #available(iOS 14.0, *) {
-            let isHDR = CGColorSpaceUsesITUR_2100TF(space)
-        } else {
-            let isHDR = false
-        }
+        let isHDR = isHDR(space)
         let hdr = CGFloat(isHDR ? 2 : 1)
         let pixelInfo = Int((size.width * point.y * scale + point.x * scale) * comp * hdr)
         let i = Array(0 ... Int(comp - 1)).map {
