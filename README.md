@@ -7,6 +7,7 @@ iOS Image Processing API to edit photo programmatically.
 This library is used by [react-native-photo-manipulator](https://github.com/guhungry/react-native-photo-manipulator/).
 
 ## Installation
+### Using CocoaPods
 Add dependency `Podfile`
 
 ```rb
@@ -18,10 +19,22 @@ target 'Demo' do
   # use_frameworks!
 
   # Add WCPhotoManipulator
-  pod 'WCPhotoManipulator', :git => 'https://github.com/guhungry/ios-photo-manipulator.git', :tag => 'v1.0.0'
+  pod 'WCPhotoManipulator', :git => 'https://github.com/guhungry/ios-photo-manipulator.git', :tag => 'v2.4.1'
 
 end
 ```
+or
+### Using Swift Package Manager
+Add dependency in `Package.swift`
+
+```swift
+    dependencies: [
+        ...,
+        .package(url: "https://github.com/guhungry/ios-photo-manipulator.git", from: "2.4.2"),
+        ...,
+    ],
+```
+
 ## Usage
 Import using
 ```objc
