@@ -7,7 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
-#import "WCPhotoManipulator-Swift.h"
+@import WCPhotoManipulator;
 
 @interface MimeUtilsObjCTests : XCTestCase
 
