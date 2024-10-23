@@ -141,15 +141,16 @@ class UIImage_PhotoManipulatorSwiftTests: XCTestCase {
         image = UIImage.init(namedTest: "background.jpg")
         XCTAssertNotNil(image)
 
-        let style = TextStyle(color: .blue, size: 42, thickness: 5, rotation: -30)
-        style.alignment = .right
-        image = image.drawText("Test Text To Align Right Draw", position: CGPoint(x: 400, y: 60), style: style, scale: 2)
-        image = image.drawText("Right", position: CGPoint(x: 400, y: 100), style: style, scale: 2)
-        image = image.drawText("Right Multiple\nLine", position: CGPoint(x: 400, y: 140), style: style, scale: 2)
-        style.alignment = .left
-        image = image.drawText("Test Text To Align Left Draw", position: CGPoint(x: 400, y: 60), style: style, scale: 2)
-        image = image.drawText("Left", position: CGPoint(x: 400, y: 100), style: style, scale: 2)
-        image = image.drawText("Left Multiple\nLine", position: CGPoint(x: 400, y: 140), style: style, scale: 2)
+        let right = TextStyle(color: .blue, size: 42, thickness: 5, rotation: -30, shadowRadius: 0, shadowOffsetX: 0, shadowOffsetY: 0, shadowColor: nil, alignment: .right)
+        image = image.drawText("Test Text To Align Right Draw", position: CGPoint(x: 400, y: 60), style: right, scale: 2)
+        image = image.drawText("Right", position: CGPoint(x: 400, y: 100), style: right, scale: 2)
+        image = image.drawText("Right Multiple\nLine", position: CGPoint(x: 400, y: 140), style: right, scale: 2)
+
+        let left = TextStyle(color: .blue, size: 42, thickness: 5, rotation: -30, shadowRadius: 0, shadowOffsetX: 0, shadowOffsetY: 0, shadowColor: nil, alignment: .left)
+        image = image.drawText("Test Text To Align Left Draw", position: CGPoint(x: 400, y: 60), style: left, scale: 2)
+        image = image.drawText("Left", position: CGPoint(x: 400, y: 100), style: left, scale: 2)
+        image = image.drawText("Left Multiple\nLine", position: CGPoint(x: 400, y: 140), style: left, scale: 2)
+
         XCTAssertNotNil(image)
         XCTAssertEqual(image.size, CGSize(width: 800, height: 530))
     }

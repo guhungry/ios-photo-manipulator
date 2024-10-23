@@ -15,7 +15,7 @@ import UIKit
     /// The font of the text.
     let font: UIFont
     /// The alignment of the text. Default value is left.
-    public var alignment: NSTextAlignment = .left
+    let alignment: NSTextAlignment
     /// The thickness of the text. Default value is 0.
     let thickness: CGFloat
     /// The rotation angle of the text in degrees. Default value is 0.
@@ -47,9 +47,11 @@ import UIKit
     ///   - shadowOffsetX: The horizontal offset of the shadow. Default is 0.
     ///   - shadowOffsetY: The vertical offset of the shadow. Default is 0.
     ///   - shadowColor: The color of the shadow. Default is nil.
-    @objc public init(color: UIColor, font: UIFont, thickness: CGFloat, rotation: CGFloat, shadowRadius: CGFloat, shadowOffsetX: Int, shadowOffsetY: Int, shadowColor: UIColor?) {
+    ///   - alignment: The alignment of the. Default is left.
+    @objc public init(color: UIColor, font: UIFont, thickness: CGFloat, rotation: CGFloat, shadowRadius: CGFloat, shadowOffsetX: Int, shadowOffsetY: Int, shadowColor: UIColor?, alignment: NSTextAlignment) {
         self.color = color
         self.font = font
+        self.alignment = alignment
         self.thickness = thickness
         self.rotation = rotation
         self.shadowRadius = shadowRadius
@@ -87,6 +89,10 @@ import UIKit
         self.init(color: color, font: font, thickness: thickness, rotation: rotation, shadowRadius: 0, shadowOffsetX: 0, shadowOffsetY: 0, shadowColor: nil)
     }
 
+    @objc public convenience init(color: UIColor, font: UIFont, thickness: CGFloat, rotation: CGFloat, shadowRadius: CGFloat, shadowOffsetX: Int, shadowOffsetY: Int, shadowColor: UIColor?) {
+        self.init(color: color, font: font, thickness: thickness, rotation: rotation, shadowRadius: 0, shadowOffsetX: 0, shadowOffsetY: 0, shadowColor: nil, alignment: .left)
+    }
+
     /// Convenience initializer with color, size, and other optional properties.
     ///
     /// - Parameters:
@@ -99,7 +105,22 @@ import UIKit
     ///   - shadowOffsetY: The vertical offset of the shadow. Default is 0.
     ///   - shadowColor: The color of the shadow. Default is nil.
     @objc public convenience init(color: UIColor, size: CGFloat, thickness: CGFloat, rotation: CGFloat, shadowRadius: CGFloat, shadowOffsetX: Int, shadowOffsetY: Int, shadowColor: UIColor?) {
-        self.init(color: color, font: UIFont.systemFont(ofSize: size), thickness: thickness, rotation: rotation, shadowRadius: shadowRadius, shadowOffsetX: shadowOffsetX, shadowOffsetY: shadowOffsetY, shadowColor: shadowColor)
+        self.init(color: color, size: size, thickness: thickness, rotation: rotation, shadowRadius: shadowRadius, shadowOffsetX: shadowOffsetX, shadowOffsetY: shadowOffsetY, shadowColor: shadowColor, alignment: .left)
+    }
+    
+    /// Convenience initializer with color, size, and other optional properties.
+    ///
+    /// - Parameters:
+    ///   - color: The color of the text.
+    ///   - size: The size of the text's font.
+    ///   - thickness: The thickness of the text. Default is 0.
+    ///   - rotation: The rotation angle of the text in degrees. Default is 0.
+    ///   - shadowRadius: The blur radius of the shadow. Default is 0.
+    ///   - shadowOffsetX: The horizontal offset of the shadow. Default is 0.
+    ///   - shadowOffsetY: The vertical offset of the shadow. Default is 0.
+    ///   - shadowColor: The color of the shadow. Default is nil.
+    @objc public convenience init(color: UIColor, size: CGFloat, thickness: CGFloat, rotation: CGFloat, shadowRadius: CGFloat, shadowOffsetX: Int, shadowOffsetY: Int, shadowColor: UIColor?, alignment: NSTextAlignment) {
+        self.init(color: color, font: UIFont.systemFont(ofSize: size), thickness: thickness, rotation: rotation, shadowRadius: shadowRadius, shadowOffsetX: shadowOffsetX, shadowOffsetY: shadowOffsetY, shadowColor: shadowColor, alignment: alignment)
     }
 
     /// Convenience initializer with only color and size.
