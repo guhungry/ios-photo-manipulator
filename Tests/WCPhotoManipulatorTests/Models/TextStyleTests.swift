@@ -26,6 +26,7 @@ final class TextStyleTests: XCTestCase {
         let shadowOffsetX: Int = 3
         let shadowOffsetY: Int = 4
         let shadowColor: UIColor? = UIColor.black
+        let alignment: NSTextAlignment = .right
 
         let textStyle = TextStyle(
             color: color,
@@ -35,7 +36,8 @@ final class TextStyleTests: XCTestCase {
             shadowRadius: shadowRadius,
             shadowOffsetX: shadowOffsetX,
             shadowOffsetY: shadowOffsetY,
-            shadowColor: shadowColor
+            shadowColor: shadowColor,
+            alignment: alignment
         )
 
         // When
@@ -46,6 +48,7 @@ final class TextStyleTests: XCTestCase {
         TextStyle:
           color: \(color)
           font: \(font)
+          alignment: \(alignment)
           thickness: \(thickness)
           rotation: \(rotation)
           shadowRadius: \(shadowRadius)
