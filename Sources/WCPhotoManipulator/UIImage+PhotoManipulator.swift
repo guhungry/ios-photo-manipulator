@@ -46,15 +46,12 @@ public extension UIImage {
 
     // Text
     @objc func drawText(_ text: String, position: CGPoint, style: TextStyle, scale: CGFloat) -> UIImage? {
-        UIGraphicsBeginImageContextWithOptions(self.size, false, scale)
-        if let context = UIGraphicsGetCurrentContext() {
-            context.translateBy(x: position.x, y: position.y)
-            context.rotate (by: -style.rotation * CGFloat.pi / 180.0) //45˚
-            context.translateBy(x: -position.x, y: -position.y)
-        }
+        let paragraphStyle = NSMutableParagraphStyle.init()
+        paragraphStyle.alignment = style.alignment
         var textStyles: [NSAttributedString.Key: Any] = [
             .font: style.font,
             .foregroundColor: style.color,
+            .paragraphStyle: paragraphStyle
         ]
         if (style.thickness > 0) {
             textStyles[.strokeColor] = style.color;
@@ -63,8 +60,21 @@ public extension UIImage {
         if (style.shadowRadius > 0 && style.shadowColor != nil) {
             textStyles[.shadow] = style.shadow;
         }
+        let textSize = (text as NSString).size(withAttributes: textStyles)
+
+        var adjustedPosition = position
+        if (style.alignment == .right) {
+            adjustedPosition = CGPoint(x: position.x - textSize.width, y: position.y)
+        }
         
-        (text as NSString).draw(at: position, withAttributes: textStyles)
+        UIGraphicsBeginImageContextWithOptions(self.size, false, scale)
+        if let context = UIGraphicsGetCurrentContext() {
+            context.translateBy(x: position.x, y: position.y)
+            context.rotate (by: -style.rotation * CGFloat.pi / 180.0) //45˚
+            context.translateBy(x: -position.x, y: -position.y)
+        }
+        
+        (text as NSString).draw(in: CGRect(origin: adjustedPosition, size: textSize), withAttributes: textStyles)
         
         let rotatedImageWithText = UIGraphicsGetImageFromCurrentImageContext();
         UIGraphicsEndImageContext()

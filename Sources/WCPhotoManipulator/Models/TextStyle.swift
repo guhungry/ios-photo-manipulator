@@ -14,6 +14,8 @@ import UIKit
     let color: UIColor
     /// The font of the text.
     let font: UIFont
+    /// The alignment of the text. Default value is left.
+    public var alignment: NSTextAlignment = .left
     /// The thickness of the text. Default value is 0.
     let thickness: CGFloat
     /// The rotation angle of the text in degrees. Default value is 0.
@@ -135,6 +137,7 @@ import UIKit
         TextStyle:
           color: \(color)
           font: \(font)
+          alignment: \(alignment)
           thickness: \(thickness)
           rotation: \(rotation)
           shadowRadius: \(shadowRadius)
