@@ -154,6 +154,24 @@ class UIImage_PhotoManipulatorSwiftTests: XCTestCase {
         XCTAssertNotNil(image)
         XCTAssertEqual(image.size, CGSize(width: 800, height: 530))
     }
+    
+    func testDrawText_WhenAlignCenter_ShouldReturnCorrectly() throws {
+        image = UIImage.init(namedTest: "background.jpg")
+        XCTAssertNotNil(image)
+        
+        let center = TextStyle(color: .blue, size: 42, thickness: 5, rotation: -30, shadowRadius: 0, shadowOffsetX: 0, shadowOffsetY: 0, shadowColor: nil, alignment: .center)
+        image = image.drawText("Test Text To Align Center Draw", position: CGPoint(x: 400, y: 60), style: center, scale: 2)
+        image = image.drawText("Center", position: CGPoint(x: 400, y: 100), style: center, scale: 2)
+        image = image.drawText("Center Multiple\nLine", position: CGPoint(x: 400, y: 140), style: center, scale: 2)
+
+        let left = TextStyle(color: .blue, size: 42, thickness: 5, rotation: -30, shadowRadius: 0, shadowOffsetX: 0, shadowOffsetY: 0, shadowColor: nil, alignment: .left)
+        image = image.drawText("Test Text To Align Left Draw", position: CGPoint(x: 400, y: 60), style: left, scale: 2)
+        image = image.drawText("Left", position: CGPoint(x: 400, y: 100), style: left, scale: 2)
+        image = image.drawText("Left Multiple\nLine", position: CGPoint(x: 400, y: 140), style: left, scale: 2)
+
+        XCTAssertNotNil(image)
+        XCTAssertEqual(image.size, CGSize(width: 800, height: 530))
+    }
 
     // Overlay Image
     func testOverlayImage_WhenNoScale_ShouldReturnCorrectly() throws {
