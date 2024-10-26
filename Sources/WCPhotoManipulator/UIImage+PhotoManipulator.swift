@@ -65,6 +65,8 @@ public extension UIImage {
         var adjustedPosition = position
         if (style.alignment == .right) {
             adjustedPosition = CGPoint(x: position.x - textSize.width, y: position.y)
+        } else if (style.alignment == .center) {
+            adjustedPosition = CGPoint(x: position.x - textSize.width / 2, y: position.y)
         }
         
         UIGraphicsBeginImageContextWithOptions(self.size, false, scale)
