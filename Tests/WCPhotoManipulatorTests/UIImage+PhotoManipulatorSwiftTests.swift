@@ -57,10 +57,33 @@ class UIImage_PhotoManipulatorSwiftTests: XCTestCase {
         image = UIImage.init(namedTest: "background.jpg")
         XCTAssertNotNil(image)
     
-    
+        // Default is Cover now
         image = image.resize(CGSize(width: 55, height: 99), scale: 1)
         XCTAssertNotNil(image)
         XCTAssertEqual(image.size, CGSize(width: 55, height: 99))
+    }
+    
+    func testResize_WhenContain_ShouldReturnFittedSize() throws {
+        image = UIImage.init(namedTest: "background.jpg") // 800x530 ~ 1.509
+        XCTAssertNotNil(image)
+        
+        // Target 400x400.
+        // Fit 800x530 into 400x400.
+        // Scale based on width 400/800 = 0.5. Height = 530 * 0.5 = 265.
+        // Result 400x265.
+        
+        let resized = image.resize(CGSize(width: 400, height: 400), scale: 1, resizeMode: .Contain)
+        XCTAssertNotNil(resized)
+        XCTAssertEqual(resized?.size, CGSize(width: 400, height: 265))
+    }
+
+    func testResize_WhenStretch_ShouldReturnTargetSize() throws {
+        image = UIImage.init(namedTest: "background.jpg")
+        XCTAssertNotNil(image)
+        
+        let resized = image.resize(CGSize(width: 400, height: 400), scale: 1, resizeMode: .Stretch)
+        XCTAssertNotNil(resized)
+        XCTAssertEqual(resized?.size, CGSize(width: 400, height: 400))
     }
 
     func testCropAndResize_ShouldReturnSizeCorrectly() throws {

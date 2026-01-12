@@ -29,6 +29,19 @@ import UIKit
             .scaledBy(x: targetRect.size.width / sourceSize.width, y: targetRect.size.height / sourceSize.height)
     }
     
+    @objc public class func fittedSize(_ sourceSize: CGSize, destSize: CGSize, scale: CGFloat) -> CGSize {
+        if destSize == .zero { return sourceSize }
+        
+        let aspect = sourceSize.width / sourceSize.height
+        let fixedDestSize = fixSize(destSize, aspect)
+        let targetAspect = fixedDestSize.width / fixedDestSize.height
+        
+        if targetAspect <= aspect { // target is taller than content
+            return ceilSize(CGSize(width: fixedDestSize.width, height: fixedDestSize.width / aspect), scale: scale)
+        }
+        return ceilSize(CGSize(width: fixedDestSize.height * aspect, height: fixedDestSize.height), scale: scale)
+    }
+
     @objc public class func targetRect(_ sourceSize: CGSize, destSize: CGSize, destScale: CGFloat, resizeMode: ResizeMode) -> CGRect {
         
         if destSize == CGSize.zero {

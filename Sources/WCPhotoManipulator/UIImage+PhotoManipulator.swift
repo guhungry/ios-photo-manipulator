@@ -34,14 +34,27 @@ public extension UIImage {
     }
     
     @objc func resize(_ targetSize: CGSize, scale: CGFloat) -> UIImage? {
-        let targetRect = BitmapUtils.targetRect(size, destSize: targetSize, destScale: 1, resizeMode: .Contain)
+        return resize(targetSize, scale: scale, resizeMode: .Cover)
+    }
+
+    @objc func resize(_ targetSize: CGSize, scale: CGFloat, resizeMode: ResizeMode) -> UIImage? {
+        var newTargetSize = targetSize
+        if (resizeMode == .Contain) {
+             newTargetSize = BitmapUtils.fittedSize(size, destSize: targetSize, scale: scale)
+        }
+        
+        let targetRect = BitmapUtils.targetRect(size, destSize: newTargetSize, destScale: 1, resizeMode: resizeMode)
         let transform = BitmapUtils.transformFromTargetRect(size, targetRect: targetRect)
 
-        return BitmapUtils.transform(self, size: targetSize, scale: scale, transform: transform)
+        return BitmapUtils.transform(self, size: newTargetSize, scale: scale, transform: transform)
     }
     
     @objc func crop(_ region: CGRect, targetSize: CGSize) -> UIImage? {
-        return crop(region)?.resize(targetSize, scale: scale)
+        return crop(region, targetSize: targetSize, resizeMode: .Cover)
+    }
+    
+    @objc func crop(_ region: CGRect, targetSize: CGSize, resizeMode: ResizeMode) -> UIImage? {
+        return crop(region)?.resize(targetSize, scale: scale, resizeMode: resizeMode)
     }
 
     // Text

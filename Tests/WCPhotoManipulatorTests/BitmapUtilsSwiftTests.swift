@@ -45,6 +45,20 @@ class BitmapUtilsSwiftTests: XCTestCase {
     }
 
     ////////////////////////////
+    /// fittedSize
+    ///////////////////////////
+    func testFittedSize_ShouldReturnValueCorrectly() throws {
+        // Source: 10x10. Target: 20x20. Fit: 20x20.
+        XCTAssertEqual(BitmapUtils.fittedSize(CGSize(width: 10, height: 10), destSize: CGSize(width: 20, height: 20), scale: 1), CGSize(width: 20, height: 20))
+         
+        // Source: 10x5 (2:1). Target: 10x10. Fit within 10x10 => Width 10. Height 5.
+        XCTAssertEqual(BitmapUtils.fittedSize(CGSize(width: 10, height: 5), destSize: CGSize(width: 10, height: 10), scale: 1), CGSize(width: 10, height: 5))
+         
+        // Source: 5x10 (1:2). Target: 10x10. Fit within 10x10 => Height 10. Width 5.
+        XCTAssertEqual(BitmapUtils.fittedSize(CGSize(width: 5, height: 10), destSize: CGSize(width: 10, height: 10), scale: 1), CGSize(width: 5, height: 10))
+    }
+
+    ////////////////////////////
     /// ceilSize
     ///////////////////////////
     func testCeilSize_ShouldReturnValueCorrectly() throws {
